@@ -1,7 +1,19 @@
+import HeroCarousel from "@/app/home/components/HeroCarousel";
+import TopHits from "@/app/home/components/TopHits";
+import Catering from "@/app/home/components/Catering";
+import Features from "@/app/home/components/Features";
+import Testimonials from "@/app/home/components/Testimonials";
+import Gallery from "@/app/home/components/Gallery";
+
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8 h-screen">
-      <h1 className="text-4xl font-bold">Home</h1>
-    </div>
+    <main>
+      <HeroCarousel />
+      <TopHits />
+      <Catering />
+      <Features />
+      <Testimonials />
+      <Gallery />
+    </main>
   );
 }
