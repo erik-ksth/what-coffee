@@ -6,14 +6,14 @@ import Testimonials from "@/app/home/components/Testimonials";
 import Gallery from "@/app/home/components/Gallery";
 
 export default function Home() {
-  return (
-    <main>
-      <HeroCarousel />
-      <TopHits />
-      <Catering />
-      <Features />
-      <Testimonials />
-      <Gallery />
-    </main>
-  );
+    return (
+        <main>
+            <HeroCarousel />
+            <TopHits />
+            <Catering />
+            <Features />
+            <Testimonials />
+            <Gallery />
+        </main>
+    );
 }
