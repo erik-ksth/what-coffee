@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MENU_HERO_IMAGE = "https://images.unsplash.com/photo-1600007525237-3ffb936cd20f?w=1920&q=80";
 
-const MenuHero = () => {
+const GalleryHero = () => {
     return (
         <section
             className="relative isolate flex h-[460px] w-screen flex-col items-center justify-center gap-6 overflow-hidden text-center text-white"
@@ -31,4 +31,4 @@ const MenuHero = () => {
         </section>
     );
 };
-export default MenuHero;
+export default GalleryHero;
