@@ -1,25 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import MenuItemCard from "@/app/menu/components/MenuItemCard";
+import type { MenuItem } from "@/app/menu/menu-data";
 
-interface TopHitItem {
-    name: string;
-    image: string;
-}
-
-const topHits: TopHitItem[] = [
+const topHits: MenuItem[] = [
     {
         name: "Coconut Coffee",
+        description: "Creamy iced latte made with toasted coconut milk and rich espresso.",
         image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80",
     },
     {
         name: "Tiramisu",
+        description: "Classic Italian dessert with layers of espresso-soaked ladyfingers and mascarpone.",
         image: "https://images.unsplash.com/photo-1542326237-94b1c5a538d4?w=600&q=80",
     },
     {
         name: "Matcha",
+        description: "Premium Japanese matcha whisked with your choice of milk, served over ice.",
         image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&q=80",
     },
 ];
@@ -41,20 +40,7 @@ export default function TopHits() {
                 {/* Product Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     {topHits.map((item, index) => (
-                        <div key={index} className="group">
-                            <div className="relative aspect-square bg-gray-100 overflow-hidden">
-                                <Image
-                                    src={item.image}
-                                    alt={item.name}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, 33vw"
-                                />
-                            </div>
-                            <h3 className="text-xl md:text-2xl font-serif text-gray-900 text-center mt-4">
-                                {item.name}
-                            </h3>
-                        </div>
+                        <MenuItemCard key={index} item={item} />
                     ))}
                 </div>
 

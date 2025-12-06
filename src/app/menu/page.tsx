@@ -20,7 +20,7 @@ export default function Menu() {
     return (
         <main>
             <MenuHero />
-            <section className="mx-auto flex w-full max-w-5xl flex-col items-center gap-10 px-16 py-16">
+            <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-16">
                 <div className="text-center">
                     <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900">
                         Products

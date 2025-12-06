@@ -11,11 +11,11 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
 
     return (
         <>
-            <article className="flex flex-col items-center gap-3 text-center">
+            <article className="group">
                 {/* Image section with hover overlay */}
                 <button
                     type="button"
-                    className="group relative aspect-square w-[80%] sm:w-[85%] overflow-hidden bg-stone-100 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                    className="relative aspect-square w-full overflow-hidden bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     onClick={() => setIsOpen(true)}
                     aria-label={`See description for ${item.name}`}
                 >
@@ -23,8 +23,8 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                         src={item.image}
                         alt={`${item.name} - ${item.description}`}
                         fill
-                        sizes="(min-width: 1024px) 220px, (min-width: 640px) 32vw, 70vw"
-                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     {/* Hover overlay to prompt user to see description */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -33,7 +33,7 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                 </button>
 
                 {/* Menu item name */}
-                <h3 className="text-base font-medium text-stone-600 ">{item.name}</h3>
+                <h3 className="text-xl md:text-2xl font-serif text-gray-900 text-center mt-4">{item.name}</h3>
                 {/* Keep description for screen readers even when dialog is closed */}
                 <p className="sr-only">{item.description}</p>
             </article>
