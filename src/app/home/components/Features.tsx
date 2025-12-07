@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Features() {
     return (
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
                 {/* Top Row: Bakery + Image */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">

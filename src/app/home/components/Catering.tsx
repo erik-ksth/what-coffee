@@ -4,16 +4,14 @@ import { ArrowRight } from "lucide-react";
 
 export default function Catering() {
     return (
-        <section className="relative py-24 px-4">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80"
-                    alt="Coffee catering setup"
-                    fill
-                    className="object-cover"
-                    sizes="100vw"
-                />
+        <section className="relative py-24 px-4 overflow-hidden">
+            {/* Background Image - Fixed/Parallax */}
+            <div
+                className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
+                style={{
+                    backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&q=80')"
+                }}
+            >
                 <div className="absolute inset-0 bg-white/85" />
             </div>
 

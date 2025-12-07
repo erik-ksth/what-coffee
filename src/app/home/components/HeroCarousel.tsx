@@ -15,15 +15,15 @@ interface HeroCarouselProps {
 
 const defaultSlides: CarouselSlide[] = [
     {
-        src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&q=80",
+        src: "https://images.unsplash.com/photo-1620131810504-79cc8cb61a70?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Cozy cafe interior with warm lighting",
     },
     {
-        src: "https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1920&q=80",
+        src: "https://images.unsplash.com/photo-1564327367919-cb377ea6a88f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Aesthetic coffee shop with plants",
     },
     {
-        src: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=1920&q=80",
+        src: "https://images.unsplash.com/photo-1621593446047-4db277eef303?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         alt: "Minimalist cafe with natural light",
     },
 ];
@@ -148,11 +148,10 @@ export default function HeroCarousel({
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            index === currentIndex
-                                ? "bg-white scale-110"
-                                : "bg-white/50 hover:bg-white/75"
-                        }`}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                            ? "bg-white scale-110"
+                            : "bg-white/50 hover:bg-white/75"
+                            }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />
                 ))}

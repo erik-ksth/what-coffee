@@ -8,26 +8,30 @@ interface Testimonial {
     rating: number;
     text: string;
     source: string;
+    link?: string;
 }
 
 const testimonials: Testimonial[] = [
     {
-        name: "Sarah M.",
+        name: "Dr Nada",
         rating: 5,
-        text: "The best coffee shop in town! Their coconut coffee is absolutely divine, and the atmosphere is so cozy. I come here every morning before work.",
+        text: "I really loved this café! The atmosphere was super cozy and welcoming. Noor was absolutely wonderful , and she was so friendly and helpful the whole time. The coffee was great, the prices were very reasonable, and the whole place had such a nice vibe. Definitely coming back soon! ☕💛",
         source: "Google",
+        link: "https://maps.app.goo.gl/HqtJzii5hiBNEDH88",
     },
     {
-        name: "James L.",
+        name: "Doug Bourne",
         rating: 5,
-        text: "Amazing matcha lattes and the pastries are always fresh. The staff is incredibly friendly and remembers my order. Highly recommend!",
-        source: "Yelp",
+        text: "Nice place.  Pistachio croissant is on the savory side, but quite good that way.  Cappuccino is dark and rich.  Cup is super fun looking.  Friendly staff.  Plain donut was fine - I'd prefer the dough a little more sweet, but probably just a preference thing. Definitely worth a try.",
+        source: "Google",
+        link: "https://maps.app.goo.gl/x6h4e1kGkwwTwrWB8",
     },
     {
-        name: "Emily R.",
+        name: "F Lee",
         rating: 5,
-        text: "We had What Coffee cater our company event and it was a huge hit. Professional service and delicious drinks. Will definitely use them again!",
+        text: "The pastry is soo good. Tried their pistachio croissant, the taste is so rich and not too sweet!  They have cute outdoor tables as well, but would suggest setting up parasol.  Worth giving this cafe a try! I definitely will come back.",
         source: "Google",
+        link: "https://maps.app.goo.gl/YYXDLtkZySyF21vn8",
     },
 ];
 
@@ -83,7 +87,8 @@ export default function Testimonials() {
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className={`absolute w-full bg-white p-8 shadow-lg transition-all duration-300 ${getCardStyle(index)}`}
+                                className={`absolute w-full bg-white p-8 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer`}
+                                onClick={() => window.open(testimonial.link, "_blank")}
                             >
                                 {/* Stars */}
                                 <div className="flex gap-1 mb-4 justify-center">
@@ -124,9 +129,8 @@ export default function Testimonials() {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-colors ${
-                                index === currentIndex ? "bg-gray-900" : "bg-gray-300"
-                            }`}
+                            className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
+                                }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />
                     ))}
