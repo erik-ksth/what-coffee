@@ -1,4 +1,4 @@
-import HeroCarousel from "@/app/home/components/HeroCarousel";
+import Hero from "@/app/home/components/Hero";
 import TopHits from "@/app/home/components/TopHits";
 import Catering from "@/app/home/components/Catering";
 import Features from "@/app/home/components/Features";
@@ -8,7 +8,7 @@ import Gallery from "@/app/home/components/Gallery";
 export default function Home() {
     return (
         <main>
-            <HeroCarousel />
+            <Hero />
             <TopHits />
             <Catering />
             <Features />

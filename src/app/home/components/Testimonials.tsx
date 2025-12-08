@@ -59,20 +59,20 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="py-20 px-4 bg-gray-100">
+        <section className="py-20 px-4 bg-muted">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <p className="text-sm tracking-widest text-gray-500 uppercase mb-2">
+                    <p className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-2">
                         What our customers say
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900">
+                    <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tighter">
                         Testimonials
                     </h2>
                 </div>
 
                 {/* Carousel */}
-                <div className="relative flex items-center justify-center h-80">
+                <div className="relative flex items-center justify-center h-[420px]">
                     {/* Navigation Buttons */}
                     <button
                         onClick={goToPrev}
@@ -87,7 +87,7 @@ export default function Testimonials() {
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className={`absolute w-full bg-white p-8 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer`}
+                                className={`absolute w-full h-full bg-white p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between`}
                                 onClick={() => window.open(testimonial.link, "_blank")}
                             >
                                 {/* Stars */}
@@ -129,7 +129,7 @@ export default function Testimonials() {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
+                            className={`w-2 h-2 transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
                                 }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />

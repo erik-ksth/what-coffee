@@ -1,103 +1,85 @@
 import Link from "next/link";
+import { ArrowUpRight, Instagram, Facebook, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#EC814E] text-white">
-            <div className="container mx-auto px-4 py-12">
-                <div className="flex flex-col items-center justify-center gap-8 text-center">
-                    {/* Brand Name */}
-                    <h2 className="font-serif text-3xl font-bold tracking-wide">What Coffee</h2>
+        <footer className="w-full bg-foreground text-background pt-24 pb-8">
+            <div className="container mx-auto px-4">
 
-                    {/* Navigation */}
-                    <nav>
-                        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-                            {["Home", "Menu", "About", "Gallery", "Contact"].map((item) => (
+                {/* Main Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-24">
+
+                    {/* Brand Section - Spans 4 cols */}
+                    <div className="md:col-span-5 flex flex-col justify-between">
+                        <div>
+                            <h2 className="text-8xl md:text-[10rem] font-bold tracking-tighter leading-[0.8] mb-8 text-primary/20 select-none">
+                                WHAT.
+                            </h2>
+                            <p className="text-xl text-zinc-400 max-w-sm leading-relaxed">
+                                Brewing coffee that inspires. <br />
+                                Minimalist sourcing, maximalist flavor.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Quick Links - Spans 2 cols */}
+                    <div className="md:col-span-2 md:col-start-7">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Menu</h3>
+                        <ul className="flex flex-col gap-4">
+                            {["Home", "Menu", "Story", "Gallery", "Contact"].map((item) => (
                                 <li key={item}>
                                     <Link
-                                        href={
-                                            item === "Home"
-                                                ? "/"
-                                                : item === "About"
-                                                  ? "/story"
-                                                  : `/${item.toLowerCase()}`
-                                        }
-                                        className="text-sm uppercase tracking-widest font-medium hover:text-stone-200 transition-colors"
+                                        href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                                        className="text-lg font-medium hover:text-primary transition-colors inline-flex items-center gap-2 group"
                                     >
                                         {item}
+                                        <ArrowUpRight className="w-4 h-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-                    </nav>
-
-                    {/* Social Icons */}
-                    <div className="flex gap-6 items-center mt-2">
-                        <a
-                            href="#"
-                            aria-label="Instagram"
-                            className="hover:text-stone-200 transition-colors transform hover:scale-110 duration-200"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                            </svg>
-                        </a>
-                        <a
-                            href="#"
-                            aria-label="Facebook"
-                            className="hover:text-stone-200 transition-colors transform hover:scale-110 duration-200"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg>
-                        </a>
-                        <a
-                            href="mailto:hello@whatcoffee.com"
-                            aria-label="Email"
-                            className="hover:text-stone-200 transition-colors transform hover:scale-110 duration-200"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            >
-                                <rect width="20" height="16" x="2" y="4" rx="2" />
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                            </svg>
-                        </a>
                     </div>
 
-                    {/* Copyright */}
-                    <div className="text-xs text-white/80 font-light tracking-wide mt-4">
-                        <p>&copy; {new Date().getFullYear()} What Coffee. All rights reserved.</p>
+                    {/* Contact Info - Spans 2 cols */}
+                    <div className="md:col-span-2">
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Visit</h3>
+                        <div className="flex flex-col gap-6 text-zinc-400">
+                            <div>
+                                <p className="text-white font-medium mb-1">Bernauer Str. 63-64</p>
+                                <p>13355 Berlin, Germany</p>
+                            </div>
+                            <div>
+                                <p className="text-white font-medium mb-1">Daily</p>
+                                <p>8:00 AM - 6:00 PM</p>
+                            </div>
+                            <a href="mailto:hello@whatcoffee.com" className="hover:text-primary transition-colors">
+                                hello@whatcoffee.com
+                            </a>
+                        </div>
                     </div>
+
+                </div>
+
+                {/* Footer Bottom */}
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <p className="text-zinc-600 text-sm font-medium">
+                        &copy; {new Date().getFullYear()} What Coffee. All rights reserved.
+                    </p>
+
+                    <div className="flex gap-6">
+                        {[Instagram, Facebook, Mail].map((Icon, i) => (
+                            <a key={i} href="#" className="w-10 h-10 bg-zinc-900 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 group">
+                                <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Big decorative text at very bottom? */}
+                <div className="w-full overflow-hidden mt-12 opacity-5 pointer-events-none select-none">
+                    <span className="text-[12vw] font-bold leading-none tracking-tighter text-white whitespace-nowrap">
+                        WHAT COFFEE — WHAT COFFEE
+                    </span>
                 </div>
             </div>
         </footer>

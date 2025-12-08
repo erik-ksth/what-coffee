@@ -47,10 +47,10 @@ export default function Gallery() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-24 relative z-10">
-                    <p className="text-sm tracking-widest text-gray-500 uppercase mb-2">
+                    <p className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-3">
                         Life at What Coffee
                     </p>
-                    <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900">
+                    <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tighter">
                         Moments from the Cafe
                     </h2>
                 </div>
@@ -104,10 +104,10 @@ export default function Gallery() {
                 <div className="text-center relative z-10">
                     <Link
                         href="/gallery"
-                        className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors"
+                        className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors"
                     >
                         View Full Gallery
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
             </div>
