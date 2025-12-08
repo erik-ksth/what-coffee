@@ -48,7 +48,7 @@ export default function TopHits() {
                     <div className="text-center">
                          <Link
                               href="/menu"
-                              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors"
+                              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full"
                          >
                               Explore Full Menu
                               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

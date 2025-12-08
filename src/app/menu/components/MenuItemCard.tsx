@@ -15,7 +15,7 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                     {/* Image section with hover overlay */}
                     <button
                          type="button"
-                         className="relative aspect-square w-full overflow-hidden bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                         className="relative aspect-square w-full overflow-hidden bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-2xl"
                          onClick={() => setIsOpen(true)}
                          aria-label={`See description for ${item.name}`}
                     >
@@ -48,14 +48,14 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                          onClick={() => setIsOpen(false)}
                     >
                          <div
-                              className="relative w-full max-w-md bg-white p-6 shadow-xl"
+                              className="relative w-full max-w-md bg-white p-6 shadow-xl rounded-2xl"
                               onClick={(e) => e.stopPropagation()}
                          >
                               {/* Close icon button in the top-right corner of the dialog */}
                               <button
                                    type="button"
                                    onClick={() => setIsOpen(false)}
-                                   className="absolute right-4 top-4 text-stone-400 transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white bg-gray-100 p-1"
+                                   className="absolute right-4 top-4 text-stone-400 transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white bg-gray-100 p-1 rounded-full"
                                    aria-label="Close description"
                               >
                                    <span aria-hidden="true" className="block h-4 w-4">

@@ -32,14 +32,14 @@ export default function Features() {
                         </p>
                         <Link
                             href="/menu"
-                            className="group inline-flex items-center gap-3 bg-foreground text-background px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 mt-4"
+                            className="group inline-flex items-center gap-3 bg-foreground text-background px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 mt-4 rounded-full"
                         >
                             View Bakery Menu
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
                     {/* Image */}
-                    <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden order-1 lg:order-2 group">
+                    <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden order-1 lg:order-2 group rounded-2xl">
                         <Image
                             src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
                             alt="Freshly baked croissants"
@@ -53,7 +53,7 @@ export default function Features() {
                 {/* Feature 2: Coffee */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Image */}
-                    <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden group">
+                    <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden group rounded-2xl">
                         <Image
                             src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
                             alt="Pour over coffee being made"
@@ -79,7 +79,7 @@ export default function Features() {
                         </p>
                         <Link
                             href="/menu"
-                            className="group inline-flex items-center gap-3 border-2 border-foreground text-foreground px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-300 mt-4"
+                            className="group inline-flex items-center gap-3 border-2 border-foreground text-foreground px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-all duration-300 mt-4 rounded-full"
                         >
                             Shop Coffee Beans
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

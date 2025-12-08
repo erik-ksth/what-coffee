@@ -23,10 +23,10 @@ export default function Hero() {
                          </p>
 
                          <div className="flex flex-wrap gap-4 mt-4">
-                              <Link href="/menu" className="px-8 py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase hover:opacity-90 transition-opacity">
+                              <Link href="/menu" className="px-8 py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase hover:opacity-90 transition-opacity rounded-full">
                                    See Menu
                               </Link>
-                              <Link href="/story" className="px-8 py-4 border border-zinc-200 text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-zinc-50 transition-colors">
+                              <Link href="/story" className="px-8 py-4 border border-zinc-200 text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-zinc-50 transition-colors rounded-full">
                                    Our Story
                               </Link>
                          </div>
@@ -34,7 +34,7 @@ export default function Hero() {
 
                     {/* Hero Image */}
                     <div className="relative h-[600px] w-full hidden lg:block">
-                         <div className="absolute top-0 right-0 w-[90%] h-full bg-zinc-100 overflow-hidden">
+                         <div className="absolute top-0 right-0 w-[90%] h-full bg-zinc-100 overflow-hidden rounded-2xl">
                               <Image
                                    src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
                                    alt="Pouring coffee"

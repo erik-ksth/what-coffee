@@ -87,7 +87,7 @@ export default function Testimonials() {
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className={`absolute w-full h-full bg-white p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between`}
+                                className={`absolute w-full h-full bg-white p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between rounded-3xl`}
                                 onClick={() => window.open(testimonial.link, "_blank")}
                             >
                                 {/* Stars */}
@@ -129,7 +129,7 @@ export default function Testimonials() {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
+                            className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
                                 }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />

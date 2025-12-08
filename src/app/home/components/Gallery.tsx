@@ -59,7 +59,7 @@ export default function Gallery() {
                 <div className="relative flex flex-col md:flex-row justify-center items-center gap-12 mb-24 py-12">
                     {/* Left Image - moves up slowly */}
                     <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out"
+                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
                         style={{ transform: `translateY(${-scrollY * 0.5}px)` }}
                     >
                         <Image
@@ -73,7 +73,7 @@ export default function Gallery() {
 
                     {/* Center Image - moves down */}
                     <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out"
+                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
                         style={{ transform: `translateY(${scrollY * 0.8}px)` }}
                     >
                         <Image
@@ -87,7 +87,7 @@ export default function Gallery() {
 
                     {/* Right Image - moves up faster */}
                     <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out"
+                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
                         style={{ transform: `translateY(${-scrollY * 1.2}px)` }}
                     >
                         <Image
@@ -104,7 +104,7 @@ export default function Gallery() {
                 <div className="text-center relative z-10">
                     <Link
                         href="/gallery"
-                        className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors"
+                        className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full"
                     >
                         View Full Gallery
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

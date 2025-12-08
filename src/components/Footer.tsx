@@ -68,7 +68,7 @@ export default function Footer() {
 
                     <div className="flex gap-6">
                         {[Instagram, Facebook, Mail].map((Icon, i) => (
-                            <a key={i} href="#" className="w-10 h-10 bg-zinc-900 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 group">
+                            <a key={i} href="#" className="w-10 h-10 bg-zinc-900 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 group rounded-full">
                                 <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </a>
                         ))}

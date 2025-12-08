@@ -33,7 +33,7 @@ export default function Catering() {
                     <div className="flex flex-col sm:flex-row gap-6 mt-4">
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center gap-3 bg-white text-foreground px-8 py-5 text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300"
+                            className="group inline-flex items-center gap-3 bg-white text-foreground px-8 py-5 text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300 rounded-full"
                         >
                             Book Catering
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -44,7 +44,7 @@ export default function Catering() {
                 {/* Image Composition - Spans 5 cols */}
                 <div className="lg:col-span-5 relative h-[600px] w-full">
                     {/* Main Image */}
-                    <div className="absolute inset-0 z-10 overflow-hidden bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 ease-out">
+                    <div className="absolute inset-0 z-10 overflow-hidden bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 ease-out rounded-2xl">
                         <Image
                             src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80"
                             alt="Catering Setup"
@@ -54,7 +54,7 @@ export default function Catering() {
                     </div>
 
                     {/* Decorative Border Offset */}
-                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-primary/30 z-0 hidden md:block"></div>
+                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-primary/30 z-0 hidden md:block rounded-2xl"></div>
                 </div>
             </div>
         </section>
