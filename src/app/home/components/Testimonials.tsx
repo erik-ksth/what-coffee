@@ -48,46 +48,52 @@ export default function Testimonials() {
 
     const getCardStyle = (index: number) => {
         const diff = index - currentIndex;
+        // Active card
         if (diff === 0) {
-            return "z-20 scale-100 opacity-100";
-        } else if (diff === -1 || (currentIndex === 0 && index === testimonials.length - 1)) {
-            return "z-10 -translate-x-1/2 scale-90 opacity-60";
-        } else if (diff === 1 || (currentIndex === testimonials.length - 1 && index === 0)) {
-            return "z-10 translate-x-1/2 scale-90 opacity-60";
+            return "z-20 scale-100 opacity-100 relative";
         }
-        return "opacity-0";
+
+        // Previous/Next cards (desktop only)
+        if (diff === -1 || (currentIndex === 0 && index === testimonials.length - 1)) {
+            return "z-10 -translate-x-1/2 scale-90 opacity-60 hidden md:block absolute top-0";
+        }
+        if (diff === 1 || (currentIndex === testimonials.length - 1 && index === 0)) {
+            return "z-10 translate-x-1/2 scale-90 opacity-60 hidden md:block absolute top-0";
+        }
+
+        return "opacity-0 hidden absolute top-0";
     };
 
     return (
-        <section className="py-20 px-4 bg-muted">
+        <section className="py-12 md:py-20 px-4 bg-muted">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-12">
-                    <p className="text-sm font-medium tracking-[0.2em] text-primary uppercase mb-2">
+                <div className="text-center mb-10 md:mb-12">
+                    <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-2">
                         What our customers say
                     </p>
-                    <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tighter">
+                    <h2 className="text-3xl md:text-6xl font-bold text-foreground tracking-tighter">
                         Testimonials
                     </h2>
                 </div>
 
                 {/* Carousel */}
-                <div className="relative flex items-center justify-center h-[420px]">
+                <div className="relative flex items-center justify-center h-auto md:h-[420px]">
                     {/* Navigation Buttons */}
                     <button
                         onClick={goToPrev}
-                        className="absolute left-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="absolute left-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors bg-white/50 rounded-full md:bg-transparent"
                         aria-label="Previous testimonial"
                     >
-                        <ChevronLeft className="w-8 h-8" />
+                        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
 
                     {/* Cards */}
-                    <div className="relative w-full max-w-lg h-full flex items-center justify-center">
+                    <div className="relative w-full max-w-lg min-h-[300px] md:h-full flex items-center justify-center">
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className={`absolute w-full h-full bg-white p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between rounded-3xl`}
+                                className={`w-full h-full bg-white p-6 md:p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between rounded-3xl`}
                                 onClick={() => window.open(testimonial.link, "_blank")}
                             >
                                 {/* Stars */}
@@ -95,20 +101,20 @@ export default function Testimonials() {
                                     {[...Array(testimonial.rating)].map((_, i) => (
                                         <Star
                                             key={i}
-                                            className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                                            className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400"
                                         />
                                     ))}
                                 </div>
 
                                 {/* Quote */}
-                                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+                                <p className="text-gray-600 text-center mb-6 leading-relaxed text-sm md:text-base">
                                     &ldquo;{testimonial.text}&rdquo;
                                 </p>
 
                                 {/* Author */}
                                 <div className="text-center">
                                     <p className="font-medium text-gray-900">{testimonial.name}</p>
-                                    <p className="text-sm text-gray-500">{testimonial.source}</p>
+                                    <p className="text-xs md:text-sm text-gray-500">{testimonial.source}</p>
                                 </div>
                             </div>
                         ))}
@@ -116,10 +122,10 @@ export default function Testimonials() {
 
                     <button
                         onClick={goToNext}
-                        className="absolute right-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors"
+                        className="absolute right-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors bg-white/50 rounded-full md:bg-transparent"
                         aria-label="Next testimonial"
                     >
-                        <ChevronRight className="w-8 h-8" />
+                        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
                     </button>
                 </div>
 

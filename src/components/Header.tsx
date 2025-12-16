@@ -2,24 +2,38 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const navItems = ["Home", "Menu", "About", "Gallery", "Contact"];
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <header className="w-full bg-[var(--background)] sticky top-0 z-50 shadow-sm">
-            <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled
+                ? "bg-background/80 backdrop-blur-md shadow-sm py-3"
+                : "bg-transparent shadow-none py-6"
+                }`}
+        >
+            <div className="container mx-auto px-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="mr-8 z-50 relative">
+                <Link href="/" className="mr-8 z-50 relative block">
                     <Image
                         src="/logo_orange.png"
                         alt="Cafe Logo"
-                        width={70}
-                        height={70}
-                        className="hover:opacity-90 transition-opacity"
+                        width={isScrolled ? 50 : 70}
+                        height={isScrolled ? 50 : 70}
+                        className="hover:opacity-90 transition-all duration-300"
                     />
                 </Link>
 
@@ -56,7 +70,7 @@ export default function Header() {
 
                 {/* Mobile Navigation Overlay */}
                 <div
-                    className={`fixed inset-0 bg-[var(--background)] z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
+                    className={`fixed inset-0 bg-background z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-in-out md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"
                         }`}
                 >
                     <nav>
