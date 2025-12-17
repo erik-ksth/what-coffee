@@ -1,0 +1,33 @@
+import Image from "next/image";
+import Link from "next/link";
+const STORY_HERO_IMAGE = "https://images.unsplash.com/photo-1600007525237-3ffb936cd20f?w=1920&q=80";
+
+const StoryHero = () => {
+    return (
+        <section
+            className="relative isolate flex h-[460px] w-screen flex-col items-center justify-center gap-6 overflow-hidden text-center text-white mt-[80px]"
+            style={{
+                marginLeft: "calc(50% - 50vw)",
+                marginRight: "calc(50% - 50vw)",
+            }}
+        >
+            {/* Background image of menu page */}
+            <Image
+                src={STORY_HERO_IMAGE}
+                alt="Cafe interior with brick wall and wooden table"
+                fill
+                priority
+                className="object-cover"
+                sizes="100vw"
+            />
+            {/* Color overlay to darken image and make text readable */}
+            <div className="absolute inset-0 bg-[#2d1809]/70" />
+
+            <div className="relative z-10 flex max-w-3xl flex-col items-center gap-8 px-6">
+                {/* Main heading */}
+                <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">Our Story</h1>
+            </div>
+        </section>
+    );
+};
+export default StoryHero;

@@ -4,45 +4,54 @@ import Link from "next/link";
 export default function About() {
      return (
           <section className="relative w-full min-h-[85svh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-background px-4 md:px-8 lg:px-16 pt-24 md:pt-20 pb-12 md:pb-0">
-               <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                    {/* Content */}
-                    <div className="flex flex-col gap-4 md:gap-6 z-10 text-center lg:text-left items-center lg:items-start">
-                         <div className="inline-flex items-center gap-2 text-primary font-medium tracking-wide uppercase text-xs md:text-sm">
-                              <span className="w-8 h-[1px] bg-primary"></span>
-                              Est. 2024
-                         </div>
 
-                         <h1 className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tighter text-foreground">
-                              STAY <br />
-                              <span className="text-primary">AWHILE.</span>
-                         </h1>
+               {/* 3:2 ratio grid */}
+               <div className="container mx-auto grid lg:grid-cols-[3fr_2.5fr] gap-8 md:gap-12 items-center">
 
-                         <p className="text-base md:text-xl text-zinc-600 max-w-md font-sans leading-relaxed">
-                              The world is fast enough. Take a slow moment with a cup that was made with care, just for you.
+                    {/* Text Content */}
+                    <div className="flex flex-col gap-4 md:gap-6 z-10 text-center lg:text-left items-center lg:items-start justify-center h-full max-w-2xl">
+                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                              A Dream Brewed to Life
+                         </h2>
+
+                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                              whatcoffee began with a dream and a young woman.
                          </p>
 
-                         <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-                              <Link href="/menu" className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase hover:opacity-90 transition-opacity rounded-full flex justify-center">
-                                   See Menu
-                              </Link>
-                              <Link href="/story" className="w-full sm:w-auto px-8 py-4 border border-zinc-200 text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-zinc-50 transition-colors rounded-full flex justify-center">
-                                   Our Story
-                              </Link>
-                         </div>
+                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                              She arrived in the United States as a teenager with her family, who opened a small coffee roastery and bakery.
+                              From a young age, she immersed herself in the art of coffee roasting and baking, finding joy in every detail —
+                              from the satisfying crack of roasting beans to the smiles on customers’ faces.
+                         </p>
+
+                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                              For her, coffee became more than just a drink; it was a way to connect, build community, and share warmth.
+                         </p>
+
+                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                              Driven by this passion, she decided to open whatcoffee Roastery and Bakery — a place that offers great coffee,
+                              pastries, and healthy dishes, and a place that embodies her love for community, freshness, and creativity.
+                         </p>
+
+                         <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                              Join us at whatcoffee, where our founder’s journey becomes your experience, and every visit feels like coming home.
+                         </p>
                     </div>
 
                     {/* Hero Image */}
-                    <div className="relative h-[400px] md:h-[600px] w-full hidden lg:block">
-                         <div className="absolute top-0 right-0 w-[90%] h-full bg-zinc-100 overflow-hidden rounded-2xl">
+                    <div className="relative h-[550px] md:h-[700px] w-full hidden lg:block">
+                         <div className="absolute top-0 right-0 w-full h-full bg-zinc-100 overflow-hidden rounded-2xl">
                               <Image
-                                   src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
-                                   alt="Pouring coffee"
+                                   src="/mural.jpeg"
+                                   alt="Mural"
                                    fill
                                    className="object-cover transition-transform duration-700"
+                                     
                                    priority
                               />
                          </div>
                     </div>
+
                </div>
           </section>
      );

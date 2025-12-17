@@ -1,49 +1,66 @@
 import Image from "next/image";
-import Link from "next/link";
 
-export default function Team() {
-     return (
-          <section className="relative w-full min-h-[85svh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-background px-4 md:px-8 lg:px-16 pt-24 md:pt-20 pb-12 md:pb-0">
-               <div className="container mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                    {/* Content */}
-                    <div className="flex flex-col gap-4 md:gap-6 z-10 text-center lg:text-left items-center lg:items-start">
-                         <div className="inline-flex items-center gap-2 text-primary font-medium tracking-wide uppercase text-xs md:text-sm">
-                              <span className="w-8 h-[1px] bg-primary"></span>
-                              Est. 2024
-                         </div>
+export default function MeetTheTeam() {
+  return (
+    <section className="w-full bg-background px-4 md:px-8 lg:px-16 py-16 md:py-20">
+      <div className="container mx-auto">
+        {/* Header */}
+        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-10">
+          Meet the Team
+        </h2>
 
-                         <h1 className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tighter text-foreground">
-                              STAY <br />
-                              <span className="text-primary">AWHILE.</span>
-                         </h1>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[260px] md:auto-rows-[300px] lg:auto-rows-[360px]">
+          {/* Large top-left image (spans 2 columns on md+) */}
+          <div className="relative md:col-span-2 rounded-2xl border-2 border-purple-500 bg-zinc-100 overflow-hidden">
+            <Image
+              src="/team-hero.jpg" // replace with your image
+              alt="Team at whatcoffee"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
 
-                         <p className="text-base md:text-xl text-zinc-600 max-w-md font-sans leading-relaxed">
-                              The world is fast enough. Take a slow moment with a cup that was made with care, just for you.
-                         </p>
+          {/* Tall top-right image (spans 2 rows on md+) */}
+          <div className="relative md:row-span-1 rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
+            <Image
+              src="/team-1.jpg" // replace with your image
+              alt="Team member"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-                         <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-                              <Link href="/menu" className="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-wide uppercase hover:opacity-90 transition-opacity rounded-full flex justify-center">
-                                   See Menu
-                              </Link>
-                              <Link href="/story" className="w-full sm:w-auto px-8 py-4 border border-zinc-200 text-foreground text-sm font-semibold tracking-wide uppercase hover:bg-zinc-50 transition-colors rounded-full flex justify-center">
-                                   Our Story
-                              </Link>
-                         </div>
-                    </div>
+          {/* Bottom three portraits */}
+          <div className="relative rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
+            <Image
+              src="/team-2.jpg"
+              alt="Team member"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-                    {/* Hero Image */}
-                    <div className="relative h-[400px] md:h-[600px] w-full hidden lg:block">
-                         <div className="absolute top-0 right-0 w-[90%] h-full bg-zinc-100 overflow-hidden rounded-2xl">
-                              <Image
-                                   src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
-                                   alt="Pouring coffee"
-                                   fill
-                                   className="object-cover transition-transform duration-700"
-                                   priority
-                              />
-                         </div>
-                    </div>
-               </div>
-          </section>
-     );
+          <div className="relative rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
+            <Image
+              src="/team-3.jpg"
+              alt="Team member"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="relative rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
+            <Image
+              src="/team-4.jpg"
+              alt="Team member"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
