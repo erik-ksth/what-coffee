@@ -1,7 +1,15 @@
+import About from "@/app/story/components/About";
+import Background from "@/app/story/components/background";
+import Team from "@/app/story/components/Team";
+
+import Gallery from "@/app/home/components/Gallery";
+
 export default function Story() {
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold">About</h1>
-        </div>
+        <main>
+            <About />
+            <Background />
+            <Team />
+        </main>
     );
 }
