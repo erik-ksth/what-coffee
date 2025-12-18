@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
-import MenuHero from "./components/MenuHero";
+import PageHeader from "@/components/PageHeader";
 import MenuTabs from "./components/MenuTabs";
 import MenuGrid from "./components/MenuGrid";
 import { MENU_ITEMS, type MenuCategory } from "./menu-data";
@@ -19,7 +20,18 @@ export default function Menu() {
 
     return (
         <main>
-            <MenuHero />
+            <PageHeader
+                title="Your Favorites, Ready When You Are"
+                subtitle="Order Online"
+                image="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=1920&q=80"
+            >
+                <Link
+                    href="https://www.clover.com/online-ordering/whatcoffee-santa-clara"
+                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full uppercase tracking-wide text-sm"
+                >
+                    Order Online
+                </Link>
+            </PageHeader>
             <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-16">
                 <div className="text-center">
                     <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900">
