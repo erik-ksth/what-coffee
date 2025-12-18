@@ -1,9 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function About() {
      return (
-          <section className="relative w-full min-h-[85svh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-background px-4 md:px-8 lg:px-16 pt-24 md:pt-20 pb-12 md:pb-0">
+          <section className="relative w-full min-h-[70svh] md:min-h-[80vh] flex items-center justify-center overflow-hidden bg-background px-4 md:px-8 lg:px-16 pt-16 md:pt-14 pb-6 md:pb-0">
 
                {/* 3:2 ratio grid */}
                <div className="container mx-auto grid lg:grid-cols-[3fr_2.5fr] gap-8 md:gap-12 items-center">

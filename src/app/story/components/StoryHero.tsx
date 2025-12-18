@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 const STORY_HERO_IMAGE = "https://images.unsplash.com/photo-1600007525237-3ffb936cd20f?w=1920&q=80";
 
 const StoryHero = () => {
