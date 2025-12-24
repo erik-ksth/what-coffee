@@ -67,19 +67,21 @@ export default function Footer() {
                     </p>
 
                     <div className="flex gap-6">
-                        {[Instagram, Facebook, Mail].map((Icon, i) => (
-                            <a key={i} href="#" className="w-10 h-10 bg-zinc-900 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 group rounded-full">
+                        {[
+                            { Icon: Instagram, href: "https://www.instagram.com/whatcoffeeandbakery/" },
+                            { Icon: Mail, href: "mailto:hello@whatcoffee.com" }
+                        ].map(({ Icon, href }, i) => (
+                            <a
+                                key={i}
+                                href={href}
+                                target={href.startsWith("http") ? "_blank" : undefined}
+                                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                                className="w-10 h-10 bg-zinc-900 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 group rounded-full"
+                            >
                                 <Icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                             </a>
                         ))}
                     </div>
-                </div>
-
-                {/* Big decorative text at very bottom? */}
-                <div className="w-full overflow-hidden mt-12 opacity-5 pointer-events-none select-none">
-                    <span className="text-[12vw] font-bold leading-none tracking-tighter text-white whitespace-nowrap">
-                        WHAT COFFEE — WHAT COFFEE
-                    </span>
                 </div>
             </div>
         </footer>

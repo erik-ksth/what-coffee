@@ -93,7 +93,7 @@ export default function Testimonials() {
                         {testimonials.map((testimonial, index) => (
                             <div
                                 key={index}
-                                className={`w-full h-full bg-white p-6 md:p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer flex flex-col justify-between rounded-3xl`}
+                                className={`w-full h-full flex flex-col justify-between bg-white p-6 md:p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer rounded-3xl`}
                                 onClick={() => window.open(testimonial.link, "_blank")}
                             >
                                 {/* Stars */}
