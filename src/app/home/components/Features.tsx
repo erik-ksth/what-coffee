@@ -44,7 +44,7 @@ export default function Features() {
                             src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
                             alt="Freshly baked croissants"
                             fill
-                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            className="object-cover transition-all duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
@@ -58,7 +58,7 @@ export default function Features() {
                             src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
                             alt="Pour over coffee being made"
                             fill
-                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            className="object-cover transition-all duration-700"
                         />
                     </div>
                     {/* Text Content */}

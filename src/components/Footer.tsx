@@ -45,8 +45,8 @@ export default function Footer() {
                         <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Visit</h3>
                         <div className="flex flex-col gap-6 text-zinc-400">
                             <div>
-                                <p className="text-white font-medium mb-1">Bernauer Str. 63-64</p>
-                                <p>13355 Berlin, Germany</p>
+                                <p className="text-white font-medium mb-1">1002 Monroe Street, </p>
+                                <p>Santa Clara, 95050</p>
                             </div>
                             <div>
                                 <p className="text-white font-medium mb-1">Daily</p>
