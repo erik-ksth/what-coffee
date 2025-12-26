@@ -33,7 +33,7 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                     </button>
 
                     {/* Menu item name */}
-                    <p className="font-medium text-xl md:text-2xl text-foreground text-center mt-4">{item.name}</p>
+                    <p className="font-medium text-xl md:text-xl text-foreground text-center mt-4">{item.name}</p>
                     {/* Keep description for screen readers even when dialog is closed */}
                     <p className="sr-only">{item.description}</p>
                </article>
