@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 import ContactForm from "./components/ContactForm";
 
+export const metadata: Metadata = {
+    title: "Contact Us",
+    description:
+        "Get in touch with What Coffee. Visit us in Santa Clara or send us a message. We'd love to hear from you!",
+    openGraph: {
+        title: "Contact What Coffee",
+        description:
+            "Get in touch with What Coffee. Visit us in Santa Clara or send us a message.",
+    },
+};
 export default function Contact() {
     return (
         <main>

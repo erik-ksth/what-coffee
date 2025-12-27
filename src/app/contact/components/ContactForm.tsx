@@ -18,12 +18,16 @@ const ContactForm = () => {
 
                     <div className="space-y-6">
                         <div className="space-y-1">
-                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">Monday – Friday</p>
-                            <p className="text-lg">7:00 AM – 7:00 PM</p>
+                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">Monday – Thursday</p>
+                            <p className="text-lg">7:30 AM – 5:00 PM</p>
                         </div>
                         <div className="space-y-1">
-                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">Saturday – Sunday</p>
-                            <p className="text-lg">8:00 AM – 8:00 PM</p>
+                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">Friday – Saturday</p>
+                            <p className="text-lg">7:30 AM – 7:00 PM</p>
+                        </div>
+                        <div className="space-y-1">
+                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">Sunday</p>
+                            <p className="text-lg">8:00 AM – 5:00 PM</p>
                         </div>
                     </div>
 

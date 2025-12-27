@@ -49,8 +49,10 @@ export default function Footer() {
                                 <p>Santa Clara, 95050</p>
                             </div>
                             <div>
-                                <p className="text-white font-medium mb-1">Daily</p>
-                                <p>8:00 AM - 6:00 PM</p>
+                                <p className="text-white font-medium mb-2">Hours</p>
+                                <p>Mon–Thu: 7:30 AM – 5 PM</p>
+                                <p>Fri–Sat: 7:30 AM – 7 PM</p>
+                                <p>Sun: 8 AM – 5 PM</p>
                             </div>
                             <a href="mailto:hello@whatcoffee.com" className="hover:text-primary transition-colors">
                                 hello@whatcoffee.com

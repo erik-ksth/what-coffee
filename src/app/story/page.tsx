@@ -1,9 +1,21 @@
+import { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
 import About from "@/app/story/components/About";
 import Team from "@/app/story/components/Team";
 import Back from "@/app/story/components/Back";
 import StoryHero from "@/app/story/components/StoryHero";
+
+export const metadata: Metadata = {
+    title: "Our Story",
+    description:
+        "Discover the story behind What Coffee. Founded in 2024, we create a space where community and quality meet. Learn about our passion for artisan coffee.",
+    openGraph: {
+        title: "Our Story | What Coffee",
+        description:
+            "Discover the story behind What Coffee. Founded in 2024, we create a space where community and quality meet.",
+    },
+};
 
 export default function Story() {
     return (
