@@ -25,6 +25,17 @@ const InstagramSection = () => {
             /> */}
             <div data-key="Carousel Instagram Feed " className="ft" id="ftp4ggqumh" />
             <Script src="https://wdg.fouita.com/widgets/0x3895b7.js" strategy="lazyOnload" />
+
+            <div className="mt-8 flex justify-center">
+                <a
+                    href="https://www.instagram.com/whatcoffeeandbakery"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full"
+                >
+                    See more
+                </a>
+            </div>
         </section>
     );
 };
