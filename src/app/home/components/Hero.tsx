@@ -1,9 +1,36 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const slides = [
+     {
+          image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1920&auto=format&fit=crop",
+          alt: "Coffee shop interior",
+     },
+     {
+          image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1920&auto=format&fit=crop",
+          alt: "Pouring coffee",
+     },
+     {
+          image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1920&auto=format&fit=crop",
+          alt: "Latte art",
+     },
+];
+
 export default function Hero() {
+     const [currentSlide, setCurrentSlide] = useState(0);
+
+     useEffect(() => {
+          const timer = setInterval(() => {
+               setCurrentSlide((prev) => (prev + 1) % slides.length);
+          }, 5000);
+          return () => clearInterval(timer);
+     }, []);
+
      return (
-          <section className="relative w-full min-h-[90vh] flex flex-col bg-background overflow-hidden pt-20">
+          <section className="relative w-full min-h-screen flex flex-col pt-20 overflow-hidden">
                {/* Running Banner */}
                <div className="w-full bg-foreground text-background py-2 overflow-hidden">
                     <div className="animate-marquee whitespace-nowrap flex">
@@ -20,74 +47,71 @@ export default function Hero() {
                     </div>
                </div>
 
-               {/* Hero Content */}
-               <div className="flex-1 flex items-center">
-                    {/* Abstract Background Shapes */}
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-zinc-100 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4" />
+               {/* Carousel Container */}
+               <div className="relative flex-1">
+                    {/* Image Carousel */}
+                    {slides.map((slide, index) => (
+                         <div
+                              key={index}
+                              className={`absolute inset-0 transition-opacity duration-3000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                                   }`}
+                         >
+                              <Image
+                                   src={slide.image}
+                                   alt={slide.alt}
+                                   fill
+                                   className="object-cover"
+                                   priority={index === 0}
+                                   sizes="100vw"
+                              />
+                         </div>
+                    ))}
 
-                    <div className="container mx-auto px-4 md:px-6 relative z-10">
-                         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                              {/* Text Content */}
-                              <div className="lg:col-span-7 flex flex-col gap-8 text-center lg:text-left">
-                                   <div className="inline-flex items-center gap-2 justify-center lg:justify-start">
-                                        <span className="w-12 h-px bg-primary"></span>
-                                        <span className="text-primary font-medium tracking-widest uppercase text-sm">
-                                             Est. 2024
-                                        </span>
-                                   </div>
+                    {/* Dark Overlay */}
+                    <div className="absolute inset-0 bg-black/60" />
 
-                                   <h1 className="text-6xl md:text-8xl xl:text-9xl font-bold leading-[0.9] tracking-tighter text-foreground">
-                                        CRAFT <br />
-                                        <span className="relative inline-block">
-                                             <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-primary to-orange-600">
-                                                  COFFEE
-                                             </span>
-                                             <span className="absolute -bottom-2 left-0 w-full h-[30%] bg-primary/20 -rotate-2 z-0"></span>
-                                        </span>
-                                   </h1>
-
-                                   <p className="text-lg md:text-2xl text-zinc-600 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                                        Experience the perfect blend of atmosphere and aroma.
-                                        Where every cup tells a story of passion and precision.
-                                   </p>
-
-                                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
-                                        <Link
-                                             href="/menu"
-                                             className="px-8 py-4 bg-foreground text-background text-sm font-bold tracking-widest uppercase hover:bg-foreground/90 transition-all rounded-full"
-                                        >
-                                             View Menu
-                                        </Link>
-                                        <Link
-                                             href="/story"
-                                             className="px-8 py-4 border-2 border-zinc-200 text-foreground text-sm font-bold tracking-widest uppercase hover:border-foreground hover:bg-zinc-50 transition-all rounded-full"
-                                        >
-                                             Our Story
-                                        </Link>
-                                   </div>
-                              </div>
-
-                              {/* Image Composition */}
-                              <div className="lg:col-span-5 relative pb-24 lg:pb-0">
-                                   <div className="relative aspect-3/4 md:aspect-square w-full max-w-md mx-auto lg:max-w-none rotate-3 hover:rotate-0 transition-transform duration-700 ease-out">
-                                        {/* Decorative Frame */}
-                                        <div className="absolute inset-0 border-2 border-primary/20 rounded-[40px] translate-x-4 translate-y-4" />
-
-                                        {/* Main Image Container */}
-                                        <div className="relative h-full w-full rounded-[40px] overflow-hidden shadow-2xl bg-zinc-100">
-                                             <Image
-                                                  src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=1000&auto=format&fit=crop"
-                                                  alt="Pouring coffee"
-                                                  fill
-                                                  className="object-cover scale-110 hover:scale-100 transition-transform duration-1000"
-                                                  priority
-                                                  sizes="(max-width: 768px) 100vw, 50vw"
-                                             />
-                                        </div>
-                                   </div>
+                    {/* Text Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                         <div className="container mx-auto px-4 text-center text-white">
+                              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6">
+                                   WHAT COFFEE
+                                   <br />
+                                   <span className="text-primary">&amp; BAKERY</span>
+                              </h1>
+                              <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 font-light">
+                                   Experience the perfect blend of atmosphere and aroma.
+                                   Where every cup tells a story of passion and precision.
+                              </p>
+                              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                   <Link
+                                        href="/menu"
+                                        className="px-8 py-4 bg-primary text-white text-sm font-bold tracking-widest uppercase hover:bg-primary/90 transition-all rounded-full"
+                                   >
+                                        View Menu
+                                   </Link>
+                                   <Link
+                                        href="/story"
+                                        className="px-8 py-4 border-2 border-white text-white text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-foreground transition-all rounded-full"
+                                   >
+                                        Our Story
+                                   </Link>
                               </div>
                          </div>
+                    </div>
+
+                    {/* Slide Indicators */}
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+                         {slides.map((_, index) => (
+                              <button
+                                   key={index}
+                                   onClick={() => setCurrentSlide(index)}
+                                   className={`w-2 h-2 rounded-full transition-all ${index === currentSlide
+                                        ? "bg-white w-8"
+                                        : "bg-white/50"
+                                        }`}
+                                   aria-label={`Go to slide ${index + 1}`}
+                              />
+                         ))}
                     </div>
                </div>
           </section>
