@@ -38,8 +38,8 @@ export default function About() {
                     </div>
 
                     {/* Hero Image */}
-                    <div className="relative h-[550px] md:h-[700px] w-full hidden lg:block">
-                         <div className="absolute top-0 right-0 w-full h-full bg-zinc-100 overflow-hidden rounded-2xl">
+                    <div className="relative h-[550px] md:h-[700px] w-full">
+                         <div className="absolute top-0 right-0 w-full h-full border-2 border-zinc-300 bg-zinc-100 overflow-hidden rounded-2xl">
                               <Image
                                    src="/mural.jpeg"
                                    alt="Mural"

@@ -12,9 +12,9 @@ export default function MeetTheTeam() {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 auto-rows-[380px] md:auto-rows-[480px] lg:auto-rows-[580px]">
           {/* Large top-left image (spans 2 columns on md+) */}
-          <div className="relative md:col-span-2 border-2 border-zinc-300 bg-zinc-100 overflow-hidden">
+          <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl md:col-span-2 border-2 border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/team-hero.jpg" // replace with your image
+              src="/menu_bg.jpg" // replace with your image
               alt="Team at whatcoffee"
               fill
               className="object-cover"
@@ -23,9 +23,9 @@ export default function MeetTheTeam() {
           </div>
 
           {/* Tall top-right image (spans 2 rows on md+) */}
-          <div className="relative md:row-span-1 border border-zinc-300 bg-zinc-100 overflow-hidden">
+          <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl md:row-span-1 border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/team-1.jpg" // replace with your image
+              src="/tall.jpeg" // replace with your image
               alt="Team member"
               fill
               className="object-cover"
@@ -33,27 +33,27 @@ export default function MeetTheTeam() {
           </div>
 
           {/* Bottom three portraits */}
-          <div className="relative border border-zinc-300 bg-zinc-100 overflow-hidden">
+          <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/team-2.jpg"
+              src="/tall.jpeg"
               alt="Team member"
               fill
               className="object-cover"
             />
           </div>
 
-          <div className="relative border border-zinc-300 bg-zinc-100 overflow-hidden">
+          <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/team-3.jpg"
+              src="/tall.jpeg"
               alt="Team member"
               fill
               className="object-cover"
             />
           </div>
           
-          <div className="relative border border-zinc-300 bg-zinc-100 overflow-hidden">
+          <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/team-4.jpg"
+              src="/tall.jpeg"
               alt="Team member"
               fill
               className="object-cover"

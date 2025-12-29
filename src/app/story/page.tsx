@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 
 import About from "@/app/story/components/About";
 import Team from "@/app/story/components/Team";
-import Back from "@/app/story/components/Back";
+import Background from "@/app/story/components/Background";
 import StoryHero from "@/app/story/components/StoryHero";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function Story() {
             </PageHeader>
             <div className="container mx-auto px-4 py-16">
                 <About />
-                <Back />
+                <Background />
                 <Team />
             </div>
         </main>
