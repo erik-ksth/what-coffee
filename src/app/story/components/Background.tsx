@@ -6,14 +6,11 @@ import Image from "next/image";
 export default function Background() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close modal on Escape
   useEffect(() => {
     if (!isOpen) return;
-
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsOpen(false);
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen]);
@@ -67,31 +64,35 @@ export default function Background() {
           {/* Reserve vertical space so the overlap never collides with text */}
           <div className="hidden md:block h-20 md:h-24 lg:h-32" />
 
-          {/* Text block */}
+          {/* Text block (improved + consistent with other sections) */}
           <div className="mt-10 md:mt-14 lg:mt-0 max-w-3xl lg:max-w-xl lg:ml-auto text-center lg:text-left">
-            <h2 className="text-2xl md:text-5xl font-bold mb-4">Our Mission</h2>
-
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-              whatcoffee began with a dream and a young woman.
+            <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-3">
+              Our Mission
             </p>
 
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-              She arrived in the United States as a teenager with her family, who opened a small coffee
-              roastery and bakery. From a young age, she immersed herself in the art of coffee roasting and
-              baking, finding joy in every detail — from the satisfying crack of roasting beans to the smiles
-              on customers’ faces.
-            </p>
+            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
+              More Than Coffee
+            </h2>
 
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-3">
-              For her, coffee became more than just a drink; it was a way to connect, build community, and
-              share warmth.
-            </p>
+            <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                whatcoffee began with a simple idea: create a place where great coffee brings people together.
+              </p>
 
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-              Driven by this passion, she decided to open whatcoffee Roastery and Bakery — a place that offers
-              great coffee, pastries, and healthy dishes, and a place that embodies her love for community,
-              freshness, and creativity.
-            </p>
+              <p>
+                From early mornings to slow afternoons, we’re here for the everyday moments — the conversations,
+                the quiet focus, and the small rituals that make a day feel better.
+              </p>
+
+              <p>
+                We craft each cup with care, pair it with fresh pastries and wholesome dishes, and welcome you
+                into a space designed to feel warm, creative, and community-driven.
+              </p>
+
+              <p>
+                Come as you are. Stay a while. Leave a little more inspired than when you arrived.
+              </p>
+            </div>
           </div>
         </div>
       </div>
