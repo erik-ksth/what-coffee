@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-export default function About() {
+export default function AboutUs() {
      return (
           <section className="relative w-full bg-background px-4 md:px-8 lg:px-16 py-16 md:py-24 overflow-hidden">
                <div className="container mx-auto max-w-6xl grid lg:grid-cols-[3fr_2.5fr] gap-10 md:gap-14 items-center">
                     {/* Text Content */}
                     <div className="flex flex-col gap-5 md:gap-7 text-center lg:text-left items-center lg:items-start max-w-2xl">
                          {/* Eyebrow (matches your other sections like Gallery/Team) */}
+
                          <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase">
                               Our Story
                          </p>

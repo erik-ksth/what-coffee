@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
-import About from "@/app/story/components/About";
-import Team from "@/app/story/components/Team";
-import Background from "@/app/story/components/Background";
-import StoryHero from "@/app/story/components/StoryHero";
+import AboutUs from "@/app/about/components/AboutUs";
+import Team from "@/app/about/components/Team";
+import Background from "@/app/about/components/Background";
 
 export const metadata: Metadata = {
     title: "Our Story",
@@ -31,7 +30,7 @@ export default function Story() {
                 </p>
             </PageHeader>
             <div className="container mx-auto px-4 py-16">
-                <About />
+                <AboutUs />
                 <Background />
                 <Team />
             </div>

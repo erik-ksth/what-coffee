@@ -26,7 +26,7 @@ export default function Footer() {
                     <div className="md:col-span-2 md:col-start-7">
                         <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Menu</h3>
                         <ul className="flex flex-col gap-4">
-                            {["Home", "Menu", "Story", "Gallery", "Contact"].map((item) => (
+                            {["Home", "Menu", "About", "Gallery", "Contact"].map((item) => (
                                 <li key={item}>
                                     <Link
                                         href={item === "Home" ? "/" : `/${item.toLowerCase()}`}

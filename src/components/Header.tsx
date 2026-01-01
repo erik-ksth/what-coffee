@@ -48,7 +48,7 @@ export default function Header() {
                                             item === "Home"
                                                 ? "/"
                                                 : item === "About"
-                                                    ? "/story"
+                                                    ? "/about"
                                                     : `/${item.toLowerCase()}`
                                         }
                                         className="text-sm uppercase tracking-[0.15em] font-bold text-foreground hover:text-primary transition-colors"
