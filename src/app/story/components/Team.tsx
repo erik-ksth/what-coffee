@@ -14,7 +14,7 @@ export default function MeetTheTeam() {
           {/* Large top-left image (spans 2 columns on md+) */}
           <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl md:col-span-2 border-2 border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/menu_bg.jpg" // replace with your image
+              src="/barista_team.jpeg" // replace with your image
               alt="Team at whatcoffee"
               fill
               className="object-cover"
@@ -25,7 +25,7 @@ export default function MeetTheTeam() {
           {/* Tall top-right image (spans 2 rows on md+) */}
           <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl md:row-span-1 border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/tall.jpeg" // replace with your image
+              src="/barista_1.jpg" // replace with your image
               alt="Team member"
               fill
               className="object-cover"
@@ -35,7 +35,7 @@ export default function MeetTheTeam() {
           {/* Bottom three portraits */}
           <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/tall.jpeg"
+              src="/barista_2.jpeg"
               alt="Team member"
               fill
               className="object-cover"
@@ -44,16 +44,16 @@ export default function MeetTheTeam() {
 
           <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/tall.jpeg"
+              src="/barista_1.jpg"
               alt="Team member"
               fill
               className="object-cover"
             />
           </div>
-          
+
           <div className="relative rounded-xl md:rounded-2xl lg:rounded-2xl border border-zinc-300 bg-zinc-100 overflow-hidden">
             <Image
-              src="/tall.jpeg"
+              src="/barista_2.jpeg"
               alt="Team member"
               fill
               className="object-cover"

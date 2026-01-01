@@ -38,17 +38,18 @@ export default function About() {
                     </div>
 
                     {/* Hero Image */}
-                    <div className="relative h-[550px] md:h-[700px] w-full">
-                         <div className="absolute top-0 right-0 w-full h-full border-2 border-zinc-300 bg-zinc-100 overflow-hidden rounded-2xl">
-                              <Image
-                                   src="/mural.jpeg"
-                                   alt="Mural"
-                                   fill
-                                   className="object-cover transition-transform duration-700"
-                                     
-                                   priority
-                              />
-                         </div>
+                    {/* 
+                        Using aspect-ratio on the container and 'fill' on the image guarantees 
+                        the image covers the full rounded area without gaps.
+                    */}
+                    <div className="relative w-full aspect-[3101/3741] overflow-hidden rounded-2xl">
+                         <Image
+                              src="/mural.jpeg"
+                              alt="Mural"
+                              fill
+                              className="object-cover scale-[1.05]"
+                              priority
+                         />
                     </div>
 
                </div>
