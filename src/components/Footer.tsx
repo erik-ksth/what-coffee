@@ -3,7 +3,7 @@ import { ArrowUpRight, Instagram, Facebook, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-foreground text-background pt-24 pb-8">
+        <footer id="main-footer" className="w-full bg-foreground text-background pt-24 pb-8">
             <div className="container mx-auto px-4">
 
                 {/* Main Grid Layout */}

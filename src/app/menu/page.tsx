@@ -7,6 +7,7 @@ import { useMemo, useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import MenuTabs from "./components/MenuTabs";
 import MenuGrid from "./components/MenuGrid";
+import FloatingOrderButton from "./components/FloatingOrderButton";
 import { MENU_ITEMS, type MenuCategory } from "./menu-data";
 
 const MENU_FILTERS: Array<"All" | MenuCategory> = ["All", "Drinks", "Bakery", "Food", "Beans"];
@@ -51,6 +52,7 @@ export default function Menu() {
                 />
                 <MenuGrid items={visibleItems} />
             </section>
+            <FloatingOrderButton />
         </main>
     );
 }
