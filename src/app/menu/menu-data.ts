@@ -40,8 +40,6 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
             description: "Coconut crumb cake topped with toasted flakes and citrus.",
             image: "https://images.unsplash.com/photo-1687975091176-5a28a9860907?auto=format&fit=crop&w=900&q=80",
         },
-    ],
-    Food: [
         {
             name: "Pistachio Croissant",
             description: "Buttery croissant filled with roasted pistachio cream.",
@@ -52,27 +50,46 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
             description: "Classic twice-baked croissant with almond frangipane.",
             image: "https://images.unsplash.com/photo-1618111415321-b406d66958de?auto=format&fit=crop&w=900&q=80",
         },
+    ],
+    Food: [
         {
-            name: "Salmon Sandwich",
-            description: "Smoked salmon on toasted sourdough with greens and lemon.",
-            image: "https://images.unsplash.com/photo-1627308595216-439c00ade0fe?auto=format&fit=crop&w=900&q=80",
+            name: "Breakfast Sandwich",
+            description: "Bacon, egg, and cheese on toasted croissant paired with a side salad and fresh orange.",
+            image: "/menu/food/breakfastsandwich.jpeg",
+        },
+        {
+            name: "The Monroe",
+            description: "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
+            image: "/menu/food/monroe.jpeg",
+        },
+        {
+            name: "The San Francisco",
+            description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and sweet fruit.",
+            image: "/menu/food/sanfranciscosandwich.jpeg",
+        },
+
+        {
+            name: "Mushroom on Ciabatta",
+            description: "Mushroom on ciabatta with a side salad and fresh orange.",
+            image: "/menu/food/mushroomonciabatta.jpeg",
         },
     ],
     Beans: [
         {
             name: "South Bay (Ethiopia + Guatemala)",
             description: "House blend • Ethiopia & Guatemala • stone fruit, cocoa.",
-            image: "https://images.unsplash.com/photo-1553292218-4892c2e7e1ae?auto=format&fit=crop&w=900&q=80",
+            image: "/menu/beans/southbay.jpeg",
+        },
+        {
+            name: "San Francisco",
+            description: "Single origin • Colombia • caramel, orange, balanced body.",
+            image: "/menu/beans/sanfranciscoblend.jpeg",
         },
         {
             name: "Brazil Decaf",
             description: "Swiss water process • Brazil • milk chocolate, nuts.",
-            image: "https://images.unsplash.com/photo-1606791405792-1004f1718d0c?auto=format&fit=crop&w=900&q=80",
+            image: "/menu/beans/brazil.jpeg",
         },
-        {
-            name: "Colombia",
-            description: "Single origin • Colombia • caramel, orange, balanced body.",
-            image: "https://images.unsplash.com/photo-1607681034540-2c46cc71896d?auto=format&fit=crop&w=900&q=80",
-        },
+
     ],
 };

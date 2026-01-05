@@ -48,7 +48,7 @@ export default function AboutUs() {
                     {/* Hero Image */}
                     <div className="relative w-full aspect-[3101/3741] overflow-hidden rounded-2xl bg-zinc-100">
                          <Image
-                              src="/mural.jpeg"
+                              src="/about/mural.jpeg"
                               alt="Mural"
                               fill
                               className="object-cover scale-[1.05]"

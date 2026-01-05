@@ -22,7 +22,7 @@ export default function Menu() {
         <main>
             <PageHeader
                 title="Your Favorites, Ready When You Are"
-                subtitle="Order Online"
+                subtitle="Our Menu"
                 image="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=1920&q=80"
             >
                 <Link

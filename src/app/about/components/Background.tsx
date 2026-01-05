@@ -25,7 +25,7 @@ export default function Background() {
             <button
               type="button"
               aria-label="Open cafe photo"
-              className="absolute inset-x-0 md:inset-x-12 lg:inset-x-24 top-0 h-full overflow-hidden rounded-2xl bg-zinc-100 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary/40"
+              className="absolute inset-x-0 md:inset-x-12 lg:inset-x-24 lg:right-0 top-0 h-full overflow-hidden rounded-2xl bg-zinc-100 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary/40"
               onClick={() => setIsOpen(true)}
             >
               <Image
@@ -42,7 +42,7 @@ export default function Background() {
             <div
               className="
                 hidden md:block
-                absolute left-2 md:left-6 lg:left-12
+                absolute left-2 md:left-0 lg:left-0
                 -bottom-20 md:-bottom-24 lg:-bottom-32
                 w-[260px] md:w-[300px] lg:w-[400px]
                 aspect-square overflow-hidden rounded-2xl bg-zinc-100
