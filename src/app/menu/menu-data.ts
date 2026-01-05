@@ -71,7 +71,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Mushroom on Ciabatta",
             description: "Mushroom on ciabatta with a side salad and fresh orange.",
-            image: "/menu/food/mushroomonciabatta.jpeg",
+            image: "/menu/food/mushroom.jpeg",
         },
     ],
     Beans: [
