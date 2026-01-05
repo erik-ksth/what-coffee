@@ -60,12 +60,12 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "The Monroe",
             description: "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
-            image: "/menu/food/monroe.jpeg",
+            image: "/menu/food/theMonroe.jpeg",
         },
         {
             name: "The San Francisco",
             description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and sweet fruit.",
-            image: "/menu/food/sanfranciscosandwich.jpeg",
+            image: "/menu/food/theSanFrancisco.jpeg",
         },
 
         {
@@ -78,17 +78,17 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "South Bay (Ethiopia + Guatemala)",
             description: "House blend • Ethiopia & Guatemala • stone fruit, cocoa.",
-            image: "/menu/beans/southbay.jpeg",
+            image: "/menu/beans/SouthBay.jpeg",
         },
         {
             name: "San Francisco",
             description: "Single origin • Colombia • caramel, orange, balanced body.",
-            image: "/menu/beans/sanfranciscoblend.jpeg",
+            image: "/menu/beans/SanFrancisco.jpeg",
         },
         {
             name: "Brazil Decaf",
             description: "Swiss water process • Brazil • milk chocolate, nuts.",
-            image: "/menu/beans/brazil.jpeg",
+            image: "/menu/beans/Brazil.jpeg",
         },
 
     ],
