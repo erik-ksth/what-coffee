@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { ShoppingBag } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import PageHeader from "@/components/PageHeader";
 import MenuTabs from "./components/MenuTabs";
@@ -27,9 +29,13 @@ export default function Menu() {
             >
                 <Link
                     href="https://www.clover.com/online-ordering/whatcoffee-santa-clara"
-                    className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full uppercase tracking-wide text-sm"
+                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 text-white shadow-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-primary/50 hover:ring-offset-2 active:scale-95"
                 >
-                    Order Online
+                    <span className="relative z-10 font-bold uppercase tracking-wider">
+                        Order Online
+                    </span>
+                    {/* <ArrowRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ShoppingBag className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:-rotate-12" /> */}
                 </Link>
             </PageHeader>
             <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-16">
