@@ -70,7 +70,7 @@ const ContactForm = () => {
 
                     <div className="space-y-2">
                         <p className="font-bold text-foreground text-xl">1002 Monroe Street,</p>
-                        <p className="font-bold text-foreground text-xl">Santa Clara, 95050</p>
+                        <p className="font-bold text-foreground text-xl">Santa Clara, CA 95050</p>
                     </div>
 
                     <div className="space-y-6">
@@ -125,11 +125,10 @@ const ContactForm = () => {
                     {/* Success/Error messages */}
                     {submitStatus.type && (
                         <div
-                            className={`rounded-xl p-4 text-sm font-medium ${
-                                submitStatus.type === "success"
-                                    ? "bg-green-50 text-green-800 border border-green-200"
-                                    : "bg-red-50 text-red-800 border border-red-200"
-                            }`}
+                            className={`rounded-xl p-4 text-sm font-medium ${submitStatus.type === "success"
+                                ? "bg-green-50 text-green-800 border border-green-200"
+                                : "bg-red-50 text-red-800 border border-red-200"
+                                }`}
                         >
                             {submitStatus.message}
                         </div>

@@ -46,7 +46,7 @@ export default function Footer() {
                         <div className="flex flex-col gap-6 text-zinc-400">
                             <div>
                                 <p className="text-white font-medium mb-1">1002 Monroe Street, </p>
-                                <p>Santa Clara, 95050</p>
+                                <p>Santa Clara, CA 95050</p>
                             </div>
                             <div>
                                 <p className="text-white font-medium mb-2">Hours</p>
@@ -71,7 +71,9 @@ export default function Footer() {
                     <div className="flex gap-6">
                         {[
                             { Icon: Instagram, href: "https://www.instagram.com/whatcoffeeandbakery/" },
-                            { Icon: Mail, href: "mailto:hello@whatcoffee.com" }
+                            { Icon: Mail, href: "https://www.tiktok.com/@whatcoffeeandbakery" }, // TODO: Add TikTok
+                            { Icon: Mail, href: "mailto:hello@whatcoffee.com" },
+
                         ].map(({ Icon, href }, i) => (
                             <a
                                 key={i}
