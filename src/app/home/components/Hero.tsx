@@ -90,7 +90,7 @@ export default function Hero() {
                                         View Menu
                                    </Link>
                                    <Link
-                                        href="/story"
+                                        href="/about"
                                         className="px-8 py-4 border-2 border-white text-white text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-foreground transition-all rounded-full"
                                    >
                                         Our Story
