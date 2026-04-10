@@ -19,13 +19,19 @@ const MenuItemCard = ({ item }: MenuItemCardProps) => {
                          onClick={() => setIsOpen(true)}
                          aria-label={`See description for ${item.name}`}
                     >
-                         <Image
-                              src={item.image}
-                              alt={`${item.name} - ${item.description}`}
-                              fill
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                              className="object-cover transition-transform duration-500 group-hover:scale-105"
-                         />
+                         {item.image ? (
+                              <Image
+                                   src={item.image}
+                                   alt={`${item.name} - ${item.description}`}
+                                   fill
+                                   sizes="(max-width: 768px) 100vw, 33vw"
+                                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              />
+                         ) : (
+                              <span className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm font-medium text-stone-400">
+                                   Photo coming soon
+                              </span>
+                         )}
                          {/* Hover overlay to prompt user to see description */}
                          <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                               <span className="text-lg font-medium tracking-wide">+ See Description</span>
