@@ -73,9 +73,8 @@ export default function Features() {
                             <span className="text-primary italic">Perfection</span>
                         </h2>
                         <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-md font-light">
-                            Sourced from sustainable farms in Ethiopia and Colombia.
-                            Every batch is roasted weekly to highlight the unique
-                            flavor profiles of each bean origin.
+                            Thoughtfully sourced from sustainable farms in Ethiopia, Colombia, Guatemala, and Brazil,
+                            each batch is freshly roasted to highlight its distinct flavor profile.
                         </p>
                         <Link
                             href="/menu"

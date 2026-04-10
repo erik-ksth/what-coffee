@@ -18,7 +18,7 @@ export default function AboutUs() {
 
                          {/* Body copy (consistent sizing + spacing) */}
                          <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
-                              <p>whatcoffee began with a dream and a young woman.</p>
+                              <p>Whatcoffee began with a dream and a young woman.</p>
 
                               <p>
                                    She arrived in the United States as a teenager with her family, who opened a small coffee roastery
