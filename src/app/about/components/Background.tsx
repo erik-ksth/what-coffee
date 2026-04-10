@@ -76,7 +76,7 @@ export default function Background() {
 
             <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
               <p>
-                whatcoffee began with a simple idea: create a place where great coffee brings people together.
+                We aim to make people feel welcome, cared for, and connected through good coffee and good food.
               </p>
 
               <p>

@@ -18,7 +18,7 @@ export default function AboutUs() {
 
                          {/* Body copy (consistent sizing + spacing) */}
                          <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
-                              <p>Whatcoffee began with a dream and a young woman.</p>
+                              <p>WhatCoffee began with a dream and a young woman.</p>
 
                               <p>
                                    She arrived in the United States as a teenager with her family, who opened a small coffee roastery
@@ -33,13 +33,13 @@ export default function AboutUs() {
                               </p>
 
                               <p>
-                                   Driven by this passion, she decided to open whatcoffee Roastery and Bakery — a place that offers
+                                   Driven by this passion, she decided to open WhatCoffee Roastery and Bakery — a place that offers
                                    great coffee, pastries, and healthy dishes, and a place that embodies her love for community,
                                    freshness, and creativity.
                               </p>
 
                               <p>
-                                   Join us at whatcoffee, where our founder’s journey becomes your experience, and every visit feels
+                                   Join us at WhatCoffee, where our founder’s journey becomes your experience, and every visit feels
                                    like coming home.
                               </p>
                          </div>
