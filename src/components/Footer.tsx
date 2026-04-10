@@ -45,14 +45,21 @@ export default function Footer() {
                         <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Visit</h3>
                         <div className="flex flex-col gap-6 text-zinc-400">
                             <div>
-                                <p className="text-white font-medium mb-1">1002 Monroe Street, </p>
-                                <p>Santa Clara, CA 95050</p>
+                                <a
+                                    href="https://maps.app.goo.gl/k7j3PC34rzGNvbjWA"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block hover:text-primary transition-colors"
+                                >
+                                    <p className="text-white font-medium mb-1">1002 Monroe Street, </p>
+                                    <p>Santa Clara, CA 95050</p>
+                                </a>
                             </div>
                             <div>
                                 <p className="text-white font-medium mb-2">Hours</p>
-                                <p>Mon–Thu: 7:30 AM – 5 PM</p>
-                                <p>Fri–Sat: 7:30 AM – 7 PM</p>
-                                <p>Sun: 8 AM – 5 PM</p>
+                                <p>Mon – Wed: 7:30 AM – 5 PM</p>
+                                <p>Thu – Fri: 7:30 AM – 11 PM</p>
+                                <p>Sat - Sun: 8 AM – 11 PM</p>
                             </div>
                             <a href="mailto:hello@whatcoffee.com" className="hover:text-primary transition-colors">
                                 hello@whatcoffee.com
