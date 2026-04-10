@@ -25,9 +25,9 @@ export default function Catering() {
                     </h2>
 
                     <p className="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed">
-                        Elevate your next event with our signature coffee experience.
+                        Elevate your next event with our signature coffee and pastry experience.
                         From corporate gatherings to intimate celebrations, we deliver
-                        more than just caffeine—we deliver a vibe.
+                        more than just hand-crafted drinks and delicious pastries — we deliver a vibe.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 mt-4">
