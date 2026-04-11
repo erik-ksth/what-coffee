@@ -17,7 +17,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Cappuccino",
             description: "House blend espresso with steamed milk and foam.",
-            image: "/menu/drinks/icedlatte.jpeg",
+            image: "/menu/drinks/cappuccino.jpeg",
         },
         {
             name: "Latte",
@@ -27,12 +27,12 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Mocha",
             description: "Chocolate and house blend espresso with steamed milk and foam.",
-            image: "/menu/drinks/icedlatte.jpeg",
+            image: "/menu/drinks/mocha.jpeg",
         },
         {
             name: "Cold Brew",
             description: "12 hour brewed cold brew coffee.",
-            image: "https://images.unsplash.com/photo-1527156231393-7023794f363c?auto=format&fit=crop&w=900&q=80",
+            image: "/menu/drinks/americano.jpeg",
         },
         {
             name: "Matcha Latte",
@@ -47,7 +47,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Iced Coconut Matcha",
             description: "Refreshing ceremonial grade matcha with coconut water.",
-            image: "/menu/drinks/.jpeg",
+            image: "/menu/drinks/coco_matcha.jpeg",
         },
         {
             name: "Tiramisu Latte",
@@ -62,7 +62,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Coconut Iced Latte",
             description: "Simply addicting creamy iced latte made with coconut milk.",
-            image: "https://images.unsplash.com/photo-1626595444746-59219e6838ac?auto=format&fit=crop&w=900&q=80",
+            image: "/menu/drinks/coconut_latte.jpeg",
         },
         {
             name: "Bee's Knee",
@@ -82,105 +82,104 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Chai Latte",
             description: "Spiced black tea latte with a hint of cinnamon and nutmeg.",
-            image: "/menu/drinks/.jpeg",
+            image: "/menu/drinks/chai.jpeg",
         },
         {
             name: "Hot Chocolate",
             description: "Rich and creamy hot chocolate with milk.",
-            image: "/menu/drinks/.jpeg",
+            image: "/menu/drinks/chocolate.jpeg",
         },
         {
             name: "Rising Green",
             description: "Refreshing green tea. Available Hot or Iced.",
-            image: "/menu/drinks/.jpeg",
+            image: "/menu/drinks/green_tea.jpeg",
         },
         {
             name: "Black Tea",
             description: "Classic black tea. Available Hot or Iced.",
-            image: "/menu/drinks/.jpeg",
+            image: "/menu/drinks/black_tea.jpeg",
         },
     ],
     Bakery: [
         {
             name: "Pistachio Croissant",
             description: "Classic croissant with a layer of pistachio paste.",
-            image: "/menu/bakery/pistachio_croissant.jpeg",
-        }
-        ,
+            image: "/menu/food/pistachio_croissant.jpeg",
+        },
         {
             name: "Almond Croissant",
             description: "Classic twice-baked croissant with almond flakes.",
-            image: "https://images.unsplash.com/photo-1618111415321-b406d66958de?auto=format&fit=crop&w=900&q=80",
+            image: "/menu/food/almond_crossiant.jpeg",
         },
         {
             name: "Pain Au Chocolat",
             description: "Classic croissant with a chocolate filling.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "",
         },
         {
             name: "Pain Suisse",
             description: "Classic croissant with a buttery crust and a sweet pastry cream filling.",
-            image: "/menu/bakery/plain_donut.jpeg",
+            image: "",
         },
         {
             name: "Ham & Cheese Croissant",
             description: "Double-baked croissant with a creamy cheese filling and ham.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "",
         },
         {
             name: "Chocolate Banana Croissant",
             description: "Croissant with a chocolate and banana filling.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "/menu/food/chocolate_banana.jpeg",
         },
         {
             name: "Fruit Danish",
             description: "Danish with a pastry cream and fresh berries.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "/menu/food/fruit_danish.jpeg",
         },
         {
             name: "Butter Croissant",
             description: "Simply addictive butter croissant with a warm and flaky texture.",
-            image: "/menu/bakery/croissant_sandwich.jpeg",
+            image: "",
         },
         {
             name: "Strawberry Cream Donut",
             description: "Brioche Donut with a strawberry filling.",
-            image: "/menu/bakery/donut.jpeg",
+            image: "",
         },
         {
             name: "Mango Cream Donut",
             description: "Brioche Donut with a mango filling.",
-            image: "/menu/bakery/donut.jpeg",
+            image: "",
         },
         {
             name: "Cinnamon Roll",
             description: "Soft and fluffy cinnamon roll with a sweet and sticky cinnamon sugar filling.",
-            image: "/menu/bakery/plain_donut.jpeg",
+            image: "",
         },
         {
             name: "Scones",
             description: "Buttery scones with a sweet or savory filling.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "",
         },
         {
             name: "Double Chocolate Muffin",
             description: "Chocolate muffin with extra chocolate chips.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "",
         },
         {
             name: "Cookies",
             description: "Chocolate chip cookies with a crispy exterior and a soft, chewy center.",
-            image: "/menu/bakery/chocolate_croissant.jpeg",
+            image: "/menu/food/cookie.jpeg",
         },
         {
             name: "Chocolate Roll Cake",
             description: "Soft sponge rolled with rich chocolate cream—sliceable and indulgent.",
-            image: "",
+            image: "/menu/food/roll_cake.jpeg",
         },
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked sponge, mascarpone, and cocoa.",
-            image: "",
+            image: "/menu/food/tiramisu.jpeg",
         },
         {
             name: "Cheese Cake",
@@ -214,10 +213,9 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
             description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and fresh seasonal fruits.",
             image: "/menu/food/theSanFrancisco.jpeg",
         },
-
         {
             name: "Mushroom on Ciabatta",
-            description: "Mushroom on ciabatta with a side salad and fresh seasonal fruits.",
+            description: "Roasted mushrooms on ciabatta with a side salad and fresh seasonal fruits.",
             image: "/menu/food/mushroom.jpeg",
         },
     ],
