@@ -34,7 +34,7 @@ export default function Hero() {
                {/* Running Banner */}
                <div className="w-full bg-foreground text-background py-2 overflow-hidden">
                     <div className="animate-marquee whitespace-nowrap flex">
-                         {[...Array(2)].map((_, i) => (
+                         {[...Array(5)].map((_, i) => (
                               <div key={i} className="flex items-center gap-8 mx-4">
                                    <span className="text-sm font-medium tracking-widest uppercase">★ Fresh Roasted Daily</span>
                                    <span className="text-sm font-medium tracking-widest uppercase">★ Artisan Coffee</span>

@@ -104,12 +104,12 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Pistachio Croissant",
             description: "Classic croissant with a layer of pistachio paste.",
-            image: "/menu/food/pistachio_croissant.jpeg",
+            image: "/menu/edited/food/pistachio_croissant.jpeg",
         },
         {
             name: "Almond Croissant",
             description: "Classic twice-baked croissant with almond flakes.",
-            image: "/menu/food/almond_crossiant.jpeg",
+            image: "/menu/edited/food/almond_crossiant.jpeg",
         },
         {
             name: "Pain Au Chocolat",
@@ -129,12 +129,12 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Chocolate Banana Croissant",
             description: "Croissant with a chocolate and banana filling.",
-            image: "/menu/food/chocolate_banana.jpeg",
+            image: "/menu/edited/food/chocolate_banana.jpeg",
         },
         {
             name: "Fruit Danish",
             description: "Danish with a pastry cream and fresh berries.",
-            image: "/menu/food/fruit_danish.jpeg",
+            image: "/menu/edited/food/fruit_danish.jpeg",
         },
         {
             name: "Butter Croissant",
@@ -169,17 +169,17 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Cookies",
             description: "Chocolate chip cookies with a crispy exterior and a soft, chewy center.",
-            image: "/menu/food/cookie.jpeg",
+            image: "/menu/edited/food/cookie.jpeg",
         },
         {
             name: "Chocolate Roll Cake",
             description: "Soft sponge rolled with rich chocolate cream—sliceable and indulgent.",
-            image: "/menu/food/roll_cake.jpeg",
+            image: "/menu/edited/food/roll_cake.jpeg",
         },
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked sponge, mascarpone, and cocoa.",
-            image: "/menu/food/tiramisu.jpeg",
+            image: "/menu/edited/food/tiramisu.jpeg",
         },
         {
             name: "Cheese Cake",
@@ -201,22 +201,22 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Breakfast Sandwich",
             description: "Bacon, egg, avocado and cheese on toasted croissant paired with a side salad and fresh seasonal fruits.",
-            image: "/menu/food/breakfastsandwich.jpeg",
+            image: "/menu/edited/food/breakfastsandwich.jpeg",
         },
         {
             name: "The Monroe",
             description: "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
-            image: "/menu/food/theMonroe.jpeg",
+            image: "/menu/edited/food/theMonroe.jpeg",
         },
         {
             name: "The San Francisco",
             description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and fresh seasonal fruits.",
-            image: "/menu/food/theSanFrancisco.jpeg",
+            image: "/menu/edited/food/theSanFrancisco.jpeg",
         },
         {
             name: "Mushroom on Ciabatta",
             description: "Roasted mushrooms on ciabatta with a side salad and fresh seasonal fruits.",
-            image: "/menu/food/mushroom.jpeg",
+            image: "/menu/edited/food/mushroom.jpeg",
         },
     ],
     Beans: [
