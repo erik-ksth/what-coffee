@@ -87,34 +87,31 @@ export default function MeetTheTeam() {
         </header>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 md:gap-x-10 gap-y-12 md:gap-y-25 auto-rows-[380px] md:auto-rows-[500px] lg:auto-rows-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 md:gap-x-6 gap-y-8 auto-rows-[380px] md:auto-rows-[500px] lg:auto-rows-[600px]">
 
           {teamImages.map((img, i) => (
             <div
               key={img.src + i}
               className={[
-                "group relative overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-sm",
+                "group relative overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100",
                 "transition-transform duration-300 ease-out",
                 img.className,
               ].join(" ")}
-              style={{
-                transform:
-                  !isMobile && img.speed
-                    ? `translateY(${scrollY * img.speed}px)`
-                    : "none",
-              }}
+            // style={{
+            //   transform:
+            //     !isMobile && img.speed
+            //       ? `translateY(${scrollY * img.speed}px)`
+            //       : "none",
+            // }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
                 priority={Boolean(img.priority)}
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                className="object-cover transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-
-              {/* Optional overlay for a premium feel */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           ))}
         </div>

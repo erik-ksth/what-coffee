@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { X } from "lucide-react";
 
 export default function Background() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,105 +17,83 @@ export default function Background() {
   }, [isOpen]);
 
   return (
-    <section className="relative w-full bg-background px-4 md:px-8 lg:px-16 pt-12 md:pt-20 pb-0">
+    <section className="relative w-full bg-background px-4 md:px-8 lg:px-16 py-20 md:py-32 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
-        <div className="relative">
-          {/* Image cluster */}
-          <div className="relative h-[280px] md:h-[380px] lg:h-[460px]">
-            {/* Large image (click to open) */}
-            <button
-              type="button"
-              aria-label="Open cafe photo"
-              className="absolute inset-x-0 md:inset-x-12 lg:inset-x-24 lg:right-0 top-0 h-full overflow-hidden rounded-2xl bg-zinc-100 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary/40"
-              onClick={() => setIsOpen(true)}
-            >
-              <Image
-                src="/cafe_front.jpeg"
-                alt="Cafe interior"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 70vw, 55vw"
-              />
-            </button>
-
-            {/* Overlapping square (desktop only) */}
-            <div
-              className="
-                hidden md:block
-                absolute left-2 md:left-0 lg:left-0
-                -bottom-20 md:-bottom-24 lg:-bottom-32
-                w-[260px] md:w-[300px] lg:w-[400px]
-                aspect-square overflow-hidden rounded-2xl bg-zinc-100
-                shadow-sm
-                transition-transform duration-500 ease-out
-                hover:rotate-3
-              "
-            >
-              <Image
-                src="/square.jpeg"
-                alt="Coffee details"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 300px, 400px"
-              />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
+          
+          {/* Image Column - Spans 7 columns on large screens */}
+          <div className="lg:col-span-7 relative order-1">
+            <div className="relative aspect-[4/5] md:aspect-[16/10] lg:aspect-[4/3] w-full">
+              {/* Subtle background accent */}
+              <div className="absolute -inset-4 md:-inset-8 bg-zinc-50 rounded-[2rem] lg:rounded-[3rem] -z-10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8" />
+              
+              <button
+                type="button"
+                aria-label="Open cafe photo"
+                className="group relative h-full w-full overflow-hidden rounded-2xl lg:rounded-[2.5rem] bg-zinc-100 cursor-zoom-in focus:outline-none shadow-sm"
+                onClick={() => setIsOpen(true)}
+              >
+                <Image
+                  src="/cafe_front.jpeg"
+                  alt="Cafe interior"
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-1000"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+                <div className="absolute inset-0 bg-black/0 transition-colors duration-500" />
+              </button>
             </div>
           </div>
 
-          {/* Reserve vertical space so the overlap never collides with text */}
-          <div className="hidden md:block h-20 md:h-24 lg:h-32" />
-
-          {/* Text block (improved + consistent with other sections) */}
-          <div className="mt-10 md:mt-14 lg:mt-0 max-w-3xl lg:max-w-xl lg:ml-auto text-center lg:text-left">
-            <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-3">
-              Our Mission
-            </p>
-
-            <h2 className="text-2xl md:text-5xl font-bold tracking-tight mb-4">
-              More Than Coffee
-            </h2>
-
-            <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
-              <p>
-                We aim to make people feel welcome, cared for, and connected through good coffee and good food.
+          {/* Text Column - Spans 5 columns, slightly offset/overlapping on large screens */}
+          <div className="lg:col-span-5 lg:pl-16 xl:pl-24 order-2 relative">
+            <div className="flex flex-col">
+              
+              <p className="text-xs md:text-sm font-semibold tracking-[0.3em] text-primary uppercase mb-4">
+                Our Narrative
               </p>
+              
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8 text-zinc-900 leading-[1.1]">
+                Where craft <br />
+                meets <span className="text-primary italic">connection.</span>
+              </h2>
 
-              <p>
-                From early mornings to slow afternoons, we’re here for the everyday moments — the conversations,
-                the quiet focus, and the small rituals that make a day feel better.
-              </p>
-
-              <p>
-                We craft each cup with care, pair it with fresh pastries and wholesome dishes, and welcome you
-                into a space designed to feel warm, creative, and community-driven.
-              </p>
-
-              <p>
-                Come as you are. Stay a while. Leave a little more inspired than when you arrived.
-              </p>
+              <div className="space-y-6 text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-xl">
+                <p>
+                  We believe the perfect cup of coffee is only half the story. The other half is the space 
+                  it creates for conversations to spark and ideas to brew.
+                </p>
+                <p>
+                  Our mission is to cultivate a sanctuary where quality is never compromised, and 
+                  every guest is treated like a local from their very first visit.
+                </p>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
-      {/* Modal / Lightbox */}
+      {/* Lightbox Modal */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center px-4"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
           onClick={() => setIsOpen(false)}
           role="dialog"
           aria-modal="true"
-          aria-label="Cafe photo preview"
         >
+          <div className="absolute inset-0 bg-zinc-950/90 backdrop-blur-sm" />
+          
           <div
-            className="relative w-full max-w-5xl aspect-[3/2]"
+            className="relative w-full max-w-6xl aspect-[4/3] md:aspect-[16/10] animate-in fade-in zoom-in duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src="/cafe_front.jpeg"
               alt="Cafe interior enlarged"
               fill
-              className="object-contain rounded-xl"
+              className="object-contain rounded-lg"
               sizes="100vw"
               priority
             />
@@ -122,10 +101,10 @@ export default function Background() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="absolute top-4 right-4 rounded-full bg-black/50 px-3 py-2 text-white hover:bg-black/70 transition"
+              className="absolute -top-12 right-0 md:top-4 md:right-4 p-2 text-white/70 hover:text-white transition-colors"
               aria-label="Close image"
             >
-              ✕
+              <X className="w-8 h-8" />
             </button>
           </div>
         </div>
