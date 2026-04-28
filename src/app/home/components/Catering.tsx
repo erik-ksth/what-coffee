@@ -46,7 +46,8 @@ export default function Catering() {
                     {/* Main Image */}
                     <div className="absolute inset-0 z-10 overflow-hidden bg-zinc-800 grayscale hover:grayscale-0 transition-all duration-700 ease-out rounded-2xl">
                         <Image
-                            src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80"
+                            // src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?w=800&q=80"
+                            src="/store2.jpeg"
                             alt="Catering Setup"
                             fill
                             className="object-cover"

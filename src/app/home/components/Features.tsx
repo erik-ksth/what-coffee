@@ -41,7 +41,8 @@ export default function Features() {
                     {/* Image */}
                     <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden order-1 lg:order-2 group rounded-2xl">
                         <Image
-                            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+                            // src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop"
+                            src="/event1.jpeg"
                             alt="Freshly baked croissants"
                             fill
                             className="object-cover transition-all duration-700"
