@@ -18,7 +18,9 @@ export default function Contact() {
             <PageHeader
                 title="Get in touch"
                 subtitle="Contact Us"
-                image="https://images.unsplash.com/photo-1755884931646-ae6e1d227717?w=1920&q=80"
+                // image="https://images.unsplash.com/photo-1755884931646-ae6e1d227717?w=1920&q=80"
+                // image="/sunrise.jpeg"
+                image="/community.jpg"
             />
             <ContactForm />
             <Map />

@@ -22,7 +22,8 @@ export default function Story() {
             <PageHeader
                 title="Our Story"
                 subtitle="About Us"
-                image="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80"
+                // image="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80"
+                image="/about/chairsetup.jpeg"
             >
                 <p className="text-lg text-zinc-600 max-w-lg leading-relaxed">
                     Founded in 2024, we set out to create more than just a coffee shop.
@@ -32,7 +33,7 @@ export default function Story() {
             <div className="container mx-auto px-4 py-16">
                 <AboutUs />
                 <Background />
-                <Team />
+                {/* <Team /> */}
             </div>
         </main>
     );

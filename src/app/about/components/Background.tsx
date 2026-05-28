@@ -34,7 +34,8 @@ export default function Background() {
                 onClick={() => setIsOpen(true)}
               >
                 <Image
-                  src="/cafe_front.jpeg"
+                  // src="/cafe_front.jpeg"
+                  src="/cafeinside.jpeg"
                   alt="Cafe interior"
                   fill
                   priority

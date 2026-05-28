@@ -56,7 +56,8 @@ export default function Features() {
                     {/* Image */}
                     <div className="relative aspect-[4/3] bg-zinc-100 w-full overflow-hidden group rounded-2xl">
                         <Image
-                            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+                            // src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200&auto=format&fit=crop"
+                            src="/roaster12.jpeg"
                             alt="Pour over coffee being made"
                             fill
                             className="object-cover transition-all duration-700"

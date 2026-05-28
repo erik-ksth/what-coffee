@@ -186,11 +186,11 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
             description: "Creamy baked cheesecake with a buttery crust.",
             image: "",
         },
-        {
-            name: "Raspberry Heart Mousse",
-            description: "Silky mousse with bright raspberry and a heart-shaped finish.",
-            image: "",
-        },
+        // {
+        //     name: "Raspberry Heart Mousse",
+        //     description: "Silky mousse with bright raspberry and a heart-shaped finish.",
+        //     image: "",
+        // },
         {
             name: "Hazelnut Mousse Cake",
             description: "Light hazelnut mousse layered over sponge with a nutty, elegant finish.",

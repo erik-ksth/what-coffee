@@ -7,19 +7,19 @@ import type { MenuItem } from "@/app/menu/menu-data";
 
 const topHits: MenuItem[] = [
      {
-          name: "Coconut Coffee",
-          description: "Creamy iced latte made with toasted coconut milk and rich espresso.",
-          image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&q=80",
+          name: "Tiramisu Latte",
+          description: "Latte inspired by tiramisu—rich coffee, cocoa, and a dessert-like finish.",
+          image: "/menu/edited/drinks/tiramisu_latte.jpeg",
      },
      {
           name: "Tiramisu",
-          description: "Classic Italian dessert with layers of espresso-soaked ladyfingers and mascarpone.",
-          image: "https://images.unsplash.com/photo-1542326237-94b1c5a538d4?w=600&q=80",
+          description: "Layers of espresso-soaked sponge, mascarpone, and cocoa.",
+          image: "/menu/food/tiramisu.jpeg",
      },
      {
-          name: "Matcha",
-          description: "Premium Japanese matcha whisked with your choice of milk, served over ice.",
-          image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&q=80",
+          name: "Matcha Latte",
+          description: "Ceremonial grade matcha with milk. Available Hot or Iced.",
+          image: "/menu/edited/drinks/matcha.jpeg",
      },
 ];
 

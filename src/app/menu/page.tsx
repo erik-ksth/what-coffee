@@ -26,7 +26,8 @@ export default function Menu() {
             <PageHeader
                 title="Your Favorites, Ready When You Are"
                 subtitle="Our Menu"
-                image="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=1920&q=80"
+                // image="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=1920&q=80"
+                image="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80"
             >
                 <Link
                     href="https://www.clover.com/online-ordering/whatcoffee-santa-clara"
