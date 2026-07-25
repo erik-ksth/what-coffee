@@ -40,13 +40,20 @@ export default function Footer() {
                     <div className="md:col-span-2 md:col-start-7">
                         <h3 className="text-sm font-bold uppercase tracking-widest text-primary mb-8">Menu</h3>
                         <ul className="flex flex-col gap-4">
-                            {["Home", "Menu", "About", "Gallery", "Contact"].map((item) => (
-                                <li key={item}>
+                            {[
+                                { label: "Home", href: "/" },
+                                { label: "Menu", href: "/menu" },
+                                { label: "Catering", href: "/catering-wholesale" },
+                                { label: "About", href: "/about" },
+                                { label: "Gallery", href: "/gallery" },
+                                { label: "Contact", href: "/contact" },
+                            ].map((item) => (
+                                <li key={item.href}>
                                     <Link
-                                        href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                                        href={item.href}
                                         className="text-lg font-medium hover:text-primary transition-colors inline-flex items-center gap-2 group"
                                     >
-                                        {item}
+                                        {item.label}
                                         <ArrowUpRight className="w-4 h-4 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                                     </Link>
                                 </li>

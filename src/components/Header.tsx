@@ -8,7 +8,14 @@ import { Menu, X } from "lucide-react";
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const navItems = ["Home", "Menu", "About", "Gallery", "Contact"];
+    const navItems = [
+        { label: "Home", href: "/" },
+        { label: "Menu", href: "/menu" },
+        { label: "Catering", href: "/catering-wholesale" },
+        { label: "About", href: "/about" },
+        { label: "Gallery", href: "/gallery" },
+        { label: "Contact", href: "/contact" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -42,18 +49,12 @@ export default function Header() {
                     <nav className="hidden md:block">
                         <ul className="flex items-center gap-x-8">
                             {navItems.map((item) => (
-                                <li key={item}>
+                                <li key={item.href}>
                                     <Link
-                                        href={
-                                            item === "Home"
-                                                ? "/"
-                                                : item === "About"
-                                                    ? "/about"
-                                                    : `/${item.toLowerCase()}`
-                                        }
+                                        href={item.href}
                                         className="text-sm uppercase tracking-[0.15em] font-bold text-foreground hover:text-primary transition-colors"
                                     >
-                                        {item}
+                                        {item.label}
                                     </Link>
                                 </li>
                             ))}
@@ -79,19 +80,13 @@ export default function Header() {
                 <nav>
                     <ul className="flex flex-col items-center gap-y-8">
                         {navItems.map((item) => (
-                            <li key={item}>
+                            <li key={item.href}>
                                 <Link
-                                    href={
-                                        item === "Home"
-                                            ? "/"
-                                            : item === "About"
-                                                ? "/about"
-                                                : `/${item.toLowerCase()}`
-                                    }
+                                    href={item.href}
                                     className="text-2xl uppercase tracking-[0.15em] font-bold text-foreground hover:text-primary transition-colors"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {item}
+                                    {item.label}
                                 </Link>
                             </li>
                         ))}
