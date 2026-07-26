@@ -31,14 +31,22 @@ export default function Menu() {
             >
                 <Link
                     href="https://www.clover.com/online-ordering/whatcoffee-santa-clara"
-                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 text-white shadow-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-xl hover:ring-2 hover:ring-primary/50 hover:ring-offset-2 active:scale-95"
+                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-primary px-8 py-4 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-xl hover:ring-2 hover:ring-primary/50 hover:ring-offset-2 active:scale-95"
                 >
                     <span className="relative z-10 font-bold uppercase tracking-wider">
                         Order Online
                     </span>
-                    {/* <ArrowRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    <ShoppingBag className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:-rotate-12" /> */}
+                    <ShoppingBag className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:-rotate-12" />
                 </Link>
+                <a
+                    href="https://www.doordash.com/store/32911877?pickup=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 rounded-full border-2 border-foreground px-8 py-4 font-bold uppercase tracking-wider text-foreground transition-all duration-300 hover:scale-105 hover:border-primary hover:bg-primary hover:text-white active:scale-95"
+                >
+                    Order on DoorDash
+                    <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
             </PageHeader>
             <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-4 py-16">
                 <div className="text-center">
