@@ -104,67 +104,67 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Pistachio Croissant",
             description: "Classic croissant with a layer of pistachio paste.",
-            image: "/menu/food/pistachio_croissant.jpeg",
+            image: "/menu/food/pistachio-croissant.jpeg",
         },
         {
             name: "Almond Croissant",
             description: "Classic twice-baked croissant with almond flakes.",
-            image: "/menu/food/almond_crossiant.jpeg",
+            image: "/menu/food/almond-crossiant.jpeg",
         },
         {
             name: "Pain Au Chocolat",
             description: "Classic croissant with a chocolate filling.",
-            image: "",
+            image: "/menu/food/chocolate-croissant.jpeg",
         },
         {
             name: "Pain Suisse",
             description: "Classic croissant with a buttery crust and a sweet pastry cream filling.",
-            image: "",
+            image: "/menu/food/pain-suisse.jpeg",
         },
         {
             name: "Ham & Cheese Croissant",
             description: "Double-baked croissant with a creamy cheese filling and ham.",
-            image: "",
+            image: "/menu/food/ham-and-cheese-croissant.jpeg",
         },
         {
             name: "Chocolate Banana Croissant",
             description: "Croissant with a chocolate and banana filling.",
-            image: "/menu/food/chocolate_banana.jpeg",
+            image: "/menu/food/chocolate-banana.jpeg",
         },
         {
             name: "Fruit Danish",
             description: "Danish with a pastry cream and fresh berries.",
-            image: "/menu/food/fruit_danish.jpeg",
+            image: "/menu/food/fruit-danish.jpeg",
         },
         {
             name: "Butter Croissant",
             description: "Simply addictive butter croissant with a warm and flaky texture.",
-            image: "",
+            image: "/menu/food/butter-croissant.jpeg",
         },
-        {
-            name: "Strawberry Cream Donut",
-            description: "Brioche Donut with a strawberry filling.",
-            image: "",
-        },
-        {
-            name: "Mango Cream Donut",
-            description: "Brioche Donut with a mango filling.",
-            image: "",
-        },
+        // {
+        //     name: "Strawberry Cream Donut",
+        //     description: "Brioche Donut with a strawberry filling.",
+        //     image: "",
+        // },
+        // {
+        //     name: "Mango Cream Donut",
+        //     description: "Brioche Donut with a mango filling.",
+        //     image: "",
+        // },
         {
             name: "Cinnamon Roll",
             description: "Soft and fluffy cinnamon roll with a sweet and sticky cinnamon sugar filling.",
-            image: "",
+            image: "/menu/food/cinnamon-roll.jpeg",
         },
         {
             name: "Scones",
             description: "Buttery scones with a sweet or savory filling.",
-            image: "",
+            image: "/menu/food/scone.jpeg",
         },
         {
-            name: "Double Chocolate Muffin",
-            description: "Chocolate muffin with extra chocolate chips.",
-            image: "",
+            name: "Muffins",
+            description: "Soft and fluffy muffins with a chocolate chips, walnut, banana or blueberry filling.",
+            image: "/menu/food/muffin.jpeg",
         },
         {
             name: "Cookies",
@@ -174,7 +174,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Chocolate Roll Cake",
             description: "Soft sponge rolled with rich chocolate cream—sliceable and indulgent.",
-            image: "/menu/food/roll_cake.jpeg",
+            image: "/menu/food/roll-cake.jpeg",
         },
         {
             name: "Tiramisu",
@@ -184,7 +184,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Cheese Cake",
             description: "Creamy baked cheesecake with a buttery crust.",
-            image: "",
+            image: "/menu/food/cheese-cake.jpeg",
         },
         // {
         //     name: "Raspberry Heart Mousse",
@@ -194,7 +194,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Hazelnut Mousse Cake",
             description: "Light hazelnut mousse layered over sponge with a nutty, elegant finish.",
-            image: "",
+            image: "/menu/food/hazelnut-mousse.jpeg",
         },
     ],
     Food: [

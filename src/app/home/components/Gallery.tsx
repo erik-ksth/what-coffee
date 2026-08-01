@@ -7,16 +7,19 @@ import { ArrowRight } from "lucide-react";
 
 const galleryImages = [
     {
-        src: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80",
-        alt: "Friends gathering at the cafe",
+        // src: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80",
+        src: "/yellow-table.jpeg",
+        alt: "Yellow table with coffee and pastries at the outside of cafe",
     },
     {
-        src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
-        alt: "Barista making pour over coffee",
+        // src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
+        src: "/aesthetic-pastries.jpeg",
+        alt: "Aesthetic pastries on a table at the cafe",
     },
     {
-        src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
-        alt: "Cafe outdoor patio",
+        // src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
+        src: "/coffee1.jpeg",
+        alt: "Coffee beans being roasted in a roaster",
     },
 ];
 
