@@ -78,12 +78,12 @@ export default function Footer() {
                             </div>
                             <div>
                                 <p className="text-white font-medium mb-2">Hours</p>
-                                <p>Mon – Wed: 7:30 AM – 5 PM</p>
-                                <p>Thu – Fri: 7:30 AM – 11 PM</p>
-                                <p>Sat - Sun: 8 AM – 11 PM</p>
+                                <p>Mon – Thu: 7:30 AM – 5 PM</p>
+                                <p>Fri – Sat: 7:30 AM – 7 PM</p>
+                                <p>Sun      : 8 AM – 5 PM</p>
                             </div>
-                            <a href="mailto:hello@whatcoffee.com" className="hover:text-primary transition-colors">
-                                hello@whatcoffee.com
+                            <a href="mailto:techsupport@whatcoffeeandbakery.com" className="hover:text-primary transition-colors">
+                                techsupport@whatcoffeeandbakery.com
                             </a>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ export default function Footer() {
                         {[
                             { Icon: Instagram, href: "https://www.instagram.com/whatcoffeeandbakery/" },
                             { Icon: TikTokIcon, href: "https://www.tiktok.com/@whatcoffeeandbakery" },
-                            { Icon: Mail, href: "mailto:hello@whatcoffee.com" },
+                            { Icon: Mail, href: "mailto:techsupport@whatcoffeeandbakery.com" },
 
                         ].map(({ Icon, href }, i) => (
                             <a

@@ -36,8 +36,9 @@ export default function Hero() {
                     <div className="animate-marquee whitespace-nowrap flex">
                          {[...Array(2)].map((_, i) => (
                               <div key={i} className="flex items-center gap-8 mx-4">
-                                   <span className="text-sm font-medium tracking-widest uppercase">★ Fresh Roasted Daily</span>
-                                   <span className="text-sm font-medium tracking-widest uppercase">★ Artisan Coffee</span>
+                                   <span className="text-sm font-medium tracking-widest uppercase">★ Buttery Croissants</span>
+                                   <span className="text-sm font-medium tracking-widest uppercase">★ Baked Fresh Daily</span>
+                                   <span className="text-sm font-medium tracking-widest uppercase">★ Specialty Coffee</span>
                                    <span className="text-sm font-medium tracking-widest uppercase">★ Premium Beans</span>
                                    <span className="text-sm font-medium tracking-widest uppercase">★ Handcrafted with Love</span>
                                    <span className="text-sm font-medium tracking-widest uppercase">★ Locally Sourced</span>

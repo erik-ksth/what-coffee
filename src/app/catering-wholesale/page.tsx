@@ -19,7 +19,7 @@ export default function CateringWholesalePage() {
                 image="/store2.jpeg"
             >
                 <p className="max-w-lg text-lg leading-relaxed text-zinc-600">
-                    Bring What Coffee to your next event, office, or special occasion. Browse our
+                    Bring WhatCoffee to your next event, office, or special occasion. Browse our
                     current catering and wholesale menu below.
                 </p>
             </PageHeader>
@@ -53,7 +53,7 @@ export default function CateringWholesalePage() {
                             Catering & Wholesale Menu
                         </p>
                         <p className="mt-3 text-zinc-600">
-                            This area will display the JPEG menu once it is ready.
+                            This area will display the menu once it is ready.
                         </p>
                     </div>
                 </div>

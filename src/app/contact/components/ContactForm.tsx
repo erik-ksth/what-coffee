@@ -96,10 +96,10 @@ const ContactForm = () => {
 
                     <div className="space-y-2">
                         <p className="font-medium text-lg hover:text-primary transition-colors cursor-pointer">
-                            (408) 279-3333
+                            (408) 609-3146
                         </p>
                         <p className="font-medium text-lg hover:text-primary transition-colors cursor-pointer">
-                            hello@whatcoffee.com
+                            techsupport@whatcoffeeandbakery.com
                         </p>
                     </div>
 
