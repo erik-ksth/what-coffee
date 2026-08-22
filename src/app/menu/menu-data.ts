@@ -37,7 +37,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Matcha Latte",
             description: "Ceremonial grade matcha with milk. Available Hot or Iced.",
-            image: "/menu/edited/drinks/matcha.jpeg",
+            image: "/menu/edited/drinks/coco_matcha.png",
         },
         {
             name: "Raspberry Iced Matcha",
