@@ -7,23 +7,23 @@ import SimpleSlider from "./SimpleSlider";
 
 const storeSlides = [
     {
-        image: "/cafeinside-edited.jpg",
+        image: "/images/site/interiors/cafe-interior-edited.jpg",
         caption: "The neighborhood table",
     },
     {
-        image: "/menu/edited/interior/Coffee Santa Clara (2) (1).jpeg",
+        image: "/images/site/interiors/coffee-santa-clara-2-alt.jpeg",
         caption: "The café on Monroe",
     },
     {
-        image: "/donuts-edited.jpg",
+        image: "/images/site/pastries/donuts-edited.jpg",
         caption: "Freshly made donuts",
     },
     {
-        image: "/menu/edited/interior/Coffee Santa Clara (1).jpeg",
+        image: "/images/site/interiors/coffee-santa-clara-1.jpeg",
         caption: "Coffee with company",
     },
     {
-        image: "/menu/edited/interior/Coffee Santa Clara (4).jpeg",
+        image: "/images/site/interiors/coffee-santa-clara-4.jpeg",
         caption: "Our sunny corner",
     },
 ];

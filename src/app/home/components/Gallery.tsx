@@ -8,42 +8,42 @@ import styles from "./Gallery.module.css";
 
 const parallaxImages = [
     {
-        src: "/yellow-table-edited.jpg",
+        src: "/images/site/events/yellow-table-edited.jpg",
         alt: "Coffee and a pastry on the café patio",
         depth: 1,
     },
     {
-        src: "/aesthetic-pastries-edited.jpg",
+        src: "/images/site/pastries/aesthetic-pastries-edited.jpg",
         alt: "Fresh pastries at What Coffee",
         depth: -0.42,
     },
     {
-        src: "/sunrise.jpeg",
+        src: "/images/site/exteriors/sunrise.jpeg",
         alt: "Morning light at What Coffee",
         depth: 0.58,
     },
     {
-        src: "/cafeinside-edited.jpg",
+        src: "/images/site/interiors/cafe-interior-edited.jpg",
         alt: "Inside the What Coffee café",
         depth: 0.88,
     },
     {
-        src: "/event1-edited.png",
+        src: "/images/site/events/catering-edited.png",
         alt: "A community event at What Coffee",
         depth: 0.72,
     },
     {
-        src: "/cream_croissant.jpeg",
+        src: "/images/site/pastries/cream-croissant.jpeg",
         alt: "A filled croissant made at What Coffee",
         depth: -0.55,
     },
     {
-        src: "/donuts-edited.jpg",
+        src: "/images/site/pastries/donuts-edited.jpg",
         alt: "Freshly made donuts",
         depth: 0.48,
     },
     {
-        src: "/menu/edited/interior/Coffee Santa Clara.jpeg",
+        src: "/images/site/interiors/coffee-santa-clara-main.jpeg",
         alt: "The What Coffee shop in Santa Clara",
         depth: 1.08,
     },

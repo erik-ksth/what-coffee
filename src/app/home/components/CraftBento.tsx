@@ -18,7 +18,7 @@ export default function CraftBento() {
                     <article className={`${styles.card} ${styles.featureCard}`}>
                         <div className={`${styles.featureImage} ${styles.coffeeImage}`}>
                             <Image
-                                src="/roaster12.jpeg"
+                                src="/images/site/roastery/roasting-process.jpeg"
                                 alt="What Coffee beans beside the in-house roaster"
                                 fill
                                 sizes="(max-width: 700px) 100vw, 50vw"
@@ -34,7 +34,7 @@ export default function CraftBento() {
                     <article className={`${styles.card} ${styles.featureCard}`}>
                         <div className={styles.featureImage}>
                             <Image
-                                src="/aesthetic-pastries-edited.jpg"
+                                src="/images/site/pastries/aesthetic-pastries-edited.jpg"
                                 alt="Fresh pastries made by the What Coffee bakery"
                                 fill
                                 sizes="(max-width: 700px) 100vw, 50vw"
@@ -62,7 +62,7 @@ export default function CraftBento() {
                         </div>
                         <div className={styles.cateringImage}>
                             <Image
-                                src="/cafeinside-edited.jpg"
+                                src="/images/site/interiors/cafe-interior-edited.jpg"
                                 alt="A busy gathering inside What Coffee"
                                 fill
                                 sizes="(max-width: 700px) 100vw, 58vw"

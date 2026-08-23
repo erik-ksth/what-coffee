@@ -69,7 +69,7 @@ export const metadata: Metadata = {
             "Experience the perfect blend of atmosphere and aroma. Fresh roasted daily, artisan coffee, premium beans, and handcrafted pastries.",
         images: [
             {
-                url: "/og-image.jpg",
+                url: "/images/site/interiors/coffee-santa-clara-main.jpeg",
                 width: 1200,
                 height: 630,
                 alt: "What Coffee - Artisan Coffee Shop",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
         title: "What Coffee | Best Coffee Shop in Santa Clara",
         description:
             "Experience the perfect blend of atmosphere and aroma. Fresh roasted daily, artisan coffee, premium beans.",
-        images: ["/og-image.jpg"],
+        images: ["/images/site/interiors/coffee-santa-clara-main.jpeg"],
     },
     robots: {
         index: true,
@@ -114,7 +114,7 @@ export default function RootLayout({
                             "@context": "https://schema.org",
                             "@type": "CafeOrCoffeeShop",
                             name: "What Coffee",
-                            image: "https://whatcoffee.com/og-image.jpg",
+                            image: "https://whatcoffee.com/images/site/interiors/coffee-santa-clara-main.jpeg",
                             url: "https://whatcoffee.com",
                             telephone: "408-279-3333",
                             address: {

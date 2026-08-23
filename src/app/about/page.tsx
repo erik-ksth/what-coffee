@@ -21,7 +21,7 @@ export default function Story() {
             <PageHeader
                 title="A café built around craft and community."
                 subtitle="Our story"
-                image="/community-edited.jpg"
+                image="/images/site/events/community-edited.jpg"
                 imagePosition="center 36%"
             >
                 <p>

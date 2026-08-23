@@ -2,7 +2,7 @@
     position: fixed;
     inset: -3vh -3vw;
     z-index: 200;
-    background: url("/hero-leaf-shadow.png") left top / cover no-repeat;
+    background: url("/images/decor/hero-leaf-shadow.png") left top / cover no-repeat;
     mix-blend-mode: multiply;
     opacity: 0.24;
     pointer-events: none;

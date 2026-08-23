@@ -84,7 +84,13 @@ export default function Header() {
         <header className={styles.header}>
             <div ref={desktopNavRef} className={styles.desktopPill} data-scrolled="false">
                 <Link href="/" className={styles.logo} aria-label="What Coffee home">
-                    <Image src="/whatcoffee_logo.png" alt="" width={48} height={28} priority />
+                    <Image
+                        src="/images/brand/logo-mark.png"
+                        alt=""
+                        width={48}
+                        height={28}
+                        priority
+                    />
                 </Link>
 
                 <nav aria-label="Primary navigation">
@@ -108,7 +114,15 @@ export default function Header() {
             </div>
 
             <BubbleMenu
-                logo={<Image src="/whatcoffee_logo.png" alt="" width={40} height={23} priority />}
+                logo={
+                    <Image
+                        src="/images/brand/logo-mark.png"
+                        alt=""
+                        width={40}
+                        height={23}
+                        priority
+                    />
+                }
                 items={mobileItems}
                 menuAriaLabel="Open navigation"
                 menuBg="#ffffff"

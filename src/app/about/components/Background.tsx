@@ -8,7 +8,7 @@ export default function Background() {
             <div className={styles.beliefInner}>
                 <figure className={styles.widePhoto}>
                     <Image
-                        src="/cafeinside-edited.jpg"
+                        src="/images/site/interiors/cafe-interior-edited.jpg"
                         alt="Guests gathering inside What Coffee"
                         fill
                         sizes="(max-width: 800px) 100vw, 58vw"

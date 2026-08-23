@@ -29,7 +29,7 @@ export default function AboutUs() {
 
                 <figure className={styles.portrait}>
                     <Image
-                        src="/about/mural.jpeg"
+                        src="/images/site/about/mural.jpeg"
                         alt="The colorful mural inside What Coffee"
                         fill
                         sizes="(max-width: 800px) 100vw, 42vw"

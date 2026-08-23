@@ -7,31 +7,31 @@ const topHits = [
     {
         name: "Tiramisu Latte",
         description: "A tiramisu-inspired latte with cocoa and a creamy top.",
-        image: "/menu/edited/drinks/tiramisu_latte.jpeg",
+        image: "/images/menu/drinks/edited/tiramisu-latte.jpeg",
         imagePosition: "center",
     },
     {
         name: "Pistachio Croissant",
         description: "Flaky, filled with pistachio cream, and finished with crushed nuts.",
-        image: "/menu/edited/food/pistachio-croissant-edited.jpeg",
+        image: "/images/menu/food/edited/pistachio-croissant.jpeg",
         imagePosition: "center",
     },
     {
         name: "Iced Matcha Latte",
         description: "Ceremonial matcha with milk, served over ice.",
-        image: "/menu/edited/drinks/coco_matcha.png",
+        image: "/images/menu/drinks/edited/matcha-latte-creamy.png",
         imagePosition: "center 58%",
     },
     {
         name: "Breakfast Sandwich",
         description: "Bacon, egg, avocado, and cheese on a toasted croissant.",
-        image: "/menu/edited/food/breakfastsandwich-edited.jpeg",
+        image: "/images/menu/food/edited/breakfast-sandwich.jpeg",
         imagePosition: "center",
     },
     {
         name: "Tiramisu",
         description: "Espresso-soaked cake with mascarpone and cocoa.",
-        image: "/menu/edited/food/tiramisu-edited.jpeg",
+        image: "/images/menu/food/edited/tiramisu.jpeg",
         imagePosition: "center",
     },
 ];

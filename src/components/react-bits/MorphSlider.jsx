@@ -9,8 +9,8 @@ import "./MorphSlider.css";
 const TRANSITIONS = { melt: 0, ripple: 1, shear: 2, swirl: 3 };
 
 const DEFAULT_ITEMS = [
-    { image: "/cafeinside-edited.jpg", caption: "The neighborhood table" },
-    { image: "/cafe_front.jpeg", caption: "Our sunny corner" },
+    { image: "/images/site/interiors/cafe-interior-edited.jpg", caption: "The neighborhood table" },
+    { image: "/images/site/exteriors/cafe-front.jpeg", caption: "Our sunny corner" },
 ];
 
 const vertexShader = `

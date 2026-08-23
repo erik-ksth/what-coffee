@@ -34,7 +34,7 @@ export default function Menu() {
             <PageHeader
                 title="Coffee, pastries, and more."
                 subtitle="Our menu"
-                image="/menu/edited/food/foods_photo_1-v2.png"
+                image="/images/menu/food/edited/menu-composite.png"
                 imagePosition="center"
             >
                 <p>Roasted here, baked fresh, and made to order in Santa Clara.</p>

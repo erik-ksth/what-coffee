@@ -21,7 +21,7 @@ export default function CateringWholesalePage() {
             <PageHeader
                 title="Coffee for every gathering."
                 subtitle="Catering & wholesale"
-                image="/menu/edited/interior/Coffee Santa Clara (3).jpeg"
+                image="/images/site/interiors/coffee-santa-clara-3.jpeg"
                 imagePosition="center 54%"
             >
                 <p>Bring the coffee, pastries, and warmth of our café to your next gathering.</p>
@@ -34,7 +34,7 @@ export default function CateringWholesalePage() {
                 <article className={styles.offering}>
                     <figure className={styles.photo}>
                         <Image
-                            src="/event1-edited.png"
+                            src="/images/site/events/catering-edited.png"
                             alt="A community event catered by What Coffee"
                             fill
                             sizes="(max-width: 800px) 100vw, 52vw"
@@ -55,7 +55,7 @@ export default function CateringWholesalePage() {
                 <article className={`${styles.offering} ${styles.reverse}`}>
                     <figure className={styles.photo}>
                         <Image
-                            src="/roaster.jpg"
+                            src="/images/site/roastery/roaster-machine.jpg"
                             alt="Coffee beans roasting at What Coffee"
                             fill
                             sizes="(max-width: 800px) 100vw, 52vw"

@@ -5,32 +5,32 @@ import Image from "next/image";
 
 const teamImages = [
   {
-    src: "/barista_team.jpeg",
+    src: "/images/site/people/barista-team.jpeg",
     alt: "What Coffee team smiling together behind the bar",
     className: "md:col-span-2",
     speed: -0.4,
     priority: true,
   },
   {
-    src: "/barista_1.jpg",
+    src: "/images/site/people/barista-1.jpg",
     alt: "Barista preparing espresso",
     className: "",
     speed: 0.3,
   },
   {
-    src: "/barista_2.jpeg",
+    src: "/images/site/people/barista-2.jpeg",
     alt: "Team member holding a latte",
     className: "",
     speed: -0.2,
   },
   {
-    src: "/barista_1.jpg",
+    src: "/images/site/people/barista-1.jpg",
     alt: "Barista steaming milk",
     className: "",
     speed: 0.3,
   },
   {
-    src: "/barista_2.jpeg",
+    src: "/images/site/people/barista-2.jpeg",
     alt: "Team member smiling in the cafe",
     className: "",
     speed: -0.5,
