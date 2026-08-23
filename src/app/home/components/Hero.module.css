@@ -39,12 +39,12 @@
 
 .titleLead {
     margin-left: 0.08em;
-    font-family: var(--font-poppins-italic), sans-serif;
-    font-size: 0.67em;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.05;
+    font-family: var(--font-crafty-girls), cursive;
+    font-size: 0.74em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
 }
 
 .titleFocus {
@@ -59,11 +59,11 @@
 }
 
 .titleQuestion {
-    font-family: var(--font-poppins-italic), sans-serif;
-    font-size: 0.78em;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: -0.035em;
+    font-family: var(--font-crafty-girls), cursive;
+    font-size: 0.82em;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
     line-height: 1;
     white-space: nowrap;
 }

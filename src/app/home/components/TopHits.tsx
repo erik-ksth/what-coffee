@@ -1,60 +1,80 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import MenuItemCard from "@/app/menu/components/MenuItemCard";
-import type { MenuItem } from "@/app/menu/menu-data";
 
-const topHits: MenuItem[] = [
-     {
-          name: "Tiramisu Latte",
-          description: "Latte inspired by tiramisu—rich coffee, cocoa, and a dessert-like finish.",
-          image: "/menu/edited/drinks/tiramisu_latte.jpeg",
-     },
-     {
-          name: "Tiramisu",
-          description: "Layers of espresso-soaked sponge, mascarpone, and cocoa.",
-          image: "/menu/food/tiramisu.jpeg",
-     },
-     {
-          name: "Matcha Latte",
-          description: "Ceremonial grade matcha with milk. Available Hot or Iced.",
-          image: "/menu/edited/drinks/coco_matcha.png",
-     },
+import styles from "./TopHits.module.css";
+
+const topHits = [
+    {
+        name: "Tiramisu Latte",
+        description: "A tiramisu-inspired latte with cocoa and a creamy top.",
+        image: "/menu/edited/drinks/tiramisu_latte.jpeg",
+        imagePosition: "center",
+    },
+    {
+        name: "Pistachio Croissant",
+        description: "Flaky, filled with pistachio cream, and finished with crushed nuts.",
+        image: "/menu/food/pistachio-croissant.jpeg",
+        imagePosition: "center 68%",
+    },
+    {
+        name: "Iced Matcha Latte",
+        description: "Ceremonial matcha with milk, served over ice.",
+        image: "/menu/edited/drinks/coco_matcha.png",
+        imagePosition: "center 58%",
+    },
+    {
+        name: "Breakfast Sandwich",
+        description: "Bacon, egg, avocado, and cheese on a toasted croissant.",
+        image: "/menu/food/breakfastsandwich.jpeg",
+        imagePosition: "center",
+    },
+    {
+        name: "Tiramisu",
+        description: "Espresso-soaked cake with mascarpone and cocoa.",
+        image: "/menu/food/tiramisu.jpeg",
+        imagePosition: "center 68%",
+    },
 ];
 
 export default function TopHits() {
-     return (
-          <section className="py-12 md:py-20 px-4">
-               <div className="max-w-6xl mx-auto">
-                    {/* Header */}
-                    <div className="text-center mb-10 md:mb-16">
-                         <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-2 md:mb-3">
-                              Best Sellers
-                         </p>
-                         <h2 className="text-3xl md:text-6xl font-bold text-foreground tracking-tighter">
-                              Our Top Hits
-                         </h2>
-                    </div>
+    return (
+        <section className={styles.section} aria-labelledby="top-hits-heading">
+            <div className={styles.inner}>
+                <header className={styles.heading}>
+                    <h2 id="top-hits-heading">
+                        Five café <em>favorites.</em>
+                    </h2>
+                    <p>A short list of what people ask for most.</p>
+                </header>
 
-                    {/* Product Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
-                         {topHits.map((item, index) => (
-                              <MenuItemCard key={index} item={item} />
-                         ))}
-                    </div>
+                <div className={styles.grid}>
+                    {topHits.map((item) => (
+                        <article className={styles.card} key={item.name}>
+                            <div className={styles.imageWrap}>
+                                <Image
+                                    src={item.image}
+                                    alt={item.description}
+                                    fill
+                                    sizes="(max-width: 700px) 72vw, (max-width: 1000px) 230px, 20vw"
+                                    className={styles.image}
+                                    style={{ objectPosition: item.imagePosition }}
+                                />
+                            </div>
 
-                    {/* CTA Button */}
-                    <div className="text-center">
-                         <Link
-                              href="/menu"
-                              className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full"
-                         >
-                              Explore Full Menu
-                              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                         </Link>
-                    </div>
-               </div>
-          </section>
-     );
+                            <div className={styles.cardBody}>
+                                <h3>{item.name}</h3>
+                                <p className={styles.visuallyHidden}>{item.description}</p>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+
+                <div className={styles.footer}>
+                    <Link href="/menu" className={styles.action}>
+                        See the full menu
+                    </Link>
+                </div>
+            </div>
+        </section>
+    );
 }

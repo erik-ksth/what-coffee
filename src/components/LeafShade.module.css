@@ -20,6 +20,11 @@
     }
 }
 
+.staticShade {
+    animation: none;
+    transform: none;
+}
+
 @media (max-width: 767px) {
     .shade {
         inset: -1vh -4vw;

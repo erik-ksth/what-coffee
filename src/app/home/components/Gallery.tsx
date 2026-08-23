@@ -1,131 +1,173 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
-const galleryImages = [
+import styles from "./Gallery.module.css";
+
+const parallaxImages = [
     {
-        // src: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80",
-         src: "/yellow-table.jpeg",
-        //src: "/menu/edited/drinks/rasp_match.jpeg",
-        alt: "Yellow table with coffee and pastries at the outside of cafe",
+        src: "/yellow-table.jpeg",
+        alt: "Coffee and a pastry on the café patio",
+        depth: 1,
     },
     {
-        // src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80",
         src: "/aesthetic-pastries.jpeg",
-        alt: "Aesthetic pastries on a table at the cafe",
+        alt: "Fresh pastries at What Coffee",
+        depth: -0.42,
     },
     {
-        // src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80",
-        src: "/roaster.jpg",
-        alt: "Coffee beans being roasted in a roaster",
+        src: "/sunrise.jpeg",
+        alt: "Morning light at What Coffee",
+        depth: 0.58,
+    },
+    {
+        src: "/cafeinside.jpeg",
+        alt: "Inside the What Coffee café",
+        depth: 0.88,
+    },
+    {
+        src: "/event1.jpeg",
+        alt: "A community event at What Coffee",
+        depth: 0.72,
+    },
+    {
+        src: "/cream_croissant.jpeg",
+        alt: "A filled croissant made at What Coffee",
+        depth: -0.55,
+    },
+    {
+        src: "/donuts.jpeg",
+        alt: "Freshly made donuts",
+        depth: 0.48,
+    },
+    {
+        src: "/menu/edited/interior/Coffee Santa Clara.jpeg",
+        alt: "The What Coffee shop in Santa Clara",
+        depth: 1.08,
     },
 ];
 
+const HORIZONTAL_RANGE = 28;
+const VERTICAL_RANGE = 20;
+const FOLLOW_STRENGTH = 0.13;
+
 export default function Gallery() {
     const sectionRef = useRef<HTMLElement>(null);
-    const [scrollY, setScrollY] = useState(0);
-    const [isMobile, setIsMobile] = useState(false);
+    const imageRefs = useRef<Array<HTMLElement | null>>([]);
+    const frameRef = useRef<number | null>(null);
+    const currentRef = useRef({ x: 0, y: 0 });
+    const targetRef = useRef({ x: 0, y: 0 });
+
+    const renderFrame = () => {
+        const current = currentRef.current;
+        const target = targetRef.current;
+
+        current.x += (target.x - current.x) * FOLLOW_STRENGTH;
+        current.y += (target.y - current.y) * FOLLOW_STRENGTH;
+
+        imageRefs.current.forEach((image, index) => {
+            if (!image) return;
+
+            const depth = parallaxImages[index].depth;
+            image.style.setProperty("--parallax-x", `${current.x * depth}px`);
+            image.style.setProperty("--parallax-y", `${current.y * depth}px`);
+        });
+
+        const isSettled =
+            Math.abs(target.x - current.x) < 0.02 && Math.abs(target.y - current.y) < 0.02;
+
+        if (isSettled) {
+            currentRef.current = { ...target };
+            frameRef.current = null;
+            return;
+        }
+
+        frameRef.current = window.requestAnimationFrame(renderFrame);
+    };
+
+    const requestFrame = () => {
+        if (frameRef.current === null) {
+            frameRef.current = window.requestAnimationFrame(renderFrame);
+        }
+    };
+
+    const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
+        if (event.pointerType === "touch") return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!window.matchMedia("(pointer: fine)").matches) return;
+
+        const section = sectionRef.current;
+        if (!section) return;
+
+        const bounds = section.getBoundingClientRect();
+        const normalizedX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+        const normalizedY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+
+        targetRef.current = {
+            x: normalizedX * HORIZONTAL_RANGE,
+            y: normalizedY * VERTICAL_RANGE,
+        };
+        requestFrame();
+    };
+
+    const handlePointerLeave = () => {
+        targetRef.current = { x: 0, y: 0 };
+        requestFrame();
+    };
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-
-        const handleScroll = () => {
-            if (sectionRef.current && window.innerWidth >= 768) {
-                const rect = sectionRef.current.getBoundingClientRect();
-                const sectionTop = rect.top;
-                const windowHeight = window.innerHeight;
-
-                if (sectionTop < windowHeight && sectionTop > -rect.height) {
-                    setScrollY((windowHeight - sectionTop) * 0.1);
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
+        const images = imageRefs.current;
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("resize", checkMobile);
+            if (frameRef.current !== null) window.cancelAnimationFrame(frameRef.current);
+            images.forEach((image) => {
+                image?.style.removeProperty("--parallax-x");
+                image?.style.removeProperty("--parallax-y");
+            });
         };
     }, []);
 
     return (
-        <section ref={sectionRef} className="py-16 md:py-32 px-4 overflow-hidden">
-            <div className="max-w-6xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-12 md:mb-24 relative z-10">
-                    <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-3">
-                        Life at What Coffee
-                    </p>
-                    <h2 className="text-3xl md:text-6xl font-bold text-foreground tracking-tighter">
-                        Moments from the Cafe
-                    </h2>
-                </div>
-
-                {/* Gallery Grid - Parallax Layout */}
-                <div className="relative flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 mb-12 md:mb-24 py-0 md:py-12">
-                    {/* Left Image - moves up slowly */}
-                    <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
-                        style={{ transform: !isMobile ? `translateY(${-scrollY * 0.5}px)` : 'none' }}
+        <section
+            ref={sectionRef}
+            className={styles.section}
+            aria-labelledby="closing-heading"
+            onPointerMove={handlePointerMove}
+            onPointerLeave={handlePointerLeave}
+        >
+            <div className={styles.parallaxStage} aria-label="Moments from What Coffee">
+                {parallaxImages.map((image, index) => (
+                    <figure
+                        className={styles.photo}
+                        key={image.src}
+                        ref={(node) => {
+                            imageRefs.current[index] = node;
+                        }}
                     >
                         <Image
-                            src={galleryImages[0].src}
-                            alt={galleryImages[0].alt}
+                            src={image.src}
+                            alt={image.alt}
                             fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 288px"
+                            sizes="(max-width: 700px) 46vw, 22vw"
+                            className={styles.image}
                         />
-                    </div>
+                    </figure>
+                ))}
+            </div>
 
-                    {/* Center Image - moves down */}
-                    <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
-                        style={{ transform: !isMobile ? `translateY(${scrollY * 0.8}px)` : 'none' }}
-                    >
-                        <Image
-                            src={galleryImages[1].src}
-                            alt={galleryImages[1].alt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 288px"
-                        />
-                    </div>
-
-                    {/* Right Image - moves up faster */}
-                    <div
-                        className="relative w-full md:w-72 aspect-3/4 bg-gray-100 overflow-hidden transition-transform duration-300 ease-out rounded-2xl"
-                        style={{ transform: !isMobile ? `translateY(${-scrollY * 1.2}px)` : 'none' }}
-                    >
-                        <Image
-                            src={galleryImages[2].src}
-                            alt={galleryImages[2].alt}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 288px"
-                        />
-                    </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="text-center relative z-10">
-                    <Link
-                        href="/gallery"
-                        className="group inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-8 py-3 font-medium transition-colors rounded-full"
-                    >
-                        View Full Gallery
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                </div>
+            <div className={styles.content}>
+                <p className={styles.prompt}>
+                    {/* <span className={styles.desktopPrompt}>Move your cursor</span> */}
+                    <span className={styles.touchPrompt}>Life at What Coffee</span>
+                </p>
+                <h2 id="closing-heading">
+                    A few moments <em>from the café.</em>
+                </h2>
+                <Link href="/gallery" className={styles.action}>
+                    See the gallery
+                </Link>
             </div>
         </section>
     );

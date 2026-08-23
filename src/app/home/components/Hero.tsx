@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import MorphSlider from "@/components/react-bits/MorphSlider";
 import { Highlighter } from "@/components/ui/Highlighter";
 import styles from "./Hero.module.css";
+import SimpleSlider from "./SimpleSlider";
 
 const storeSlides = [
     {
@@ -11,7 +11,7 @@ const storeSlides = [
         caption: "The café on Monroe",
     },
     {
-        image: "/cafeinside.jpeg",
+        image: "/menu/edited/interior/Coffee Santa Clara (1).jpeg",
         caption: "Coffee with company",
     },
     {
@@ -57,23 +57,7 @@ export default function Hero() {
 
             <div className={styles.sliderArea}>
                 <div className={styles.sliderFrame}>
-                    <MorphSlider
-                        items={storeSlides}
-                        transition="melt"
-                        duration={1.15}
-                        ease="power2.inOut"
-                        intensity={0.42}
-                        scale={2.6}
-                        aberration={0.12}
-                        drift={0.22}
-                        autoplay
-                        autoplayDelay={4.5}
-                        radius={36}
-                        overlayColor="#24130d"
-                        showCaptions={false}
-                        showControls={false}
-                        showIndicators
-                    />
+                    <SimpleSlider slides={storeSlides} />
                 </div>
             </div>
         </section>

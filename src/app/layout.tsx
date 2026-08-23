@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Poppins } from "next/font/google";
+import { Crafty_Girls, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,6 +22,13 @@ const poppinsItalic = Poppins({
     subsets: ["latin"],
     weight: "600",
     style: "italic",
+    display: "swap",
+});
+
+const craftyGirls = Crafty_Girls({
+    variable: "--font-crafty-girls",
+    subsets: ["latin"],
+    weight: "400",
     display: "swap",
 });
 
@@ -151,7 +158,7 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${geistMono.variable} ${poppins.variable} ${poppinsItalic.variable} antialiased flex flex-col min-h-screen`}
+                className={`${geistMono.variable} ${poppins.variable} ${poppinsItalic.variable} ${craftyGirls.variable} antialiased flex flex-col min-h-screen`}
             >
                 <Header />
                 <LeafShade />

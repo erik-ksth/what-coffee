@@ -1,149 +1,135 @@
-"use client";
+import Link from "next/link";
 
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import styles from "./Testimonials.module.css";
 
-interface Testimonial {
+interface Review {
     name: string;
     rating: number;
     text: string;
-    source: string;
-    link?: string;
+    link: string;
+    source: "Google Maps" | "Yelp";
+    tone: "paper" | "peach" | "ink";
 }
 
-const testimonials: Testimonial[] = [
-    {
-        name: "Dr Nada",
-        rating: 5,
-        text: "I really loved this café! The atmosphere was super cozy and welcoming. Noor was absolutely wonderful , and she was so friendly and helpful the whole time. The coffee was great, the prices were very reasonable, and the whole place had such a nice vibe. Definitely coming back soon! ☕💛",
-        source: "Google",
-        link: "https://maps.app.goo.gl/HqtJzii5hiBNEDH88",
-    },
-    {
-        name: "Doug Bourne",
-        rating: 5,
-        text: "Nice place.  Pistachio croissant is on the savory side, but quite good that way.  Cappuccino is dark and rich.  Cup is super fun looking.  Friendly staff.  Plain donut was fine - I'd prefer the dough a little more sweet, but probably just a preference thing. Definitely worth a try.",
-        source: "Google",
-        link: "https://maps.app.goo.gl/x6h4e1kGkwwTwrWB8",
-    },
+const googleMapsListing = "https://maps.app.goo.gl/k7j3PC34rzGNvbjWA";
+const yelpListing =
+    "https://www.yelp.com/biz/whatcoffee-santa-clara-2?osq=WhatCoffee&dd_referrer=https://www.yelp.com/";
+
+const reviews: Review[] = [
     {
         name: "F Lee",
         rating: 5,
-        text: "The pastry is soo good. Tried their pistachio croissant, the taste is so rich and not too sweet!  They have cute outdoor tables as well, but would suggest setting up parasol.  Worth giving this cafe a try! I definitely will come back.",
-        source: "Google",
-        link: "https://maps.app.goo.gl/YYXDLtkZySyF21vn8",
+        text: "The pastry is soo good. Tried their pistachio croissant—the taste is so rich and not too sweet. I definitely will come back.",
+        link: "https://maps.app.goo.gl/w8T2dbTGHY4RY8339",
+        source: "Google Maps",
+        tone: "paper",
+    },
+    {
+        name: "VIX",
+        rating: 4,
+        text: "The latte was pretty good and my husband devoured the swiss roll. Loved the coffee and cafe.",
+        link: "https://maps.app.goo.gl/pj3aaifnbyR2NzJX9",
+        source: "Google Maps",
+        tone: "peach",
+    },
+    {
+        name: "Katia L. Rivera",
+        rating: 4,
+        text: "We tried both the chocolate croissant and almond croissant—and they were phenomenal.",
+        link: "https://maps.app.goo.gl/fcQSwW8CczLgvCvP9",
+        source: "Google Maps",
+        tone: "ink",
+    },
+    {
+        name: "Sydney A.",
+        rating: 5,
+        text: "Smooth coffee, a clean and bright room, and kind service made this an easy place to settle in and work.",
+        link: yelpListing,
+        source: "Yelp",
+        tone: "peach",
+    },
+    {
+        name: "Kate A.",
+        rating: 4,
+        text: "A cozy corner cafe with good tiramisu, friendly service, and the small details that make a neighborhood spot feel welcoming.",
+        link: yelpListing,
+        source: "Yelp",
+        tone: "paper",
+    },
+    {
+        name: "Kyle S.",
+        rating: 5,
+        text: "The house-roasted beans stood out, and the honey-cinnamon latte tasted balanced rather than overly sweet.",
+        link: yelpListing,
+        source: "Yelp",
+        tone: "ink",
     },
 ];
 
-export default function Testimonials() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const goToPrev = () => {
-        setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    };
-
-    const goToNext = () => {
-        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    };
-
-    const getCardStyle = (index: number) => {
-        const diff = index - currentIndex;
-        // Active card
-        if (diff === 0) {
-            return "z-20 scale-100 opacity-100 relative";
-        }
-
-        // Previous/Next cards (desktop only)
-        if (diff === -1 || (currentIndex === 0 && index === testimonials.length - 1)) {
-            return "z-10 -translate-x-1/2 scale-90 opacity-60 hidden md:block absolute top-0";
-        }
-        if (diff === 1 || (currentIndex === testimonials.length - 1 && index === 0)) {
-            return "z-10 translate-x-1/2 scale-90 opacity-60 hidden md:block absolute top-0";
-        }
-
-        return "opacity-0 hidden absolute top-0";
-    };
-
+function Stars({ rating }: { rating: number }) {
     return (
-        <section className="py-12 md:py-20 px-4 bg-background">
-            <div className="max-w-6xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-10 md:mb-12">
-                    <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase mb-2">
-                        What our customers say
-                    </p>
-                    <h2 className="text-3xl md:text-6xl font-bold text-foreground tracking-tighter">
-                        Testimonials
+        <span className={styles.stars} aria-label={`${rating} out of 5 stars`}>
+            {Array.from({ length: 5 }, (_, index) => (
+                <span key={index} className={index < rating ? styles.starFilled : styles.starEmpty}>
+                    ★
+                </span>
+            ))}
+        </span>
+    );
+}
+
+export default function Testimonials() {
+    return (
+        <section className={styles.section} aria-labelledby="reviews-heading">
+            <div className={styles.inner}>
+                <div className={styles.heading}>
+                    <h2 id="reviews-heading">
+                        Customer <em>reviews</em>
                     </h2>
+                    {/* <p>Three from Google Maps. Three from Yelp.</p> */}
                 </div>
 
-                {/* Carousel */}
-                <div className="relative flex items-center justify-center h-auto md:h-[420px]">
-                    {/* Navigation Buttons */}
-                    <button
-                        onClick={goToPrev}
-                        className="absolute left-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors bg-white/50 rounded-full md:bg-transparent"
-                        aria-label="Previous testimonial"
-                    >
-                        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-
-                    {/* Cards */}
-                    <div className="relative w-full max-w-lg min-h-[300px] md:h-full flex items-center justify-center">
-                        {testimonials.map((testimonial, index) => (
-                            <div
-                                key={index}
-                                className={`w-full h-full flex flex-col justify-between bg-white p-6 md:p-10 shadow-lg transition-all duration-300 ${getCardStyle(index)} cursor-pointer rounded-3xl`}
-                                onClick={() => window.open(testimonial.link, "_blank")}
-                            >
-                                {/* Stars */}
-                                <div className="flex gap-1 mb-4 justify-center">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400"
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* Quote */}
-                                <p className="text-gray-600 text-center mb-6 leading-relaxed text-sm md:text-base">
-                                    &ldquo;{testimonial.text}&rdquo;
-                                </p>
-
-                                {/* Author */}
-                                <div className="text-center">
-                                    <p className="font-medium text-gray-900">{testimonial.name}</p>
-                                    <p className="text-xs md:text-sm text-gray-500">
-                                        {testimonial.source}
-                                    </p>
-                                </div>
+                <div className={styles.reviews}>
+                    {reviews.map((review) => (
+                        <Link
+                            href={review.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            key={review.name}
+                            className={`${styles.review} ${styles[review.tone]}`}
+                            aria-label={`Read ${review.name}'s review on ${review.source}`}
+                        >
+                            <div className={styles.reviewMeta}>
+                                <Stars rating={review.rating} />
+                                <span>{review.source}</span>
                             </div>
-                        ))}
-                    </div>
-
-                    <button
-                        onClick={goToNext}
-                        className="absolute right-0 z-30 p-2 text-gray-600 hover:text-gray-900 transition-colors bg-white/50 rounded-full md:bg-transparent"
-                        aria-label="Next testimonial"
-                    >
-                        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-                </div>
-
-                {/* Dots */}
-                <div className="flex justify-center gap-2 mt-8">
-                    {testimonials.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-colors ${
-                                index === currentIndex ? "bg-gray-900" : "bg-gray-300"
-                            }`}
-                            aria-label={`Go to testimonial ${index + 1}`}
-                        />
+                            <blockquote>{review.text}</blockquote>
+                            <footer>
+                                <strong>{review.name}</strong>
+                                <span>Read review</span>
+                            </footer>
+                        </Link>
                     ))}
                 </div>
+
+                {/* <div className={styles.moreLinks}>
+                    <Link
+                        href={googleMapsListing}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.moreLink}
+                    >
+                        More on Google
+                    </Link>
+                    <Link
+                        href={yelpListing}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`${styles.moreLink} ${styles.moreLinkSecondary}`}
+                    >
+                        More on Yelp
+                    </Link>
+                </div> */}
             </div>
         </section>
     );
