@@ -14,16 +14,17 @@ export const metadata: Metadata = {
 };
 export default function Contact() {
     return (
-        <main>
+        <div>
             <PageHeader
-                title="Get in touch"
-                subtitle="Contact Us"
-                // image="https://images.unsplash.com/photo-1755884931646-ae6e1d227717?w=1920&q=80"
-                // image="/sunrise.jpeg"
-                image="/community.jpg"
-            />
+                title="Come by or say hello."
+                subtitle="Contact"
+                image="/about/chairsetup.jpeg"
+                imagePosition="center 42%"
+            >
+                <p>Visit us in Santa Clara or send a note. We&apos;d love to hear from you.</p>
+            </PageHeader>
             <ContactForm />
             <Map />
-        </main>
+        </div>
     );
 }

@@ -1,91 +1,43 @@
 import Image from "next/image";
-import { useState } from "react";
+
 import type { MenuItem } from "../menu-data";
+import styles from "./MenuItemCard.module.css";
 
 interface MenuItemCardProps {
     item: MenuItem;
 }
 
-const MenuItemCard = ({ item }: MenuItemCardProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+export default function MenuItemCard({ item }: MenuItemCardProps) {
+    const descriptionId = `menu-description-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
     return (
-        <>
-            <article className="group">
-                {/* Image section with hover overlay */}
-                <button
-                    type="button"
-                    className="relative aspect-square w-full overflow-hidden rounded-[var(--radius-shell)] bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                    onClick={() => setIsOpen(true)}
-                    aria-label={`See description for ${item.name}`}
-                >
-                    {item.image ? (
-                        <Image
-                            src={item.image}
-                            alt={`${item.name} - ${item.description}`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover"
-                        />
-                    ) : (
-                        <span className="absolute inset-0 flex items-center justify-center px-4 text-center text-sm font-medium text-stone-400">
-                            Photo coming soon
-                        </span>
-                    )}
-                    {/* Hover overlay to prompt user to see description */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        <span className="text-lg font-medium tracking-wide">+ See Description</span>
-                    </div>
-                </button>
+        <article
+            className={styles.item}
+            tabIndex={item.description ? 0 : undefined}
+            aria-describedby={item.description ? descriptionId : undefined}
+        >
+            <div className={styles.imageWrap}>
+                {item.image ? (
+                    <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                    />
+                ) : (
+                    <span>Photo coming soon</span>
+                )}
 
-                {/* Menu item name */}
-                <p className="font-medium text-xl md:text-xl text-foreground text-center mt-4">
-                    {item.name}
-                </p>
-                {/* Keep description for screen readers even when dialog is closed */}
-                <p className="sr-only">{item.description}</p>
-            </article>
+                {item.description && (
+                    <p className={styles.description} id={descriptionId} role="tooltip">
+                        {item.description}
+                    </p>
+                )}
+            </div>
 
-            {/* Simple modal dialog for description */}
-            {isOpen && (
-                <div
-                    className="fixed inset-0 z-40 flex items-center justify-center bg-black/50 px-4"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby={`menu-item-title-${item.name}`}
-                    onClick={() => setIsOpen(false)}
-                >
-                    <div
-                        className="relative w-full max-w-md rounded-[var(--radius-shell)] bg-white p-6 shadow-xl"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {/* Close icon button in the top-right corner of the dialog */}
-                        <button
-                            type="button"
-                            onClick={() => setIsOpen(false)}
-                            className="absolute right-4 top-4 text-stone-400 transition hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white bg-gray-100 p-1 rounded-full"
-                            aria-label="Close description"
-                        >
-                            <span
-                                aria-hidden="true"
-                                className="h-4 w-4 flex justify-center items-center"
-                            >
-                                ×
-                            </span>
-                        </button>
-
-                        <h3
-                            id={`menu-item-title-${item.name}`}
-                            className="mb-2 text-lg font-semibold text-stone-900"
-                        >
-                            {item.name}
-                        </h3>
-                        <p className="mt-2 text-sm text-stone-600">{item.description}</p>
-                    </div>
-                </div>
-            )}
-        </>
+            <div className={styles.copy}>
+                <h2>{item.name}</h2>
+            </div>
+        </article>
     );
-};
-
-export default MenuItemCard;
+}

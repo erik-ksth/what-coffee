@@ -1,0 +1,31 @@
+.section {
+    width: min(100%, 1248px);
+    margin-inline: auto;
+    padding: 0 1.5rem clamp(6rem, 10vw, 9rem);
+    color: var(--foreground);
+    font-family: var(--font-poppins), sans-serif;
+}
+
+.section h2 {
+    margin: 0 0 1.25rem;
+    font-size: 1.16rem;
+    font-weight: 500;
+}
+
+.map {
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--paper);
+}
+
+.map iframe {
+    display: block;
+    width: 100%;
+    height: clamp(420px, 52vw, 600px);
+}
+
+@media (max-width: 800px) {
+    .section {
+        padding-inline: 1rem;
+    }
+}

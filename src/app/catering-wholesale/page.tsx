@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+
 import PageHeader from "@/components/PageHeader";
+
+import styles from "./catering.module.css";
 
 export const metadata: Metadata = {
     title: "Catering & Wholesale",
@@ -12,52 +17,61 @@ export const metadata: Metadata = {
 
 export default function CateringWholesalePage() {
     return (
-        <main>
+        <div>
             <PageHeader
-                title="Catering & Wholesale"
-                subtitle="Coffee for every gathering"
+                title="Coffee for every gathering."
+                subtitle="Catering & wholesale"
                 image="/store2.jpeg"
+                imagePosition="center 54%"
             >
-                <p className="max-w-lg text-lg leading-relaxed text-zinc-600">
-                    Bring WhatCoffee to your next event, office, or special occasion. Browse our
-                    current catering and wholesale menu below.
-                </p>
+                <p>Bring the coffee, pastries, and warmth of our café to your next gathering.</p>
+                <Link href="/contact" className={styles.headerLink}>
+                    Start an order
+                </Link>
             </PageHeader>
 
-            <section className="mx-auto w-full max-w-6xl px-4 py-16 md:px-6 md:py-24">
-                <div className="mb-10 text-center">
-                    <span className="text-sm font-medium uppercase tracking-wider text-primary">
-                        Our offerings
-                    </span>
-                    <h2 className="mt-2 text-4xl font-bold text-foreground md:text-5xl">
-                        Catering & Wholesale Menu
-                    </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-zinc-600">
-                        Our menu image will be available here soon. Contact us to discuss a custom
-                        order in the meantime.
-                    </p>
-                </div>
-
-                {/* Replace this placeholder with the supplied JPEG menu image. */}
-                <div className="relative flex min-h-[26.25rem] items-center justify-center overflow-hidden rounded-2xl border border-dashed border-primary/40 bg-muted/50 p-8 shadow-sm md:min-h-[37.5rem] md:p-12">
-                    <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
-                    <div className="absolute -bottom-20 -left-16 h-52 w-52 rounded-full bg-primary/10 blur-3xl" />
-                    <div className="relative max-w-md text-center">
-                        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white">
-                            WC
-                        </div>
-                        <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
-                            Menu image placeholder
+            <section className={styles.offerings}>
+                <article className={styles.offering}>
+                    <figure className={styles.photo}>
+                        <Image
+                            src="/event1.jpeg"
+                            alt="A community event catered by What Coffee"
+                            fill
+                            sizes="(max-width: 800px) 100vw, 52vw"
+                        />
+                    </figure>
+                    <div className={styles.copy}>
+                        <p className={styles.eyebrow}>Catering</p>
+                        <h2>Made for gathering.</h2>
+                        <p>
+                            Coffee and pastries for meetings, celebrations, and community events.
+                            Tell us the size of your group and we&apos;ll help keep the order
+                            simple.
                         </p>
-                        <p className="mt-3 text-2xl font-bold text-foreground md:text-3xl">
-                            Catering & Wholesale Menu
-                        </p>
-                        <p className="mt-3 text-zinc-600">
-                            This area will display the menu once it is ready.
-                        </p>
+                        <Link href="/contact">Ask about catering</Link>
                     </div>
-                </div>
+                </article>
+
+                <article className={`${styles.offering} ${styles.reverse}`}>
+                    <figure className={styles.photo}>
+                        <Image
+                            src="/roaster.jpg"
+                            alt="Coffee beans roasting at What Coffee"
+                            fill
+                            sizes="(max-width: 800px) 100vw, 52vw"
+                        />
+                    </figure>
+                    <div className={styles.copy}>
+                        <p className={styles.eyebrow}>Wholesale</p>
+                        <h2>Our roast, at your place.</h2>
+                        <p>
+                            Bring What Coffee beans to your office, shop, or hospitality program.
+                            We&apos;ll talk through volume, roast preferences, and pickup options.
+                        </p>
+                        <Link href="/contact">Ask about wholesale</Link>
+                    </div>
+                </article>
             </section>
-        </main>
+        </div>
     );
 }

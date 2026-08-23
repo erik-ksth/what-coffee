@@ -8,20 +8,22 @@ export const metadata: Metadata = {
         "Explore our cozy coffee shop space and beautiful moments at What Coffee. View photos of our artisan drinks, pastries, and welcoming atmosphere.",
     openGraph: {
         title: "Gallery | What Coffee",
-        description:
-            "Explore our cozy coffee shop space and beautiful moments at What Coffee.",
+        description: "Explore our cozy coffee shop space and beautiful moments at What Coffee.",
     },
 };
 
 export default function Gallery() {
     return (
-        <main>
+        <div>
             <PageHeader
-                title="Gallery"
-                subtitle="Our Space"
-                image="https://images.unsplash.com/photo-1600007525237-3ffb936cd20f?w=1920&q=80"
-            />
+                title="Life at What Coffee."
+                subtitle="Gallery"
+                image="/yellow-table.jpeg"
+                imagePosition="center 58%"
+            >
+                <p>Coffee, pastries, and the people who make the café feel like home.</p>
+            </PageHeader>
             <InstagramSection />
-        </main>
+        </div>
     );
 }

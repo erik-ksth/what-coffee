@@ -1,62 +1,38 @@
 import Image from "next/image";
 
+import styles from "./About.module.css";
+
 export default function AboutUs() {
-     return (
-          <section className="relative w-full bg-background px-4 md:px-8 lg:px-16 py-16 md:py-24 overflow-hidden">
-               <div className="container mx-auto max-w-6xl grid lg:grid-cols-[3fr_2.5fr] gap-10 md:gap-14 items-center">
-                    {/* Text Content */}
-                    <div className="flex flex-col gap-5 md:gap-7 text-center lg:text-left items-center lg:items-start max-w-2xl">
-                         {/* Eyebrow (matches your other sections like Gallery/Team) */}
+    return (
+        <section className={styles.story}>
+            <div className={styles.storyInner}>
+                <div className={styles.storyCopy}>
+                    <h2>A dream brewed to life.</h2>
+                    <p className={styles.lead}>What Coffee began with a young woman and a dream.</p>
+                    <p>
+                        She came to the United States as a teenager with her family, who opened a
+                        small coffee roastery and bakery. There, she learned the rhythms of roasting
+                        beans, baking pastries, and welcoming people across the counter.
+                    </p>
+                    <p>
+                        Coffee became more than a drink. It became a way to connect, build
+                        community, and share warmth.
+                    </p>
+                    <p>
+                        That idea became What Coffee Roastery &amp; Bakery—a Santa Clara café for
+                        carefully made coffee, fresh pastries, and time together.
+                    </p>
+                </div>
 
-                         <p className="text-xs md:text-sm font-medium tracking-[0.2em] text-primary uppercase">
-                              Our Story
-                         </p>
-
-                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-                              A Dream Brewed to Life
-                         </h2>
-
-                         {/* Body copy (consistent sizing + spacing) */}
-                         <div className="space-y-4 md:space-y-5 text-sm md:text-base text-muted-foreground leading-relaxed">
-                              <p>WhatCoffee began with a dream and a young woman.</p>
-
-                              <p>
-                                   She arrived in the United States as a teenager with her family, who opened a small coffee roastery
-                                   and bakery. From a young age, she immersed herself in the art of coffee roasting and baking,
-                                   finding joy in every detail — from the satisfying crack of roasting beans to the smiles on
-                                   customers’ faces.
-                              </p>
-
-                              <p>
-                                   For her, coffee became more than just a drink; it was a way to connect, build community, and share
-                                   warmth.
-                              </p>
-
-                              <p>
-                                   Driven by this passion, she decided to open WhatCoffee Roastery and Bakery — a place that offers
-                                   great coffee, pastries, and healthy dishes, and a place that embodies her love for community,
-                                   freshness, and creativity.
-                              </p>
-
-                              <p>
-                                   Join us at WhatCoffee, where our founder’s journey becomes your experience, and every visit feels
-                                   like coming home.
-                              </p>
-                         </div>
-                    </div>
-
-                    {/* Hero Image */}
-                    <div className="relative w-full aspect-[3101/3741] overflow-hidden rounded-2xl bg-zinc-100">
-                         <Image
-                              src="/about/mural.jpeg"
-                              alt="Mural"
-                              fill
-                              className="object-cover scale-[1.05]"
-                              priority
-                              sizes="(max-width: 1024px) 100vw, 40vw"
-                         />
-                    </div>
-               </div>
-          </section>
-     );
+                <figure className={styles.portrait}>
+                    <Image
+                        src="/about/mural.jpeg"
+                        alt="The colorful mural inside What Coffee"
+                        fill
+                        sizes="(max-width: 800px) 100vw, 42vw"
+                    />
+                </figure>
+            </div>
+        </section>
+    );
 }

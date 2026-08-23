@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
 
 import AboutUs from "@/app/about/components/AboutUs";
-import Team from "@/app/about/components/Team";
 import Background from "@/app/about/components/Background";
 
 export const metadata: Metadata = {
@@ -18,23 +17,20 @@ export const metadata: Metadata = {
 
 export default function Story() {
     return (
-        <main>
+        <div>
             <PageHeader
-                title="Our Story"
-                subtitle="About Us"
-                // image="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1920&q=80"
-                image="/about/chairsetup.jpeg"
+                title="A café built around craft and community."
+                subtitle="Our story"
+                image="/community.jpg"
+                imagePosition="center 36%"
             >
-                <p className="text-lg text-zinc-600 max-w-lg leading-relaxed">
-                    Founded in 2024, we set out to create more than just a coffee shop.
-                    We wanted to create a space where community and quality meet.
+                <p>
+                    What Coffee began with a love of roasting, baking, and making people feel at
+                    home.
                 </p>
             </PageHeader>
-            <div className="container mx-auto px-4 py-16">
-                <AboutUs />
-                <Background />
-                {/* <Team /> */}
-            </div>
-        </main>
+            <AboutUs />
+            <Background />
+        </div>
     );
 }

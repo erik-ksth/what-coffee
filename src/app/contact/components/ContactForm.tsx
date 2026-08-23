@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, FormEvent, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+
+import styles from "./ContactForm.module.css";
 
 const ContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
@@ -57,129 +58,77 @@ const ContactForm = () => {
     };
 
     return (
-        <section className="mx-auto w-full max-w-6xl px-6 py-16 md:py-32 md:px-16">
-            <div className="grid gap-16 lg:grid-cols-2 items-start">
-                {/* Left column – contact details */}
-                <div className="space-y-12 text-base text-zinc-600 md:mt-18">
-                    <div className="flex items-center gap-4">
-                        <div className="w-16 h-[2px] bg-primary"></div>
-                        <p className="text-xs md:text-sm font-bold tracking-[0.3em] text-primary uppercase">
-                            Get in Touch
-                        </p>
-                    </div>
+        <section className={styles.section}>
+            <div className={styles.inner}>
+                <div className={styles.details}>
+                    <p className={styles.eyebrow}>Visit</p>
+                    <h2>Find us in Santa Clara.</h2>
 
-                    <div className="space-y-2">
-                        <p className="font-bold text-foreground text-xl">1002 Monroe Street,</p>
-                        <p className="font-bold text-foreground text-xl">Santa Clara, CA 95050</p>
-                    </div>
+                    <address>
+                        1002 Monroe Street
+                        <br />
+                        Santa Clara, CA 95050
+                    </address>
 
-                    <div className="space-y-6">
-                        <div className="space-y-1">
-                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">
-                                Monday – Thursday
-                            </p>
-                            <p className="text-lg">7:30 AM – 5:00 PM</p>
+                    <div className={styles.hours}>
+                        <div>
+                            <span>Mon – Thu</span>
+                            <p>7:30 AM – 5 PM</p>
                         </div>
-                        <div className="space-y-1">
-                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">
-                                Friday – Saturday
-                            </p>
-                            <p className="text-lg">7:30 AM – 7:00 PM</p>
+                        <div>
+                            <span>Fri – Sat</span>
+                            <p>7:30 AM – 7 PM</p>
                         </div>
-                        <div className="space-y-1">
-                            <p className="font-bold text-foreground uppercase tracking-wider text-sm">
-                                Sunday
-                            </p>
-                            <p className="text-lg">8:00 AM – 5:00 PM</p>
+                        <div>
+                            <span>Sunday</span>
+                            <p>8 AM – 5 PM</p>
                         </div>
                     </div>
 
-                    <div className="space-y-2">
-                        <p className="font-medium text-lg hover:text-primary transition-colors cursor-pointer">
-                            (408) 609-3146
-                        </p>
-                        <p className="font-medium text-lg hover:text-primary transition-colors cursor-pointer">
+                    <div className={styles.contactLinks}>
+                        <a href="tel:+14082793333">(408) 279-3333</a>
+                        <a href="mailto:techsupport@whatcoffeeandbakery.com">
                             techsupport@whatcoffeeandbakery.com
-                        </p>
+                        </a>
                     </div>
-
-                    <div className="h-px w-full bg-stone-200" />
                 </div>
 
-                {/* Right column – form */}
-                <form
-                    ref={formRef}
-                    onSubmit={handleSubmit}
-                    className="flex flex-col gap-8 bg-zinc-50 p-8 md:p-12 rounded-3xl"
-                >
+                <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-foreground pb-4">
-                            Send a Message
-                        </h2>
-                        <p className="mt-2 text-lg text-zinc-600 font-light leading-relaxed">
+                        <h2>Send a message.</h2>
+                        <p className={styles.intro}>
                             Have a question about catering, hosting an event, or our menu? Leave us
-                            a note and we&apos;ll get back to you as soon as we can.
+                            a note.
                         </p>
                     </div>
 
-                    {/* Success/Error messages */}
                     {submitStatus.type && (
                         <div
-                            className={`rounded-xl p-4 text-sm font-medium ${submitStatus.type === "success"
-                                ? "bg-green-50 text-green-800 border border-green-200"
-                                : "bg-red-50 text-red-800 border border-red-200"
-                                }`}
+                            className={`${styles.status} ${submitStatus.type === "success" ? styles.success : styles.error}`}
+                            role="status"
                         >
                             {submitStatus.message}
                         </div>
                     )}
 
-                    <label className="flex flex-col gap-3 text-sm font-bold text-foreground uppercase tracking-wider">
+                    <label>
                         <span>Name</span>
-                        <input
-                            type="text"
-                            name="name"
-                            autoComplete="name"
-                            className="h-16 w-full border border-stone-200 bg-white px-6 text-base text-stone-900 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-xl"
-                        />
+                        <input type="text" name="name" autoComplete="name" required />
                     </label>
 
-                    <label className="flex flex-col gap-3 text-sm font-bold text-foreground uppercase tracking-wider">
+                    <label>
                         <span>Email</span>
-                        <input
-                            type="email"
-                            name="email"
-                            autoComplete="email"
-                            className="h-16 w-full border border-stone-200 bg-white px-6 text-base text-stone-900 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-xl"
-                        />
+                        <input type="email" name="email" autoComplete="email" required />
                     </label>
 
-                    <label className="flex flex-col gap-3 text-sm font-bold text-foreground uppercase tracking-wider">
+                    <label>
                         <span>Message</span>
-                        <textarea
-                            name="message"
-                            rows={6}
-                            className="w-full resize-y border border-stone-200 bg-white px-6 py-4 text-base text-stone-900 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-xl"
-                        />
+                        <textarea name="message" rows={6} required />
                     </label>
 
-                    <div className="mt-4 flex justify-end">
-                        <button
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="group w-full md:w-auto inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-300 rounded-full disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-foreground disabled:hover:text-background"
-                        >
-                            {isSubmitting ? "Sending..." : "Send Message"}
-                            {!isSubmitting && (
-                                <span
-                                    aria-hidden="true"
-                                    className="group-hover:translate-x-1 transition-transform"
-                                >
-                                    ›
-                                </span>
-                            )}
-                        </button>
-                    </div>
+                    <button type="submit" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending…" : "Send message"}
+                    </button>
                 </form>
             </div>
         </section>
