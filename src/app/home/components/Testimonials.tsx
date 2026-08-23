@@ -65,7 +65,7 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="py-12 md:py-20 px-4 bg-muted">
+        <section className="py-12 md:py-20 px-4 bg-background">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-12">
@@ -114,7 +114,9 @@ export default function Testimonials() {
                                 {/* Author */}
                                 <div className="text-center">
                                     <p className="font-medium text-gray-900">{testimonial.name}</p>
-                                    <p className="text-xs md:text-sm text-gray-500">{testimonial.source}</p>
+                                    <p className="text-xs md:text-sm text-gray-500">
+                                        {testimonial.source}
+                                    </p>
                                 </div>
                             </div>
                         ))}
@@ -135,8 +137,9 @@ export default function Testimonials() {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-2 h-2 rounded-full transition-colors ${index === currentIndex ? "bg-gray-900" : "bg-gray-300"
-                                }`}
+                            className={`w-2 h-2 rounded-full transition-colors ${
+                                index === currentIndex ? "bg-gray-900" : "bg-gray-300"
+                            }`}
                             aria-label={`Go to testimonial ${index + 1}`}
                         />
                     ))}

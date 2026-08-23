@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
+    --background: oklch(0.9448 0.008 73.74);
     --foreground: #111111;
     --primary: #ec814e;
     --primary-foreground: #ffffff;
     --muted: #f4f4f5;
+    --radius-shell: 36px;
 }
 
 @theme inline {
@@ -14,15 +15,15 @@
     --color-primary: var(--primary);
     --color-primary-foreground: var(--primary-foreground);
     --color-muted: var(--muted);
-    --font-sans: var(--font-geist-sans);
+    --font-sans: var(--font-poppins);
     --font-mono: var(--font-geist-mono);
-    --font-display: var(--font-outfit);
+    --font-display: var(--font-poppins);
 }
 
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-sans), sans-serif;
+    font-family: var(--font-poppins), sans-serif;
 }
 
 h1,
@@ -31,7 +32,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--font-display), sans-serif;
+    font-family: var(--font-poppins), sans-serif;
     letter-spacing: -0.025em;
     font-weight: 700;
 }

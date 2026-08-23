@@ -4,12 +4,8 @@ import { ArrowRight } from "lucide-react";
 
 export default function Catering() {
     return (
-        <section className="relative w-full bg-foreground text-background py-16 md:py-32 px-4 overflow-hidden">
-            {/* Background Texture/Gradient for subtle depth */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
-
+        <section className="relative w-full bg-background text-foreground py-16 md:py-32 px-4 overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-
                 {/* Text Content - Spans 7 cols */}
                 <div className="lg:col-span-7 flex flex-col gap-6 md:gap-8">
                     <div className="inline-flex items-center gap-3 text-primary uppercase tracking-[0.2em] text-xs md:text-sm font-semibold">
@@ -24,16 +20,16 @@ export default function Catering() {
                         </span>
                     </h2>
 
-                    <p className="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed">
+                    <p className="text-lg md:text-xl text-foreground/70 max-w-xl leading-relaxed">
                         Elevate your next event with our signature coffee and pastry experience.
-                        From corporate gatherings to intimate celebrations, we deliver
-                        more than just hand-crafted drinks and delicious pastries — we deliver a vibe.
+                        From corporate gatherings to intimate celebrations, we deliver more than
+                        just hand-crafted drinks and delicious pastries — we deliver a vibe.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 mt-4">
                         <Link
                             href="/contact"
-                            className="group inline-flex items-center justify-center gap-3 bg-white text-foreground px-8 py-5 text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300 rounded-full w-full sm:w-auto"
+                            className="group inline-flex items-center justify-center gap-3 bg-foreground text-background px-8 py-5 text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all duration-300 rounded-full w-full sm:w-auto"
                         >
                             Book Catering
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

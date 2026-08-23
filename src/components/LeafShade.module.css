@@ -1,0 +1,36 @@
+.shade {
+    position: fixed;
+    inset: -3vh -3vw;
+    z-index: 200;
+    background: url("/hero-leaf-shadow.png") left top / cover no-repeat;
+    mix-blend-mode: multiply;
+    opacity: 0.24;
+    pointer-events: none;
+    transform-origin: 18% 12%;
+    animation: leaf-shadow-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes leaf-shadow-drift {
+    from {
+        transform: translate3d(-10px, -4px, 0) rotate(-0.35deg) scale(1.015);
+    }
+
+    to {
+        transform: translate3d(12px, 8px, 0) rotate(0.45deg) scale(1.035);
+    }
+}
+
+@media (max-width: 767px) {
+    .shade {
+        inset: -1vh -4vw;
+        background-size: auto 78%;
+        opacity: 0.18;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shade {
+        animation: none;
+        transform: none;
+    }
+}

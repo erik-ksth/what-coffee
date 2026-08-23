@@ -7,13 +7,13 @@ import Gallery from "@/app/home/components/Gallery";
 
 export default function Home() {
     return (
-        <main>
+        <>
             <Hero />
             <TopHits />
             <Catering />
             <Features />
             <Testimonials />
             <Gallery />
-        </main>
+        </>
     );
 }

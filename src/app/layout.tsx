@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import { Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
+import LeafShade from "@/components/LeafShade";
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
 });
 
-const outfit = Outfit({
-    variable: "--font-outfit",
+const poppins = Poppins({
+    variable: "--font-poppins",
     subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    display: "swap",
+});
+
+const poppinsItalic = Poppins({
+    variable: "--font-poppins-italic",
+    subsets: ["latin"],
+    weight: "600",
+    style: "italic",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -119,12 +125,7 @@ export default function RootLayout({
                             openingHoursSpecification: [
                                 {
                                     "@type": "OpeningHoursSpecification",
-                                    dayOfWeek: [
-                                        "Monday",
-                                        "Tuesday",
-                                        "Wednesday",
-                                        "Thursday",
-                                    ],
+                                    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
                                     opens: "07:30",
                                     closes: "17:00",
                                 },
@@ -150,9 +151,10 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased flex flex-col min-h-screen`}
+                className={`${geistMono.variable} ${poppins.variable} ${poppinsItalic.variable} antialiased flex flex-col min-h-screen`}
             >
                 <Header />
+                <LeafShade />
                 <main className="flex-1">{children}</main>
                 <Footer />
             </body>
