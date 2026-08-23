@@ -16,10 +16,11 @@ export default function Gallery() {
     return (
         <div>
             <PageHeader
-                title="Life at What Coffee."
+                title="Life at"
+                titleAccent="What Coffee."
                 subtitle="Gallery"
                 image="/yellow-table.jpeg"
-                imagePosition="center 58%"
+                imagePosition="center bottom"
             >
                 <p>Coffee, pastries, and the people who make the café feel like home.</p>
             </PageHeader>

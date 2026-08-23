@@ -34,6 +34,12 @@
                     "#FCE9DF"
                 ]
             },
+            "mobile-menu-orange": {
+                "role": "primary",
+                "displayName": "Mobile Menu Orange",
+                "canonical": "oklch(62.779% 0.15774 42.873)",
+                "tonalRamp": ["oklch(62.779% 0.15774 42.873)"]
+            },
             "cafe-cream": {
                 "role": "neutral",
                 "displayName": "Café Cream",
@@ -74,6 +80,10 @@
             "accent": {
                 "displayName": "Handwritten Accent",
                 "purpose": "One short expressive phrase per composition."
+            },
+            "homeSectionTitle": {
+                "displayName": "Homepage Section Title",
+                "purpose": "The favorites, offerings, and reviews headings in one consistent Crafty Girls treatment."
             },
             "section": {
                 "displayName": "Section Heading",
@@ -160,7 +170,7 @@
         "keyCharacteristics": [
             "Photography-led, with real café and product imagery.",
             "Warm cream surfaces, confident orange, and strong ink contrast.",
-            "Poppins for clarity; Crafty Girls only for short expressive phrases.",
+            "Poppins for clarity; Crafty Girls for the three core homepage content headings and short expressive phrases.",
             "Simple compositions with generous space and restrained rounded corners.",
             "Useful information stays visible, readable, and unobstructed."
         ],
@@ -176,8 +186,13 @@
                 "section": "colors"
             },
             {
+                "name": "The Homepage Section Title Rule",
+                "body": "The favorites, offerings, and reviews headings use Crafty Girls at the shared homepage title scale. The closing A few moments from the café title keeps its Poppins structure with a handwritten emphasis. Poppins remains the font for body copy, navigation, buttons, and content titles.",
+                "section": "typography"
+            },
+            {
                 "name": "The One Handwritten Phrase Rule",
-                "body": "Use Crafty Girls for one short expressive phrase per major composition; never for paragraphs, menus, forms, or multiple competing labels.",
+                "body": "Outside homepage section titles, use Crafty Girls for one short expressive phrase per major composition; never for paragraphs, menus, forms, or multiple competing labels.",
                 "section": "typography"
             },
             {

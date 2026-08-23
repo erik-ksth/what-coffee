@@ -6,6 +6,7 @@ import styles from "./Footer.module.css";
 const directionsUrl = "https://maps.app.goo.gl/k7j3PC34rzGNvbjWA";
 
 const footerLinks = [
+    { label: "Home", href: "/" },
     { label: "Menu", href: "/menu" },
     { label: "Catering", href: "/catering-wholesale" },
     { label: "About", href: "/about" },
@@ -28,9 +29,7 @@ export default function Footer() {
             <div className={styles.shell}>
                 <div className={styles.inner}>
                     <div className={styles.topRow}>
-                        <Link href="/" className={styles.brand} aria-label="What Coffee home">
-                            What Coffee
-                        </Link>
+                        <span className={styles.brand}>What Coffee</span>
 
                         <nav aria-label="Footer navigation">
                             <ul className={styles.navList}>

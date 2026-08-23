@@ -130,7 +130,7 @@ export default function BubbleMenu({
                     href="/"
                     className="bubble logo-bubble"
                     aria-label="What Coffee home"
-                    style={{ background: menuBg }}
+                    style={{ backgroundColor: menuBg }}
                 >
                     <span className="logo-content">{logo}</span>
                 </Link>
@@ -143,7 +143,7 @@ export default function BubbleMenu({
                     aria-label={isMenuOpen ? "Close navigation" : menuAriaLabel}
                     aria-expanded={isMenuOpen}
                     aria-controls="mobile-bubble-menu"
-                    style={{ background: menuBg }}
+                    style={{ backgroundColor: menuBg }}
                 >
                     <span className="menu-line" style={{ background: menuContentColor }} />
                     <span className="menu-line short" style={{ background: menuContentColor }} />
@@ -160,7 +160,7 @@ export default function BubbleMenu({
                     <ul className="pill-list" aria-label="Menu links">
                         {menuItems.map((item, index) => (
                             <li key={item.href} className="pill-col">
-                                <a
+                                <Link
                                     href={item.href}
                                     aria-label={item.ariaLabel || item.label}
                                     className="pill-link"
@@ -185,7 +185,7 @@ export default function BubbleMenu({
                                     >
                                         {item.label}
                                     </span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

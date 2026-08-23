@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeafShade from "@/components/LeafShade";
+import PageTransition from "@/components/PageTransition";
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
@@ -162,7 +163,9 @@ export default function RootLayout({
             >
                 <Header />
                 <LeafShade />
-                <main className="flex-1">{children}</main>
+                <main className="flex-1">
+                    <PageTransition>{children}</PageTransition>
+                </main>
                 <Footer />
             </body>
         </html>

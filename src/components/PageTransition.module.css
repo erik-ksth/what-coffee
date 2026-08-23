@@ -1,0 +1,74 @@
+.page {
+    min-width: 0;
+    min-height: 100%;
+}
+
+.panels {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    pointer-events: none;
+}
+
+.panel {
+    width: calc(100% + 2px);
+    height: 100%;
+    margin-inline: -1px;
+    background: var(--primary);
+    will-change: transform;
+}
+
+.textStage {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    z-index: 1001;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.textStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform-origin: center center;
+    color: var(--body-ink);
+    font-family: var(--font-poppins), sans-serif;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.84;
+    white-space: nowrap;
+    will-change: transform, opacity;
+}
+
+.textRowMask {
+    display: block;
+    overflow: hidden;
+    padding: 0.05em;
+    margin: -0.05em;
+}
+
+.outlineText {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--body-ink);
+    will-change: transform, opacity;
+}
+
+.filledText {
+    display: block;
+    color: var(--body-ink);
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panels,
+    .textStage {
+        display: none;
+    }
+}

@@ -5,6 +5,7 @@
     min-height: clamp(760px, 92svh, 940px);
     place-items: center;
     overflow: visible;
+    margin-block-start: clamp(3rem, 6vw, 6rem);
     margin-block-end: clamp(8rem, 10vw, 9rem);
     padding: clamp(6rem, 10vw, 9rem) 1.5rem;
     background: var(--background);

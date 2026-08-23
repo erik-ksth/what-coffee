@@ -5,6 +5,7 @@ import styles from "./PageHeader.module.css";
 
 interface PageHeaderProps {
     title: string;
+    titleAccent?: string;
     subtitle?: string;
     image: string;
     children?: ReactNode;
@@ -13,6 +14,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({
     title,
+    titleAccent,
     subtitle,
     image,
     children,
@@ -23,7 +25,10 @@ export default function PageHeader({
             <div className={styles.inner}>
                 <div className={styles.copy}>
                     {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-                    <h1>{title}</h1>
+                    <h1>
+                        {title}
+                        {titleAccent && <span className={styles.titleAccent}>{titleAccent}</span>}
+                    </h1>
                     {children && <div className={styles.supporting}>{children}</div>}
                 </div>
 

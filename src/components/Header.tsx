@@ -17,48 +17,41 @@ const navItems = [
     { label: "Contact", href: "/contact" },
 ];
 
+const mobileMenuBackground = "oklch(62.779% 0.15774 42.873)";
+const mobileMenuText = "var(--background)";
+
 const mobileItems = [
     {
         label: "menu",
         href: "/menu",
         ariaLabel: "Menu",
-        background: "#f6ec58",
-        color: "#2a1710",
-        hoverStyles: { bgColor: "#fff7a6", textColor: "#2a1710" },
     },
     {
         label: "catering",
         href: "/catering-wholesale",
         ariaLabel: "Catering and wholesale",
-        background: "#f46735",
-        color: "#2a1710",
-        hoverStyles: { bgColor: "#ff8254", textColor: "#2a1710" },
     },
     {
         label: "about",
         href: "/about",
         ariaLabel: "About What Coffee",
-        background: "#ffffff",
-        color: "#2a1710",
-        hoverStyles: { bgColor: "#f4efff", textColor: "#2a1710" },
     },
     {
         label: "gallery",
         href: "/gallery",
         ariaLabel: "Gallery",
-        background: "#f6ec58",
-        color: "#2a1710",
-        hoverStyles: { bgColor: "#fff7a6", textColor: "#2a1710" },
     },
     {
         label: "contact",
         href: "/contact",
         ariaLabel: "Contact What Coffee",
-        background: "#2a1710",
-        color: "#ffffff",
-        hoverStyles: { bgColor: "#49271d", textColor: "#ffffff" },
     },
-];
+].map((item) => ({
+    ...item,
+    background: mobileMenuBackground,
+    color: mobileMenuText,
+    hoverStyles: { bgColor: mobileMenuBackground, textColor: mobileMenuText },
+}));
 
 export default function Header() {
     const desktopNavRef = useRef<HTMLDivElement>(null);
@@ -122,8 +115,8 @@ export default function Header() {
                 menuContentColor="#2a1710"
                 useFixedPosition
                 animationEase="power4.out"
-                animationDuration={0.46}
-                staggerDelay={0.07}
+                animationDuration={0.5}
+                staggerDelay={0.12}
             />
         </header>
     );

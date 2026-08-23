@@ -46,7 +46,7 @@ const reviews: Review[] = [
         text: "Smooth coffee, a clean and bright room, and kind service made this an easy place to settle in and work.",
         link: yelpListing,
         source: "Yelp",
-        tone: "peach",
+        tone: "ink",
     },
     {
         name: "Kate A.",
@@ -62,7 +62,7 @@ const reviews: Review[] = [
         text: "The house-roasted beans stood out, and the honey-cinnamon latte tasted balanced rather than overly sweet.",
         link: yelpListing,
         source: "Yelp",
-        tone: "ink",
+        tone: "peach",
     },
 ];
 

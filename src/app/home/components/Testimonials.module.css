@@ -19,19 +19,18 @@
 
 .heading h2 {
     margin: 0;
-    font-size: clamp(2.45rem, 4.2vw, 3.4rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.08;
+    font-family: var(--font-crafty-girls), cursive;
+    font-size: clamp(2.25rem, 4.2vw, 3.4rem);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.1;
     text-wrap: balance;
 }
 
 .heading h2 em {
-    font-family: var(--font-crafty-girls), cursive;
-    font-size: 1.1em;
+    font: inherit;
     font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0;
+    letter-spacing: inherit;
 }
 
 .heading > p {
@@ -226,10 +225,6 @@
     .heading {
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
-
-    .heading h2 {
-        font-size: clamp(2.4rem, 10.5vw, 3.2rem);
     }
 
     .reviews {

@@ -4,6 +4,7 @@ description: A warm, photography-led neighborhood café with a simple and confid
 colors:
     orange: "#EC814E"
     orange-deep: "#BA4100"
+    mobile-menu-orange: "oklch(62.779% 0.15774 42.873)"
     cafe-cream: "#F0ECE7"
     clean-paper: "#FAF6F1"
     ink: "#111111"
@@ -32,6 +33,12 @@ typography:
         fontSize: "clamp(1.35rem, 2.2vw, 1.75rem)"
         fontWeight: 400
         lineHeight: 1
+        letterSpacing: "normal"
+    homeSectionTitle:
+        fontFamily: "Crafty Girls, cursive"
+        fontSize: "clamp(2.25rem, 4.2vw, 3.4rem)"
+        fontWeight: 400
+        lineHeight: 1.1
         letterSpacing: "normal"
     section:
         fontFamily: "Poppins, sans-serif"
@@ -127,7 +134,7 @@ The system is minimalist without becoming sterile. Every visible element must he
 
 - Photography-led, with real café and product imagery.
 - Warm cream surfaces, confident orange, and strong ink contrast.
-- Poppins for clarity; Crafty Girls only for short expressive phrases.
+- Poppins for clarity; Crafty Girls for the three core homepage content headings and short expressive phrases.
 - Simple compositions with generous space and restrained rounded corners.
 - Useful information stays visible, readable, and unobstructed.
 
@@ -139,6 +146,7 @@ The palette feels like orange packaging, espresso, pastry paper, and a clean caf
 
 - **Counter Orange:** The recognizable brand accent for primary actions and small committed color moments.
 - **Roasted Orange:** The darker orange reserved for large color fields such as the footer, where cream text needs strong contrast.
+- **Mobile Menu Orange:** The focused orange used for the mobile navigation links.
 
 ### Neutral
 
@@ -168,6 +176,7 @@ The palette feels like orange packaging, espresso, pastry paper, and a clean caf
 - **Brand** (700, fluid 2.75–5.5rem, 0.95): The large “What Coffee” footer signature and rare brand moments only.
 - **Display** (500, fluid 2.5–3.75rem, 1.08): Page and section headlines; balanced and never shouting.
 - **Accent** (400, fluid 1.35–1.75rem, 1): A short handwritten page label or phrase.
+- **Homepage Section Title** (400, fluid 2.25–3.4rem, 1.1): The favorites, offerings, and reviews headings; one consistent handwritten treatment.
 - **Section** (500, fluid 2–2.75rem, 1.1): Compact section headings.
 - **Title** (500, 1.25rem, 1.3): Menu-item and content titles.
 - **Body** (400, 1rem, 1.6): Paragraphs capped around 65–70 characters.
@@ -178,7 +187,9 @@ The palette feels like orange packaging, espresso, pastry paper, and a clean caf
 
 ### Named Rules
 
-**The One Handwritten Phrase Rule.** Use Crafty Girls for one short expressive phrase per major composition; never for paragraphs, menus, forms, or multiple competing labels.
+**The Homepage Section Title Rule.** The favorites, offerings, and reviews headings use Crafty Girls at the shared homepage title scale. The closing “A few moments from the café” title keeps its Poppins structure with a handwritten emphasis. Poppins remains the font for body copy, navigation, buttons, and content titles.
+
+**The One Handwritten Phrase Rule.** Outside homepage section titles, use Crafty Girls for one short expressive phrase per major composition; never for paragraphs, menus, forms, or multiple competing labels.
 
 **The Quiet Heading Rule.** Secondary-page headings cap around 3.75rem desktop and 2.75rem mobile. Only the What Coffee brand signature may be larger.
 
