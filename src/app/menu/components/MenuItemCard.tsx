@@ -9,8 +9,6 @@ interface MenuItemCardProps {
 }
 
 export default function MenuItemCard({ item, onOpen }: MenuItemCardProps) {
-    const descriptionId = `menu-description-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-
     return (
         <article className={styles.item}>
             <button
@@ -18,7 +16,6 @@ export default function MenuItemCard({ item, onOpen }: MenuItemCardProps) {
                 className={styles.imageWrap}
                 onClick={(event) => onOpen(event.currentTarget)}
                 aria-label={`View ${item.name} photo full screen`}
-                aria-describedby={item.description ? descriptionId : undefined}
                 aria-haspopup="dialog"
             >
                 {item.image ? (
@@ -30,12 +27,6 @@ export default function MenuItemCard({ item, onOpen }: MenuItemCardProps) {
                     />
                 ) : (
                     <span>Photo coming soon</span>
-                )}
-
-                {item.description && (
-                    <span className={styles.description} id={descriptionId}>
-                        {item.description}
-                    </span>
                 )}
             </button>
 
