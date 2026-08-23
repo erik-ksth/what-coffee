@@ -1,9 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useState } from "react";
 
 import type { MenuItem } from "../menu-data";
 import MenuItemCard from "./MenuItemCard";
+import MenuLightbox from "./MenuLightbox";
 import styles from "./MenuGrid.module.css";
 
 interface MenuGridProps {
@@ -30,6 +32,8 @@ const transitionVariants = {
 export default function MenuGrid({ items, animationKey, direction }: MenuGridProps) {
     const shouldReduceMotion = useReducedMotion();
     const custom = { direction, reducedMotion: Boolean(shouldReduceMotion) };
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [opener, setOpener] = useState<HTMLButtonElement | null>(null);
 
     return (
         <div className={styles.transitionFrame} aria-live="polite">
@@ -47,10 +51,29 @@ export default function MenuGrid({ items, animationKey, direction }: MenuGridPro
                         ease: [0.22, 1, 0.36, 1],
                     }}
                 >
-                    {items.map((item) => (
-                        <MenuItemCard key={item.name} item={item} />
+                    {items.map((item, index) => (
+                        <MenuItemCard
+                            key={item.name}
+                            item={item}
+                            onOpen={(trigger) => {
+                                setOpener(trigger);
+                                setSelectedIndex(index);
+                            }}
+                        />
                     ))}
                 </motion.div>
+            </AnimatePresence>
+
+            <AnimatePresence>
+                {selectedIndex !== null && (
+                    <MenuLightbox
+                        items={items}
+                        selectedIndex={selectedIndex}
+                        onSelect={setSelectedIndex}
+                        onClose={() => setSelectedIndex(null)}
+                        returnFocusTo={opener}
+                    />
+                )}
             </AnimatePresence>
         </div>
     );

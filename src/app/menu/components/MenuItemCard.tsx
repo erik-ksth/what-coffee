@@ -5,18 +5,22 @@ import styles from "./MenuItemCard.module.css";
 
 interface MenuItemCardProps {
     item: MenuItem;
+    onOpen: (trigger: HTMLButtonElement) => void;
 }
 
-export default function MenuItemCard({ item }: MenuItemCardProps) {
+export default function MenuItemCard({ item, onOpen }: MenuItemCardProps) {
     const descriptionId = `menu-description-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
     return (
-        <article
-            className={styles.item}
-            tabIndex={item.description ? 0 : undefined}
-            aria-describedby={item.description ? descriptionId : undefined}
-        >
-            <div className={styles.imageWrap}>
+        <article className={styles.item}>
+            <button
+                type="button"
+                className={styles.imageWrap}
+                onClick={(event) => onOpen(event.currentTarget)}
+                aria-label={`View ${item.name} photo full screen`}
+                aria-describedby={item.description ? descriptionId : undefined}
+                aria-haspopup="dialog"
+            >
                 {item.image ? (
                     <Image
                         src={item.image}
@@ -29,11 +33,11 @@ export default function MenuItemCard({ item }: MenuItemCardProps) {
                 )}
 
                 {item.description && (
-                    <p className={styles.description} id={descriptionId} role="tooltip">
+                    <span className={styles.description} id={descriptionId}>
                         {item.description}
-                    </p>
+                    </span>
                 )}
-            </div>
+            </button>
 
             <div className={styles.copy}>
                 <h2>{item.name}</h2>
