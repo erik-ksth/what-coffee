@@ -9,7 +9,7 @@ import "./MorphSlider.css";
 const TRANSITIONS = { melt: 0, ripple: 1, shear: 2, swirl: 3 };
 
 const DEFAULT_ITEMS = [
-    { image: "/cafeinside.jpeg", caption: "The neighborhood table" },
+    { image: "/cafeinside-edited.jpg", caption: "The neighborhood table" },
     { image: "/cafe_front.jpeg", caption: "Our sunny corner" },
 ];
 

@@ -18,7 +18,7 @@ export default function Contact() {
             <PageHeader
                 title="Come by or say hello."
                 subtitle="Contact"
-                image="/about/chairsetup.jpeg"
+                image="/about/chairsetup-edited.jpg"
                 imagePosition="center 42%"
             >
                 <p>Visit us in Santa Clara or send a note. We&apos;d love to hear from you.</p>

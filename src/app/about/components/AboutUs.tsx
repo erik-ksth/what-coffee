@@ -7,7 +7,10 @@ export default function AboutUs() {
         <section className={styles.story}>
             <div className={styles.storyInner}>
                 <div className={styles.storyCopy}>
-                    <h2>A dream brewed to life.</h2>
+                    <h2>
+                        <span className={styles.dreamLine}>A dream</span>
+                        <span className={styles.brewedLine}>brewed to life.</span>
+                    </h2>
                     <p className={styles.lead}>What Coffee began with a young woman and a dream.</p>
                     <p>
                         She came to the United States as a teenager with her family, who opened a

@@ -13,26 +13,26 @@ const topHits = [
     {
         name: "Pistachio Croissant",
         description: "Flaky, filled with pistachio cream, and finished with crushed nuts.",
-        image: "/menu/food/pistachio-croissant.jpeg",
-        imagePosition: "center 68%",
+        image: "/menu/edited/food/pistachio-croissant-edited.jpeg",
+        imagePosition: "center",
     },
     {
         name: "Iced Matcha Latte",
         description: "Ceremonial matcha with milk, served over ice.",
-        image: "/menu/edited/drinks/coco_matcha.png",
+        image: "/menu/edited/drinks/coco_matcha-v2.png",
         imagePosition: "center 58%",
     },
     {
         name: "Breakfast Sandwich",
         description: "Bacon, egg, avocado, and cheese on a toasted croissant.",
-        image: "/menu/food/breakfastsandwich.jpeg",
+        image: "/menu/edited/food/breakfastsandwich-edited.jpeg",
         imagePosition: "center",
     },
     {
         name: "Tiramisu",
         description: "Espresso-soaked cake with mascarpone and cocoa.",
-        image: "/menu/food/tiramisu.jpeg",
-        imagePosition: "center 68%",
+        image: "/menu/edited/food/tiramisu-edited.jpeg",
+        imagePosition: "center",
     },
 ];
 
@@ -42,7 +42,7 @@ export default function TopHits() {
             <div className={styles.inner}>
                 <header className={styles.heading}>
                     <h2 id="top-hits-heading">
-                        Five café <em>favorites.</em>
+                        Our most popular <em>picks.</em>
                     </h2>
                     <p>A short list of what people ask for most.</p>
                 </header>

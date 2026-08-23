@@ -29,6 +29,20 @@
     text-wrap: balance;
 }
 
+.dreamLine,
+.brewedLine {
+    display: block;
+}
+
+.dreamLine {
+    font-family: var(--font-crafty-girls), cursive;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
 .storyCopy > p,
 .beliefCopy > p {
     max-width: 62ch;

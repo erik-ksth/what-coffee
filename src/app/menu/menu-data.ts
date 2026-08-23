@@ -37,7 +37,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Matcha Latte",
             description: "Ceremonial grade matcha with milk. Available Hot or Iced.",
-            image: "/menu/edited/drinks/coco_matcha.png",
+            image: "/menu/edited/drinks/coco_matcha-v2.png",
         },
         {
             name: "Raspberry Iced Matcha",
@@ -47,7 +47,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Iced Coconut Matcha",
             description: "Refreshing ceremonial grade matcha with coconut water.",
-            image: "/menu/edited/drinks/coco_matcha.png",
+            image: "/menu/edited/drinks/coco_matcha-v2.png",
         },
         {
             name: "Tiramisu Latte",
@@ -104,42 +104,42 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Pistachio Croissant",
             description: "Classic croissant with a layer of pistachio paste.",
-            image: "/menu/food/pistachio-croissant.jpeg",
+            image: "/menu/edited/food/pistachio-croissant-edited.jpeg",
         },
         {
             name: "Almond Croissant",
             description: "Classic twice-baked croissant with almond flakes.",
-            image: "/menu/food/almond-crossiant.jpeg",
+            image: "/menu/edited/food/almond-croissant-edited.jpeg",
         },
         {
             name: "Pain Au Chocolat",
             description: "Classic croissant with a chocolate filling.",
-            image: "/menu/food/chocolate-croissant.jpeg",
+            image: "/menu/edited/food/chocolate-croissant-edited.jpeg",
         },
         {
             name: "Pain Suisse",
             description: "Classic croissant with a buttery crust and a sweet pastry cream filling.",
-            image: "/menu/food/pain-suisse.jpeg",
+            image: "/menu/edited/food/pain-suisse-edited-v2.png",
         },
         {
             name: "Ham & Cheese Croissant",
             description: "Double-baked croissant with a creamy cheese filling and ham.",
-            image: "/menu/food/ham-and-cheese-croissant.jpeg",
+            image: "/menu/edited/food/ham-and-cheese-croissant-edited.jpeg",
         },
         {
             name: "Chocolate Banana Croissant",
             description: "Croissant with a chocolate and banana filling.",
-            image: "/menu/food/chocolate-banana.jpeg",
+            image: "/menu/edited/food/chocolate-banana-edited.jpeg",
         },
         {
             name: "Fruit Danish",
             description: "Danish with a pastry cream and fresh berries.",
-            image: "/menu/food/fruit-danish.jpeg",
+            image: "/menu/edited/food/fruit-danish-edited.jpeg",
         },
         {
             name: "Butter Croissant",
             description: "Simply addictive butter croissant with a warm and flaky texture.",
-            image: "/menu/food/butter-croissant.jpeg",
+            image: "/menu/edited/food/butter-croissant-edited.jpeg",
         },
         // {
         //     name: "Strawberry Cream Donut",
@@ -154,37 +154,37 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Cinnamon Roll",
             description: "Soft and fluffy cinnamon roll with a sweet and sticky cinnamon sugar filling.",
-            image: "/menu/food/cinnamon-roll.jpeg",
+            image: "/menu/edited/food/cinnamon-roll-edited.jpeg",
         },
         {
             name: "Scones",
             description: "Buttery scones with a sweet or savory filling.",
-            image: "/menu/food/scone.jpeg",
+            image: "/menu/edited/food/scone-edited.jpeg",
         },
         {
             name: "Muffins",
             description: "Soft and fluffy muffins with a chocolate chips, walnut, banana or blueberry filling.",
-            image: "/menu/food/muffin.jpeg",
+            image: "/menu/edited/food/muffin-edited.jpeg",
         },
         {
             name: "Cookies",
             description: "Chocolate chip cookies with a crispy exterior and a soft, chewy center.",
-            image: "/menu/food/cookie.jpeg",
+            image: "/menu/edited/food/cookie-edited.jpeg",
         },
         {
             name: "Chocolate Roll Cake",
             description: "Soft sponge rolled with rich chocolate cream—sliceable and indulgent.",
-            image: "/menu/food/roll-cake.jpeg",
+            image: "/menu/edited/food/roll-cake-edited.jpeg",
         },
         {
             name: "Tiramisu",
             description: "Layers of espresso-soaked sponge, mascarpone, and cocoa.",
-            image: "/menu/food/tiramisu.jpeg",
+            image: "/menu/edited/food/tiramisu-edited.jpeg",
         },
         {
             name: "Cheese Cake",
             description: "Creamy baked cheesecake with a buttery crust.",
-            image: "/menu/food/cheese-cake.jpeg",
+            image: "/menu/edited/food/cheese-cake-edited.jpeg",
         },
         // {
         //     name: "Raspberry Heart Mousse",
@@ -194,46 +194,46 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Hazelnut Mousse Cake",
             description: "Light hazelnut mousse layered over sponge with a nutty, elegant finish.",
-            image: "/menu/food/hazelnut-mousse.jpeg",
+            image: "/menu/edited/food/hazelnut-mousse-edited.jpeg",
         },
     ],
     Food: [
         {
             name: "Breakfast Sandwich",
             description: "Bacon, egg, avocado and cheese on toasted croissant paired with a side salad and fresh seasonal fruits.",
-            image: "/menu/food/breakfastsandwich.jpeg",
+            image: "/menu/edited/food/breakfastsandwich-edited.jpeg",
         },
         {
             name: "The Monroe",
             description: "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
-            image: "/menu/food/theMonroe.jpeg",
+            image: "/menu/edited/food/the-monroe-edited.jpeg",
         },
         {
             name: "The San Francisco",
             description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and fresh seasonal fruits.",
-            image: "/menu/food/theSanFrancisco.jpeg",
+            image: "/menu/edited/food/the-san-francisco-edited.jpeg",
         },
         {
             name: "Mushroom on Ciabatta",
             description: "Roasted mushrooms on ciabatta with a side salad and fresh seasonal fruits.",
-            image: "/menu/food/mushroom.jpeg",
+            image: "/menu/edited/food/mushroom-edited.jpeg",
         },
     ],
     Beans: [
         {
             name: "South Bay (Ethiopia + Guatemala)",
             description: "House blend • Ethiopia & Guatemala • stone fruit, cocoa.",
-            image: "/menu/beans/SouthBay.jpeg",
+            image: "/menu/edited/beans/south-bay-package.jpeg",
         },
         {
             name: "San Francisco",
             description: "Single origin • Colombia • caramel, orange, balanced body.",
-            image: "/menu/beans/SanFrancisco.jpeg",
+            image: "/menu/edited/beans/san-francisco-package.jpeg",
         },
         {
             name: "Brazil Decaf",
             description: "Swiss water process • Brazil • milk chocolate, nuts.",
-            image: "/menu/beans/Brazil.jpeg",
+            image: "/menu/edited/beans/brazil-decaf-package.jpeg",
         },
 
     ],

@@ -14,17 +14,27 @@ const MENU_FILTERS: Array<"All" | MenuCategory> = ["All", "Drinks", "Bakery", "F
 
 export default function Menu() {
     const [selectedCategory, setSelectedCategory] = useState<(typeof MENU_FILTERS)[number]>("All");
+    const [transitionDirection, setTransitionDirection] = useState(1);
     const visibleItems = useMemo(() => {
         if (selectedCategory === "All") return Object.values(MENU_ITEMS).flat();
         return MENU_ITEMS[selectedCategory];
     }, [selectedCategory]);
+
+    const handleCategoryChange = (category: (typeof MENU_FILTERS)[number]) => {
+        if (category === selectedCategory) return;
+
+        setTransitionDirection(
+            MENU_FILTERS.indexOf(category) > MENU_FILTERS.indexOf(selectedCategory) ? 1 : -1
+        );
+        setSelectedCategory(category);
+    };
 
     return (
         <div className={styles.page}>
             <PageHeader
                 title="Coffee, pastries, and more."
                 subtitle="Our menu"
-                image="/menu/edited/food/foods_photo_1.png"
+                image="/menu/edited/food/foods_photo_1-v2.png"
                 imagePosition="center"
             >
                 <p>Roasted here, baked fresh, and made to order in Santa Clara.</p>
@@ -48,9 +58,13 @@ export default function Menu() {
                 <MenuTabs
                     filters={MENU_FILTERS}
                     selected={selectedCategory}
-                    onChange={setSelectedCategory}
+                    onChange={handleCategoryChange}
                 />
-                <MenuGrid items={visibleItems} />
+                <MenuGrid
+                    items={visibleItems}
+                    animationKey={selectedCategory}
+                    direction={transitionDirection}
+                />
             </section>
 
             <FloatingOrderButton />

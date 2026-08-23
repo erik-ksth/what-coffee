@@ -19,7 +19,7 @@ export default function Gallery() {
                 title="Life at"
                 titleAccent="What Coffee."
                 subtitle="Gallery"
-                image="/yellow-table.jpeg"
+                image="/yellow-table-edited.jpg"
                 imagePosition="center bottom"
             >
                 <p>Coffee, pastries, and the people who make the café feel like home.</p>

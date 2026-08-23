@@ -8,12 +8,12 @@ import styles from "./Gallery.module.css";
 
 const parallaxImages = [
     {
-        src: "/yellow-table.jpeg",
+        src: "/yellow-table-edited.jpg",
         alt: "Coffee and a pastry on the café patio",
         depth: 1,
     },
     {
-        src: "/aesthetic-pastries.jpeg",
+        src: "/aesthetic-pastries-edited.jpg",
         alt: "Fresh pastries at What Coffee",
         depth: -0.42,
     },
@@ -23,12 +23,12 @@ const parallaxImages = [
         depth: 0.58,
     },
     {
-        src: "/cafeinside.jpeg",
+        src: "/cafeinside-edited.jpg",
         alt: "Inside the What Coffee café",
         depth: 0.88,
     },
     {
-        src: "/event1.jpeg",
+        src: "/event1-edited.png",
         alt: "A community event at What Coffee",
         depth: 0.72,
     },
@@ -38,7 +38,7 @@ const parallaxImages = [
         depth: -0.55,
     },
     {
-        src: "/donuts.jpeg",
+        src: "/donuts-edited.jpg",
         alt: "Freshly made donuts",
         depth: 0.48,
     },
