@@ -42,6 +42,87 @@
     color: var(--foreground);
 }
 
+.allergenTrigger {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--body-ink);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.allergenTrigger:hover {
+    color: var(--primary-deep);
+}
+
+.allergenTrigger:focus-visible,
+.allergenDialogClose:focus-visible {
+    outline: 3px solid var(--foreground);
+    outline-offset: 3px;
+}
+
+.allergenDialog {
+    width: min(calc(100% - 2rem), 34rem);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    background: var(--paper);
+    box-shadow: 0 24px 64px rgb(42 23 16 / 28%);
+    color: var(--foreground);
+}
+
+.allergenDialog::backdrop {
+    background: rgb(26 15 10 / 56%);
+}
+
+.allergenDialogContent {
+    padding: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.allergenDialogHeading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.allergenDialogHeading h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    line-height: 1.1;
+}
+
+.allergenDialogClose {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+.allergenDialogClose:hover {
+    background: oklch(0.91 0.012 65);
+}
+
+.allergenDialogContent p {
+    margin: 1.25rem 0 0;
+    color: var(--body-ink);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
 .primaryAction:focus-visible,
 .secondaryAction:focus-visible {
     outline: 3px solid var(--foreground);

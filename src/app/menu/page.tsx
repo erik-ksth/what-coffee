@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { CircleAlert, X } from "lucide-react";
+import { useMemo, useRef, useState } from "react";
 
 import PageHeader from "@/components/PageHeader";
 import FloatingOrderButton from "./components/FloatingOrderButton";
@@ -15,6 +16,7 @@ const MENU_FILTERS: Array<"All" | MenuCategory> = ["All", "Drinks", "Bakery", "F
 export default function Menu() {
     const [selectedCategory, setSelectedCategory] = useState<(typeof MENU_FILTERS)[number]>("All");
     const [transitionDirection, setTransitionDirection] = useState(1);
+    const allergenDialogRef = useRef<HTMLDialogElement>(null);
     const visibleItems = useMemo(() => {
         if (selectedCategory === "All") return Object.values(MENU_ITEMS).flat();
         return MENU_ITEMS[selectedCategory];
@@ -52,6 +54,43 @@ export default function Menu() {
                 >
                     Order on DoorDash
                 </a>
+                <button
+                    type="button"
+                    className={styles.allergenTrigger}
+                    onClick={() => allergenDialogRef.current?.showModal()}
+                    aria-haspopup="dialog"
+                >
+                    <CircleAlert aria-hidden="true" size={18} strokeWidth={2} />
+                    Allergen notice
+                </button>
+                <dialog
+                    ref={allergenDialogRef}
+                    className={styles.allergenDialog}
+                    aria-labelledby="allergen-dialog-title"
+                    onClick={(event) => {
+                        if (event.target === event.currentTarget) event.currentTarget.close();
+                    }}
+                >
+                    <div className={styles.allergenDialogContent}>
+                        <div className={styles.allergenDialogHeading}>
+                            <h2 id="allergen-dialog-title">Allergen notice</h2>
+                            <button
+                                type="button"
+                                className={styles.allergenDialogClose}
+                                onClick={() => allergenDialogRef.current?.close()}
+                                aria-label="Close allergen notice"
+                            >
+                                <X aria-hidden="true" size={20} strokeWidth={2} />
+                            </button>
+                        </div>
+                        <p>
+                            Menu items, prices, and availability may change. Our kitchen handles
+                            common allergens and we cannot guarantee any item is free of allergens
+                            or cross-contact. Please ask staff about ingredients and dietary needs
+                            before ordering.
+                        </p>
+                    </div>
+                </dialog>
             </PageHeader>
 
             <section className={styles.menuSection} aria-label="What Coffee menu">

@@ -81,7 +81,7 @@ const ContactForm = () => {
                         </div>
                         <div>
                             <span>Sunday</span>
-                            <p>8 AM – 5 PM</p>
+                            <p>8 AM – 7 PM</p>
                         </div>
                     </div>
 
@@ -125,6 +125,12 @@ const ContactForm = () => {
                         <span>Message</span>
                         <textarea name="message" rows={6} required />
                     </label>
+
+                    <p className={styles.privacyNotice}>
+                        By submitting, you agree that What Coffee may use your name, email, and
+                        message to respond to your request, as described in our Privacy Policy.
+                        Please do not include payment, medical, or other sensitive information.
+                    </p>
 
                     <button type="submit" disabled={isSubmitting}>
                         {isSubmitting ? "Sending…" : "Send message"}

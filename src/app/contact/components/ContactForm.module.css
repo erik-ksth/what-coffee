@@ -127,6 +127,14 @@
     padding: 0.85rem 1rem;
 }
 
+.privacyNotice {
+    max-width: 60ch;
+    margin: -0.35rem 0 0;
+    color: var(--body-ink);
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
 .form input:focus-visible,
 .form textarea:focus-visible {
     border-color: var(--primary-deep);
