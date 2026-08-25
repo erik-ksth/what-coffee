@@ -1,5 +1,4 @@
 .page {
-    position: relative;
     display: grid;
     width: 100%;
     min-height: 78svh;
@@ -9,13 +8,10 @@
 }
 
 .copy {
-    position: relative;
-    z-index: 2;
     display: flex;
     max-width: 38rem;
     align-items: center;
     flex-direction: column;
-    pointer-events: none;
     text-align: center;
 }
 
@@ -68,7 +64,6 @@
     color: var(--primary-foreground);
     font-size: var(--button-font-size);
     font-weight: var(--button-font-weight);
-    pointer-events: auto;
     transition:
         transform 160ms cubic-bezier(0.25, 1, 0.5, 1),
         box-shadow 160ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -89,18 +84,6 @@
     outline-offset: 4px;
 }
 
-.trailStage {
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-}
-
-.trail {
-    position: absolute;
-    inset: 0;
-    cursor: crosshair;
-}
-
 @media (max-width: 800px) {
     .page {
         padding-top: 8rem;
@@ -109,7 +92,6 @@
     .copy h1 {
         max-width: 12ch;
     }
-
 }
 
 @media (max-width: 480px) {
