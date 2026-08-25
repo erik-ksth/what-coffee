@@ -1,7 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-import NotFoundImageTrail from "./NotFoundImageTrail";
 import styles from "./not-found.module.css";
 
 export default function NotFound() {
@@ -23,8 +22,6 @@ export default function NotFound() {
                     Back to home
                 </Link>
             </div>
-
-            <NotFoundImageTrail />
         </section>
     );
 }

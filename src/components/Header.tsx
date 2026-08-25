@@ -10,6 +10,7 @@ import styles from "./Header.module.css";
 const orderUrl = "https://www.clover.com/online-ordering/whatcoffee-santa-clara";
 
 const navItems = [
+    { label: "Home", href: "/" },
     { label: "Menu", href: "/menu" },
     { label: "Catering", href: "/catering-wholesale" },
     { label: "About", href: "/about" },
@@ -21,6 +22,11 @@ const mobileMenuBackground = "oklch(62.779% 0.15774 42.873)";
 const mobileMenuText = "var(--background)";
 
 const mobileItems = [
+    {
+        label: "home",
+        href: "/",
+        ariaLabel: "Home",
+    },
     {
         label: "menu",
         href: "/menu",

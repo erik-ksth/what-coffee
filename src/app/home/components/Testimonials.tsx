@@ -12,8 +12,6 @@ interface Review {
 }
 
 const googleMapsListing = "https://maps.app.goo.gl/k7j3PC34rzGNvbjWA";
-const yelpListing =
-    "https://www.yelp.com/biz/whatcoffee-santa-clara-2?osq=WhatCoffee&dd_referrer=https://www.yelp.com/";
 
 const reviews: Review[] = [
     {
@@ -44,7 +42,7 @@ const reviews: Review[] = [
         name: "Sydney A.",
         rating: 5,
         text: "Smooth coffee, a clean and bright room, and kind service made this an easy place to settle in and work.",
-        link: yelpListing,
+        link: "https://www.yelp.com/biz/whatcoffee-santa-clara-2?hrid=IF0tqKSnigPYjU5QapbLHA&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
         source: "Yelp",
         tone: "ink",
     },
@@ -52,7 +50,7 @@ const reviews: Review[] = [
         name: "Kate A.",
         rating: 4,
         text: "A cozy corner cafe with good tiramisu, friendly service, and the small details that make a neighborhood spot feel welcoming.",
-        link: yelpListing,
+        link: "https://www.yelp.com/biz/whatcoffee-santa-clara-2?hrid=M1ZWrWWirM-ktLq6PIMjvw&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
         source: "Yelp",
         tone: "paper",
     },
@@ -60,7 +58,7 @@ const reviews: Review[] = [
         name: "Kyle S.",
         rating: 5,
         text: "The house-roasted beans stood out, and the honey-cinnamon latte tasted balanced rather than overly sweet.",
-        link: yelpListing,
+        link: "https://www.yelp.com/biz/whatcoffee-santa-clara-2?hrid=rR7oelK6N4y5VpwGfwlg9Q&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)",
         source: "Yelp",
         tone: "peach",
     },
@@ -122,7 +120,7 @@ export default function Testimonials() {
                         More on Google
                     </Link>
                     <Link
-                        href={yelpListing}
+                        href="https://www.yelp.com/biz/whatcoffee-santa-clara-2"
                         target="_blank"
                         rel="noreferrer"
                         className={`${styles.moreLink} ${styles.moreLinkSecondary}`}
