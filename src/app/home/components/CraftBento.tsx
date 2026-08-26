@@ -62,7 +62,7 @@ export default function CraftBento() {
                         </div>
                         <div className={styles.cateringImage}>
                             <Image
-                                src="/images/site/interiors/cafe-interior-edited.jpg"
+                                src="/images/site/interiors/cafe-interior-color-graded.png"
                                 alt="A busy gathering inside What Coffee"
                                 fill
                                 sizes="(max-width: 700px) 100vw, 58vw"

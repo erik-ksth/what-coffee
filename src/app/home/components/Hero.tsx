@@ -7,7 +7,7 @@ import SimpleSlider from "./SimpleSlider";
 
 const storeSlides = [
     {
-        image: "/images/site/interiors/cafe-interior-edited.jpg",
+        image: "/images/site/interiors/cafe-interior-color-graded.png",
         caption: "The neighborhood table",
     },
     {
