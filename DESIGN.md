@@ -4,6 +4,15 @@ description: A warm, photography-led neighborhood café with a simple and confid
 colors:
     orange: "#EC814E"
     orange-deep: "#BA4100"
+    button-orange-top: "#F08A58"
+    button-orange-middle: "#EC814E"
+    button-orange-bottom: "#DF713D"
+    button-orange-hover-top: "#EC814E"
+    button-orange-hover-middle: "#E87943"
+    button-orange-hover-bottom: "#DF713D"
+    button-foreground: "#301C14"
+    footer-orange: "#DF713D"
+    footer-foreground: "#301C14"
     mobile-menu-orange: "oklch(62.779% 0.15774 42.873)"
     cafe-cream: "#F0ECE7"
     clean-paper: "#FAF6F1"
@@ -97,8 +106,8 @@ spacing:
     section: "96px"
 components:
     button-primary:
-        backgroundColor: "{colors.orange}"
-        textColor: "#FFFFFF"
+        backgroundColor: "linear-gradient(180deg, #F08A58 0%, #EC814E 58%, #DF713D 100%)"
+        textColor: "#301C14"
         typography: "{typography.label}"
         rounded: "{rounded.pill}"
         padding: "14px 20px"
@@ -115,8 +124,8 @@ components:
         typography: "{typography.body}"
         rounded: "{rounded.image}"
     footer-shell:
-        backgroundColor: "{colors.orange-deep}"
-        textColor: "{colors.cafe-cream}"
+        backgroundColor: "{colors.footer-orange}"
+        textColor: "{colors.footer-foreground}"
         rounded: "{rounded.section}"
 ---
 
@@ -211,7 +220,7 @@ The system is flat by default. Depth comes from photography, tonal contrast, and
 ### Buttons
 
 - **Shape:** Full pill for primary actions only.
-- **Primary:** Counter Orange with white text; compact 50px height, sentence-case label, and the shared inset tactile treatment.
+- **Primary:** A bright orange gradient with coffee-brown text; compact 50px height, sentence-case label, and the shared inset tactile treatment. Every gradient stop maintains at least 4.5:1 text contrast.
 - **Hover / Focus:** A small tactile lift or arrow shift, plus a clear 3px ink focus outline.
 - **Secondary:** Plain underline or dark pill. Do not create a second decorated orange variant.
 

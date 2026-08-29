@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Pause, Play } from "lucide-react";
 import Image from "next/image";
 
 import styles from "./SimpleSlider.module.css";
@@ -18,7 +19,8 @@ type SimpleSliderProps = {
 export default function SimpleSlider({ slides, autoplayDelay = 2000 }: SimpleSliderProps) {
     const sliderRef = useRef<HTMLDivElement>(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
+    const [isInteractionPaused, setIsInteractionPaused] = useState(false);
+    const [isRotationStopped, setIsRotationStopped] = useState(false);
     const [isInView, setIsInView] = useState(true);
     const [isDocumentVisible, setIsDocumentVisible] = useState(true);
 
@@ -41,7 +43,14 @@ export default function SimpleSlider({ slides, autoplayDelay = 2000 }: SimpleSli
 
     useEffect(() => {
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reducedMotion || isPaused || !isInView || !isDocumentVisible || slides.length < 2) {
+        if (
+            reducedMotion ||
+            isInteractionPaused ||
+            isRotationStopped ||
+            !isInView ||
+            !isDocumentVisible ||
+            slides.length < 2
+        ) {
             return;
         }
 
@@ -50,7 +59,15 @@ export default function SimpleSlider({ slides, autoplayDelay = 2000 }: SimpleSli
         }, autoplayDelay);
 
         return () => window.clearTimeout(timer);
-    }, [activeIndex, autoplayDelay, isDocumentVisible, isInView, isPaused, slides.length]);
+    }, [
+        activeIndex,
+        autoplayDelay,
+        isDocumentVisible,
+        isInView,
+        isInteractionPaused,
+        isRotationStopped,
+        slides.length,
+    ]);
 
     if (slides.length === 0) return null;
 
@@ -61,13 +78,34 @@ export default function SimpleSlider({ slides, autoplayDelay = 2000 }: SimpleSli
             role="region"
             aria-roledescription="carousel"
             aria-label="Inside What Coffee"
-            onPointerEnter={() => setIsPaused(true)}
-            onPointerLeave={() => setIsPaused(false)}
-            onFocusCapture={() => setIsPaused(true)}
+            onPointerEnter={() => setIsInteractionPaused(true)}
+            onPointerLeave={() => setIsInteractionPaused(false)}
+            onFocusCapture={() => setIsInteractionPaused(true)}
             onBlurCapture={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                    setIsInteractionPaused(false);
+                }
             }}
         >
+            {slides.length > 1 ? (
+                <button
+                    type="button"
+                    className={styles.rotationControl}
+                    aria-label={
+                        isRotationStopped
+                            ? "Start automatic photo rotation"
+                            : "Stop automatic photo rotation"
+                    }
+                    onClick={() => setIsRotationStopped((stopped) => !stopped)}
+                >
+                    {isRotationStopped ? (
+                        <Play aria-hidden="true" size={18} fill="currentColor" />
+                    ) : (
+                        <Pause aria-hidden="true" size={18} fill="currentColor" />
+                    )}
+                </button>
+            ) : null}
+
             <div className={styles.slides}>
                 {slides.map((slide, index) => (
                     <div

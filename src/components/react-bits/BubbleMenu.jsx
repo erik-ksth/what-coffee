@@ -108,17 +108,64 @@ export default function BubbleMenu({
         const body = document.body;
         const scrollLockClass = "bubble-menu-scroll-lock";
         body.classList.toggle(scrollLockClass, isMenuOpen);
+        const pageRegions = Array.from(document.querySelectorAll("main, footer"));
+        const previousInertStates = pageRegions.map((element) => ({
+            element,
+            inert: element.inert,
+        }));
+        let focusFrame = 0;
+
+        if (isMenuOpen) {
+            pageRegions.forEach((element) => {
+                element.inert = true;
+            });
+            focusFrame = window.requestAnimationFrame(() => {
+                bubblesRef.current.find(Boolean)?.focus();
+            });
+        }
 
         const handleKeyDown = (event) => {
             if (event.key === "Escape") {
+                event.preventDefault();
                 closeMenu();
                 toggleRef.current?.focus();
+                return;
+            }
+
+            if (event.key !== "Tab") return;
+
+            const focusableItems = [
+                toggleRef.current,
+                ...bubblesRef.current.filter(Boolean),
+            ].filter((element) => !element.hasAttribute("disabled"));
+            if (!focusableItems.length) return;
+
+            const firstItem = focusableItems[0];
+            const lastItem = focusableItems[focusableItems.length - 1];
+            const activeElement = document.activeElement;
+
+            if (
+                event.shiftKey &&
+                (activeElement === firstItem || !focusableItems.includes(activeElement))
+            ) {
+                event.preventDefault();
+                lastItem.focus();
+            } else if (
+                !event.shiftKey &&
+                (activeElement === lastItem || !focusableItems.includes(activeElement))
+            ) {
+                event.preventDefault();
+                firstItem.focus();
             }
         };
         if (isMenuOpen) window.addEventListener("keydown", handleKeyDown);
 
         return () => {
             body.classList.remove(scrollLockClass);
+            window.cancelAnimationFrame(focusFrame);
+            previousInertStates.forEach(({ element, inert }) => {
+                element.inert = inert;
+            });
             window.removeEventListener("keydown", handleKeyDown);
         };
     }, [isMenuOpen, closeMenu]);
@@ -174,13 +221,13 @@ export default function BubbleMenu({
                                             item.hoverStyles?.textColor || menuContentColor,
                                     }}
                                     ref={(element) => {
-                                        if (element) bubblesRef.current[index] = element;
+                                        bubblesRef.current[index] = element;
                                     }}
                                 >
                                     <span
                                         className="pill-label"
                                         ref={(element) => {
-                                            if (element) labelRefs.current[index] = element;
+                                            labelRefs.current[index] = element;
                                         }}
                                     >
                                         {item.label}
