@@ -44,6 +44,7 @@
 
 .allergenTrigger {
     display: inline-flex;
+    width: 100%;
     min-height: 44px;
     align-items: center;
     gap: 0.45rem;
@@ -139,6 +140,10 @@
 }
 
 @media (max-width: 700px) {
+    .allergenTrigger {
+        justify-content: center;
+    }
+
     .menuSection {
         width: min(100% - 2rem, 1200px);
         gap: 2.75rem;
