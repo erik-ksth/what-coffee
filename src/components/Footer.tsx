@@ -60,8 +60,8 @@ export default function Footer() {
                         <section>
                             <h2>Opening hours</h2>
                             <p>Mon – Thu&nbsp;&nbsp; 7:30 AM – 5 PM</p>
-                            <p>Fri – Sat&nbsp;&nbsp; 7:30 AM – 7 PM</p>
-                            <p>Sunday&nbsp;&nbsp; 8 AM – 7 PM</p>
+                            <p>Fri &nbsp;&nbsp; 7:30 AM – 7 PM</p>
+                            <p>Sat - Sunday&nbsp;&nbsp; 8 AM – 7 PM</p>
                         </section>
 
                         <div className={styles.socials} aria-label="Follow What Coffee">

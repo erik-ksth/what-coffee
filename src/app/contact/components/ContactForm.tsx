@@ -76,11 +76,11 @@ const ContactForm = () => {
                             <p>7:30 AM – 5 PM</p>
                         </div>
                         <div>
-                            <span>Fri – Sat</span>
+                            <span>Fri</span>
                             <p>7:30 AM – 7 PM</p>
                         </div>
                         <div>
-                            <span>Sunday</span>
+                            <span>Sat - Sunday</span>
                             <p>8 AM – 7 PM</p>
                         </div>
                     </div>
