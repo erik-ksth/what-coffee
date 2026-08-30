@@ -50,7 +50,11 @@ export default function Footer() {
                                 <br />
                                 Santa Clara, CA 95050
                             </a>
-                            <a href="tel:+14082793333">(408) 279-3333</a>
+                            <a href="tel:+14082793333">(408) 609-3146</a>
+                            <a href="tel:+14082907777">(408) 290-7777</a>
+                            <a href="mailto:contact@whatcoffeeandbakery.com">
+                            contact@whatcoffeeandbakery.com
+                        </a>
                         </section>
 
                         <section>
@@ -78,7 +82,7 @@ export default function Footer() {
                                 <TikTokIcon />
                             </a>
                             <a
-                                href="mailto:techsupport@whatcoffeeandbakery.com"
+                                href="mailto:contact@whatcoffeeandbakery.com"
                                 aria-label="Email What Coffee"
                             >
                                 <Mail aria-hidden="true" />

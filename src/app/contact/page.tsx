@@ -16,7 +16,7 @@ export default function Contact() {
     return (
         <div>
             <PageHeader
-                title="Come by or say hello."
+                title="Come by and say hello."
                 subtitle="Contact"
                 image="/images/site/about/chair-setup-edited.jpg"
                 imagePosition="center 42%"

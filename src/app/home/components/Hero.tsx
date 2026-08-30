@@ -7,8 +7,16 @@ import SimpleSlider from "./SimpleSlider";
 
 const storeSlides = [
     {
+        image: "/images/site/interiors/coffee-santa-clara-1.jpeg",
+        caption: "Coffee with company",
+    },
+    {
         image: "/images/site/interiors/cafe-interior-color-graded.png",
         caption: "The neighborhood table",
+    },
+        {
+        image: "/images/site/interiors/entrance.png",
+        caption: "The entrance to What Coffee",
     },
     {
         image: "/images/site/interiors/coffee-santa-clara-2-alt.jpeg",
@@ -18,10 +26,7 @@ const storeSlides = [
         image: "/images/site/pastries/donuts-edited.jpg",
         caption: "Freshly made donuts",
     },
-    {
-        image: "/images/site/interiors/coffee-santa-clara-1.jpeg",
-        caption: "Coffee with company",
-    },
+
     {
         image: "/images/site/interiors/coffee-santa-clara-4.jpeg",
         caption: "Our sunny corner",

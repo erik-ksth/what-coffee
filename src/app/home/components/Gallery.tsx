@@ -23,8 +23,9 @@ const parallaxImages = [
         depth: 0.58,
     },
     {
-        src: "/images/site/interiors/cafe-interior-color-graded.png",
-        alt: "Inside the What Coffee café",
+        // src: "/images/site/interiors/cafe-interior-color-graded.png",
+        src: "/images/site/interiors/entrance.png",
+        alt: "The entrance to What Coffee",
         depth: 0.88,
     },
     {
