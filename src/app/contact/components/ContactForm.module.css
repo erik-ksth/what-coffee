@@ -142,6 +142,16 @@
     line-height: 1.55;
 }
 
+.privacyNotice a {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    transition: color 160ms ease;
+}
+
+.privacyNotice a:hover {
+    color: var(--primary);
+}
+
 .recaptcha {
     width: 274px;
     min-height: 70px;
