@@ -135,6 +135,20 @@
     line-height: 1.55;
 }
 
+.recaptcha {
+    min-height: 78px;
+}
+
+.honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 .form input:focus-visible,
 .form textarea:focus-visible {
     border-color: var(--primary-deep);

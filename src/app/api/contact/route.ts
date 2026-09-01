@@ -5,26 +5,63 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "aungbobo.dev@gmail.com";
 const CONTACT_FROM_EMAIL =
     process.env.CONTACT_FROM_EMAIL || "WhatCoffee Contact <onboarding@resend.dev>";
+const RATE_LIMIT_MAX_REQUESTS = getPositiveInteger(process.env.CONTACT_RATE_LIMIT_MAX, 3);
+const RATE_LIMIT_WINDOW_MS =
+    getPositiveInteger(process.env.CONTACT_RATE_LIMIT_WINDOW_SECONDS, 15 * 60) * 1000;
+const MAX_REQUEST_BODY_BYTES = getPositiveInteger(process.env.CONTACT_MAX_BODY_BYTES, 16 * 1024);
+const MAX_TRACKED_CLIENTS = 10_000;
+
+interface RateLimitBucket {
+    count: number;
+    resetAt: number;
+}
+
+const rateLimitBuckets = new Map<string, RateLimitBucket>();
 
 interface ContactPayload {
     name?: string;
     email?: string;
     message?: string;
     honeypot?: string;
+    recaptchaToken?: string;
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+class RequestBodyTooLargeError extends Error {}
+
 export async function POST(request: Request) {
-    if (!process.env.RESEND_API_KEY) {
-        return NextResponse.json({ error: "Missing RESEND_API_KEY" }, { status: 500 });
+    if (!process.env.RESEND_API_KEY || !process.env.RECAPTCHA_SECRET_KEY) {
+        return NextResponse.json(
+            { error: "The contact form is temporarily unavailable." },
+            { status: 500 }
+        );
     }
 
-    let body: ContactPayload;
+    let body: unknown;
     try {
-        body = await request.json();
-    } catch {
+        body = await parseRequestBody(request);
+    } catch (error) {
+        if (error instanceof RequestBodyTooLargeError) {
+            return NextResponse.json({ error: "Request body is too large." }, { status: 413 });
+        }
+
         return NextResponse.json({ error: "Invalid JSON payload" }, { status: 400 });
+    }
+
+    if (!isContactPayload(body)) {
+        return NextResponse.json({ error: "Contact form fields must be text." }, { status: 400 });
+    }
+
+    const rateLimit = checkRateLimit(getClientIp(request));
+    if (!rateLimit.allowed) {
+        return NextResponse.json(
+            { error: "Too many contact requests. Please try again later." },
+            {
+                status: 429,
+                headers: { "Retry-After": String(rateLimit.retryAfterSeconds) },
+            }
+        );
     }
 
     // Honeypot spam protection
@@ -58,6 +95,14 @@ export async function POST(request: Request) {
         );
     }
 
+    const recaptchaToken = body.recaptchaToken?.trim();
+    if (!recaptchaToken || !(await verifyRecaptcha(recaptchaToken))) {
+        return NextResponse.json(
+            { error: "reCAPTCHA verification failed. Please try again." },
+            { status: 403 }
+        );
+    }
+
     try {
         const { data, error } = await resend.emails.send({
             from: CONTACT_FROM_EMAIL,
@@ -82,6 +127,119 @@ export async function POST(request: Request) {
             { error: "Something went wrong. Please try again later." },
             { status: 500 }
         );
+    }
+}
+
+function getClientIp(request: Request): string {
+    const forwardedFor = request.headers.get("x-forwarded-for");
+    if (forwardedFor) return forwardedFor.split(",")[0].trim();
+
+    return request.headers.get("x-real-ip")?.trim() || "unknown";
+}
+
+function checkRateLimit(ip: string): { allowed: boolean; retryAfterSeconds: number } {
+    const now = Date.now();
+    const bucket = rateLimitBuckets.get(ip);
+
+    if (bucket && bucket.resetAt > now) {
+        if (bucket.count >= RATE_LIMIT_MAX_REQUESTS) {
+            return {
+                allowed: false,
+                retryAfterSeconds: Math.ceil((bucket.resetAt - now) / 1000),
+            };
+        }
+
+        bucket.count += 1;
+        return { allowed: true, retryAfterSeconds: 0 };
+    }
+
+    // Bounds memory if an attacker sends requests with many unique IP values.
+    if (rateLimitBuckets.size >= MAX_TRACKED_CLIENTS) {
+        const oldestIp = rateLimitBuckets.keys().next().value as string | undefined;
+        if (oldestIp) rateLimitBuckets.delete(oldestIp);
+    }
+
+    rateLimitBuckets.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true, retryAfterSeconds: 0 };
+}
+
+function getPositiveInteger(value: string | undefined, fallback: number): number {
+    const parsed = Number.parseInt(value ?? "", 10);
+    return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function isContactPayload(value: unknown): value is ContactPayload {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+
+    return ["name", "email", "message", "honeypot", "recaptchaToken"].every((field) => {
+        const fieldValue = (value as Record<string, unknown>)[field];
+        return fieldValue === undefined || typeof fieldValue === "string";
+    });
+}
+
+async function parseRequestBody(request: Request): Promise<unknown> {
+    const contentLength = request.headers.get("content-length");
+    if (contentLength && Number(contentLength) > MAX_REQUEST_BODY_BYTES) {
+        throw new RequestBodyTooLargeError();
+    }
+
+    if (!request.body) throw new SyntaxError("Request body is missing");
+
+    const reader = request.body.getReader();
+    const chunks: Uint8Array[] = [];
+    let totalBytes = 0;
+
+    try {
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            totalBytes += value.byteLength;
+            if (totalBytes > MAX_REQUEST_BODY_BYTES) {
+                await reader.cancel();
+                throw new RequestBodyTooLargeError();
+            }
+
+            chunks.push(value);
+        }
+    } finally {
+        reader.releaseLock();
+    }
+
+    const bytes = new Uint8Array(totalBytes);
+    let offset = 0;
+    for (const chunk of chunks) {
+        bytes.set(chunk, offset);
+        offset += chunk.byteLength;
+    }
+
+    const parsed: unknown = JSON.parse(new TextDecoder().decode(bytes));
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        throw new SyntaxError("JSON payload must be an object");
+    }
+
+    return parsed;
+}
+
+async function verifyRecaptcha(token: string): Promise<boolean> {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!secret) return false;
+
+    try {
+        const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ secret, response: token }),
+            signal: AbortSignal.timeout(10_000),
+        });
+
+        if (!response.ok) return false;
+
+        const result: { success?: boolean } = await response.json();
+        return result.success === true;
+    } catch (error) {
+        console.error("reCAPTCHA verification error:", error);
+        return false;
     }
 }
 

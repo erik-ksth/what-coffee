@@ -1,19 +1,88 @@
 "use client";
 
-import { useState, FormEvent, useRef } from "react";
+import Script from "next/script";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 import styles from "./ContactForm.module.css";
 
+const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+declare global {
+    interface Window {
+        grecaptcha?: {
+            render: (
+                container: HTMLElement,
+                parameters: {
+                    sitekey: string;
+                    callback: (token: string) => void;
+                    "expired-callback": () => void;
+                    "error-callback": () => void;
+                }
+            ) => number;
+            reset: (widgetId?: number) => void;
+        };
+    }
+}
+
 const ContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
+    const recaptchaContainerRef = useRef<HTMLDivElement>(null);
+    const recaptchaWidgetIdRef = useRef<number | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
     const [submitStatus, setSubmitStatus] = useState<{
         type: "success" | "error" | null;
         message: string;
     }>({ type: null, message: "" });
 
+    useEffect(() => {
+        if (!recaptchaSiteKey || !isRecaptchaReady || !recaptchaContainerRef.current) return;
+
+        const renderWidget = () => {
+            if (recaptchaWidgetIdRef.current !== null) return true;
+
+            const recaptcha = window.grecaptcha;
+            if (typeof recaptcha?.render !== "function") return false;
+
+            recaptchaWidgetIdRef.current = recaptcha.render(recaptchaContainerRef.current!, {
+                sitekey: recaptchaSiteKey,
+                callback: (token) => setRecaptchaToken(token),
+                "expired-callback": () => setRecaptchaToken(null),
+                "error-callback": () => setRecaptchaToken(null),
+            });
+            return true;
+        };
+
+        if (renderWidget()) return;
+
+        const retryInterval = window.setInterval(() => {
+            if (renderWidget()) window.clearInterval(retryInterval);
+        }, 100);
+        const timeout = window.setTimeout(() => window.clearInterval(retryInterval), 10_000);
+
+        return () => {
+            window.clearInterval(retryInterval);
+            window.clearTimeout(timeout);
+        };
+    }, [isRecaptchaReady]);
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!recaptchaSiteKey) {
+            setSubmitStatus({
+                type: "error",
+                message: "This form is temporarily unavailable. Please try again later.",
+            });
+            return;
+        }
+
+        if (!recaptchaToken) {
+            setSubmitStatus({ type: "error", message: "Please complete the reCAPTCHA check." });
+            return;
+        }
+
         setIsSubmitting(true);
         setSubmitStatus({ type: null, message: "" });
 
@@ -22,6 +91,8 @@ const ContactForm = () => {
             name: formData.get("name") as string,
             email: formData.get("email") as string,
             message: formData.get("message") as string,
+            honeypot: formData.get("honeypot") as string,
+            recaptchaToken,
         };
 
         try {
@@ -44,6 +115,10 @@ const ContactForm = () => {
                 message: "Thank you! Your message has been sent. We'll get back to you soon.",
             });
             formRef.current?.reset();
+            setRecaptchaToken(null);
+            if (recaptchaWidgetIdRef.current !== null) {
+                window.grecaptcha?.reset(recaptchaWidgetIdRef.current);
+            }
         } catch (error) {
             setSubmitStatus({
                 type: "error",
@@ -113,9 +188,27 @@ const ContactForm = () => {
                         </div>
                     )}
 
+                    <div className={styles.honeypot} aria-hidden="true">
+                        <label htmlFor="contact-website">Website</label>
+                        <input
+                            id="contact-website"
+                            type="text"
+                            name="honeypot"
+                            tabIndex={-1}
+                            autoComplete="off"
+                        />
+                    </div>
+
                     <label>
                         <span>Name</span>
-                        <input type="text" name="name" autoComplete="name" required />
+                        <input
+                            type="text"
+                            name="name"
+                            autoComplete="name"
+                            minLength={2}
+                            maxLength={120}
+                            required
+                        />
                     </label>
 
                     <label>
@@ -125,8 +218,18 @@ const ContactForm = () => {
 
                     <label>
                         <span>Message</span>
-                        <textarea name="message" rows={6} required />
+                        <textarea
+                            name="message"
+                            rows={6}
+                            minLength={10}
+                            maxLength={3000}
+                            required
+                        />
                     </label>
+
+                    {recaptchaSiteKey ? (
+                        <div className={styles.recaptcha} ref={recaptchaContainerRef} />
+                    ) : null}
 
                     <p className={styles.privacyNotice}>
                         By submitting, you agree that What Coffee may use your name, email, and
@@ -139,6 +242,19 @@ const ContactForm = () => {
                     </button>
                 </form>
             </div>
+            {recaptchaSiteKey ? (
+                <Script
+                    src="https://www.google.com/recaptcha/api.js?render=explicit"
+                    strategy="afterInteractive"
+                    onLoad={() => setIsRecaptchaReady(true)}
+                    onError={() =>
+                        setSubmitStatus({
+                            type: "error",
+                            message: "Unable to load reCAPTCHA. Please refresh and try again.",
+                        })
+                    }
+                />
+            ) : null}
         </section>
     );
 };
