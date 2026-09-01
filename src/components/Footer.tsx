@@ -12,6 +12,7 @@ const footerLinks = [
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy" },
 ];
 
 const TikTokIcon = () => (
@@ -53,8 +54,8 @@ export default function Footer() {
                             <a href="tel:+14082793333">(408) 609-3146</a>
                             <a href="tel:+14082907777">(408) 290-7777</a>
                             <a href="mailto:contact@whatcoffeeandbakery.com">
-                            contact@whatcoffeeandbakery.com
-                        </a>
+                                contact@whatcoffeeandbakery.com
+                            </a>
                         </section>
 
                         <section>

@@ -1,6 +1,7 @@
 "use client";
 
 import Script from "next/script";
+import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 
 import styles from "./ContactForm.module.css";
@@ -234,8 +235,9 @@ const ContactForm = () => {
 
                     <p className={styles.privacyNotice}>
                         By submitting, you agree that What Coffee may use your name, email, and
-                        message to respond to your request, as described in our Privacy Policy.
-                        Please do not include payment, medical, or other sensitive information.
+                        message to respond to your request, as described in our{" "}
+                        <Link href="/privacy">Privacy Policy</Link>. Please do not include payment,
+                        medical, or other sensitive information.
                     </p>
 
                     <button type="submit" disabled={isSubmitting}>
