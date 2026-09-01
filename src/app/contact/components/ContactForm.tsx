@@ -162,7 +162,7 @@ const ContactForm = () => {
                     </div>
 
                     <div className={styles.contactLinks}>
-                        <a href="tel:+14082793333">(408) 609-3146</a>
+                        <a href="tel:+14086093146">(408) 609-3146</a>
                         <a href="tel:+14082907777">(408) 290-7777</a>
 
                         <a href="mailto:contact@whatcoffeeandbakery.com">
