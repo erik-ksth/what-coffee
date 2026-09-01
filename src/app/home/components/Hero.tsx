@@ -11,10 +11,6 @@ const storeSlides = [
         caption: "Coffee with company",
     },
     {
-        image: "/images/site/interiors/cafe-interior-color-graded.png",
-        caption: "The neighborhood table",
-    },
-        {
         image: "/images/site/interiors/entrance.png",
         caption: "The entrance to What Coffee",
     },
