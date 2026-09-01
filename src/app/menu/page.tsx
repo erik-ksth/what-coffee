@@ -99,6 +99,16 @@ export default function Menu() {
                     selected={selectedCategory}
                     onChange={handleCategoryChange}
                 />
+                <p
+                    className={styles.filterStatus}
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                >
+                    {selectedCategory === "All"
+                        ? `Showing all ${visibleItems.length} menu items.`
+                        : `Showing ${visibleItems.length} items in ${selectedCategory}.`}
+                </p>
                 <MenuGrid
                     items={visibleItems}
                     animationKey={selectedCategory}

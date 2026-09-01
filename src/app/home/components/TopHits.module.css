@@ -134,17 +134,7 @@
 
 @media (max-width: 1000px) {
     .grid {
-        grid-template-columns: repeat(5, minmax(230px, 1fr));
-        overflow-x: auto;
-        padding: 0.25rem 0.25rem 1rem;
-        margin-inline: -0.25rem;
-        scroll-snap-type: x proximity;
-        scrollbar-color: rgb(188 79 37 / 0.45) transparent;
-        scrollbar-width: thin;
-    }
-
-    .card {
-        scroll-snap-align: start;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 }
 
@@ -154,8 +144,12 @@
     }
 
     .grid {
-        grid-template-columns: repeat(5, minmax(245px, 72vw));
-        gap: 0.9rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .imageWrap {
+        aspect-ratio: 4 / 3;
     }
 }
 

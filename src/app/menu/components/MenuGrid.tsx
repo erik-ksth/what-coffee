@@ -36,7 +36,7 @@ export default function MenuGrid({ items, animationKey, direction }: MenuGridPro
     const [opener, setOpener] = useState<HTMLButtonElement | null>(null);
 
     return (
-        <div className={styles.transitionFrame} aria-live="polite">
+        <div className={styles.transitionFrame}>
             <AnimatePresence initial={false} mode="wait" custom={custom}>
                 <motion.div
                     key={animationKey}

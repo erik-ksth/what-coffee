@@ -96,6 +96,13 @@
     line-height: 1.65;
 }
 
+.requiredNote {
+    margin: 0.65rem 0 0;
+    color: var(--body-ink);
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
 .form label {
     display: flex;
     flex-direction: column;
@@ -170,7 +177,7 @@
 }
 
 .form button:focus-visible {
-    outline: 3px solid var(--primary);
+    outline: 3px solid var(--foreground);
     outline-offset: 3px;
 }
 

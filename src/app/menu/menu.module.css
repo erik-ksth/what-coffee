@@ -139,6 +139,16 @@
     padding-bottom: clamp(6rem, 10vw, 9rem);
 }
 
+.filterStatus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
 @media (max-width: 700px) {
     .allergenTrigger {
         justify-content: center;

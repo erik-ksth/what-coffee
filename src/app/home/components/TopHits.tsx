@@ -55,7 +55,7 @@ export default function TopHits() {
                                     src={item.image}
                                     alt={item.description}
                                     fill
-                                    sizes="(max-width: 700px) 72vw, (max-width: 1000px) 230px, 20vw"
+                                    sizes="(max-width: 700px) calc(100vw - 2rem), (max-width: 1000px) 230px, 20vw"
                                     className={styles.image}
                                     style={{ objectPosition: item.imagePosition }}
                                 />

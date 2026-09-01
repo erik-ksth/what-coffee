@@ -189,7 +189,7 @@ export default function BubbleMenu({
                     onClick={handleToggle}
                     aria-label={isMenuOpen ? "Close navigation" : menuAriaLabel}
                     aria-expanded={isMenuOpen}
-                    aria-controls="mobile-bubble-menu"
+                    aria-controls={showOverlay ? "mobile-bubble-menu" : undefined}
                     style={{ backgroundColor: menuBg }}
                 >
                     <span className="menu-line" style={{ background: menuContentColor }} />
