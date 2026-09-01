@@ -109,20 +109,14 @@
     white-space: nowrap;
 }
 
-.starFilled {
-    color: #d86031;
-}
-
+.starFilled,
 .starEmpty {
-    color: rgb(17 17 17 / 0.17);
+    color: var(--body-ink);
 }
 
-.ink .starFilled {
-    color: #f49364;
-}
-
+.ink .starFilled,
 .ink .starEmpty {
-    color: rgb(255 255 255 / 0.2);
+    color: #f49364;
 }
 
 .review blockquote {
@@ -153,7 +147,7 @@
 }
 
 .review footer span {
-    color: #bc4f25;
+    color: var(--body-ink);
     font-size: 0.74rem;
     font-weight: 500;
 }

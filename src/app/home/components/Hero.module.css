@@ -230,7 +230,7 @@
 
 @media (max-width: 420px) {
     .copy h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2.65rem, 13.3vw, 3.35rem);
     }
 
     .actions {

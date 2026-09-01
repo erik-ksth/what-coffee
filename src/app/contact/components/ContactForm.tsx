@@ -177,12 +177,13 @@ const ContactForm = () => {
                             Have a question about catering, hosting an event, or our menu? Leave us
                             a note.
                         </p>
+                        <p className={styles.requiredNote}>All fields are required.</p>
                     </div>
 
                     {submitStatus.type && (
                         <div
                             className={`${styles.status} ${submitStatus.type === "success" ? styles.success : styles.error}`}
-                            role="status"
+                            role={submitStatus.type === "error" ? "alert" : "status"}
                         >
                             {submitStatus.message}
                         </div>

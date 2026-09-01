@@ -15,7 +15,7 @@ export default function MenuTabs({ filters, selected, onChange }: MenuTabsProps)
     const shouldReduceMotion = useReducedMotion();
 
     return (
-        <div className={styles.tabs} aria-label="Filter menu items">
+        <div className={styles.tabs} role="group" aria-label="Filter menu items">
             {filters.map((category) => {
                 const isActive = category === selected;
                 return (

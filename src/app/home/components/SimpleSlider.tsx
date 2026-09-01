@@ -126,7 +126,7 @@ export default function SimpleSlider({ slides, autoplayDelay = 2000 }: SimpleSli
             </div>
 
             {slides.length > 1 ? (
-                <div className={styles.indicators} aria-label="Choose a café photo">
+                <div className={styles.indicators} role="group" aria-label="Choose a café photo">
                     {slides.map((slide, index) => (
                         <button
                             type="button"

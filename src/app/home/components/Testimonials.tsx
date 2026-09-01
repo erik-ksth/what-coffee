@@ -66,10 +66,14 @@ const reviews: Review[] = [
 
 function Stars({ rating }: { rating: number }) {
     return (
-        <span className={styles.stars} aria-label={`${rating} out of 5 stars`}>
+        <span className={styles.stars} role="img" aria-label={`${rating} out of 5 stars`}>
             {Array.from({ length: 5 }, (_, index) => (
-                <span key={index} className={index < rating ? styles.starFilled : styles.starEmpty}>
-                    ★
+                <span
+                    key={index}
+                    className={index < rating ? styles.starFilled : styles.starEmpty}
+                    aria-hidden="true"
+                >
+                    {index < rating ? "★" : "☆"}
                 </span>
             ))}
         </span>

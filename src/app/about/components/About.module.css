@@ -118,7 +118,8 @@
     }
 
     .portrait {
-        min-height: 420px;
+        width: 100%;
+        min-height: 0;
     }
 
     .widePhoto {
