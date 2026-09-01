@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "aungbobo.dev@gmail.com";
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "aungag1998@gmail.com";
 const CONTACT_FROM_EMAIL =
     process.env.CONTACT_FROM_EMAIL || "WhatCoffee Contact <onboarding@resend.dev>";
 const RATE_LIMIT_MAX_REQUESTS = getPositiveInteger(process.env.CONTACT_RATE_LIMIT_MAX, 3);
