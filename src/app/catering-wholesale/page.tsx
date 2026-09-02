@@ -3,15 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 import PageHeader from "@/components/PageHeader";
+import { absoluteUrl, SOCIAL_IMAGE } from "@/config/site";
 
 import styles from "./catering.module.css";
 
 export const metadata: Metadata = {
     title: "Catering & Wholesale",
     description: "Explore catering and wholesale options from What Coffee in Santa Clara.",
+    alternates: {
+        canonical: absoluteUrl("/catering-wholesale"),
+    },
     openGraph: {
+        url: absoluteUrl("/catering-wholesale"),
         title: "Catering & Wholesale | What Coffee",
         description: "Explore catering and wholesale options from What Coffee in Santa Clara.",
+        images: [SOCIAL_IMAGE],
     },
 };
 
@@ -34,7 +40,7 @@ export default function CateringWholesalePage() {
                 <article className={styles.offering}>
                     <figure className={styles.photo}>
                         <Image
-                            src="/images/site/events/catering-edited.png"
+                            src="/images/site/events/catering-edited.webp"
                             alt="A community event catered by What Coffee"
                             fill
                             sizes="(max-width: 800px) 100vw, 52vw"
@@ -55,7 +61,7 @@ export default function CateringWholesalePage() {
                 <article className={`${styles.offering} ${styles.reverse}`}>
                     <figure className={styles.photo}>
                         <Image
-                            src="/images/site/roastery/roaster-machine.jpg"
+                            src="/images/site/roastery/roaster-machine.webp"
                             alt="Coffee beans roasting at What Coffee"
                             fill
                             sizes="(max-width: 800px) 100vw, 52vw"

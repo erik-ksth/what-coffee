@@ -8,10 +8,10 @@ export interface MenuItem {
 
 export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
     Drinks: [
-
         {
             name: "Americano",
-            description: "Made with house blend espresso, bold, and refreshing. Available Hot or Iced.",
+            description:
+                "Made with house blend espresso, bold, and refreshing. Available Hot or Iced.",
             image: "/images/menu/drinks/edited/americano.jpeg",
         },
         {
@@ -37,7 +37,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Matcha Latte",
             description: "Ceremonial grade matcha with milk. Available Hot or Iced.",
-            image: "/images/menu/drinks/edited/matcha-latte-creamy.png",
+            image: "/images/menu/drinks/edited/matcha-latte-creamy.webp",
         },
         {
             name: "Raspberry Iced Matcha",
@@ -51,12 +51,14 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         },
         {
             name: "Tiramisu Latte",
-            description: "Latte inspired by tiramisu—rich coffee, cocoa, and a dessert-like finish.",
+            description:
+                "Latte inspired by tiramisu—rich coffee, cocoa, and a dessert-like finish.",
             image: "/images/menu/drinks/edited/tiramisu-latte.jpeg",
         },
         {
             name: "Ube Latte",
-            description: "Creamy ube-forward latte with a naturally purple hue and mellow vanilla notes.",
+            description:
+                "Creamy ube-forward latte with a naturally purple hue and mellow vanilla notes.",
             image: "/images/menu/drinks/edited/ube-latte.jpeg",
         },
         {
@@ -66,7 +68,8 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         },
         {
             name: "Bee's Knee",
-            description: "Honey-kissed espresso drink with vanilla and a cinnamon twist for a smooth, mellow sweetness. Available Hot or Iced.",
+            description:
+                "Honey-kissed espresso drink with vanilla and a cinnamon twist for a smooth, mellow sweetness. Available Hot or Iced.",
             image: "/images/menu/drinks/edited/bees-knees.jpeg",
         },
         {
@@ -82,7 +85,7 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         {
             name: "Chai Latte",
             description: "Spiced black tea latte with a hint of cinnamon and nutmeg.",
-            image: "/images/menu/drinks/edited/chai.png",
+            image: "/images/menu/drinks/edited/chai.webp",
         },
         {
             name: "Hot Chocolate",
@@ -153,7 +156,8 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         // },
         {
             name: "Cinnamon Roll",
-            description: "Soft and fluffy cinnamon roll with a sweet and sticky cinnamon sugar filling.",
+            description:
+                "Soft and fluffy cinnamon roll with a sweet and sticky cinnamon sugar filling.",
             image: "/images/menu/food/edited/cinnamon-roll.jpeg",
         },
         {
@@ -163,7 +167,8 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
         },
         {
             name: "Muffins",
-            description: "Soft and fluffy muffins with a chocolate chips, walnut, banana or blueberry filling.",
+            description:
+                "Soft and fluffy muffins with a chocolate chips, walnut, banana or blueberry filling.",
             image: "/images/menu/food/edited/muffin.jpeg",
         },
         {
@@ -200,22 +205,26 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
     Food: [
         {
             name: "Breakfast Sandwich",
-            description: "Bacon, egg, avocado and cheese on toasted croissant paired with a side salad and fresh seasonal fruits.",
+            description:
+                "Bacon, egg, avocado and cheese on toasted croissant paired with a side salad and fresh seasonal fruits.",
             image: "/images/menu/food/edited/breakfast-sandwich.jpeg",
         },
         {
             name: "The Monroe",
-            description: "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
+            description:
+                "Succulent, slow-cooked pulled pork topped with melted cheese and vine-ripened tomatoes, served alongside a crisp side salad and fresh seasonal fruit.",
             image: "/images/menu/food/edited/the-monroe.jpeg",
         },
         {
             name: "The San Francisco",
-            description: "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and fresh seasonal fruits.",
+            description:
+                "Tender, herb-roasted beef stacked high with rich cheese and juicy tomato slices, perfectly paired with a refreshing garden salad and fresh seasonal fruits.",
             image: "/images/menu/food/edited/the-san-francisco.jpeg",
         },
         {
             name: "Mushroom on Ciabatta",
-            description: "Roasted mushrooms on ciabatta with a side salad and fresh seasonal fruits.",
+            description:
+                "Roasted mushrooms on ciabatta with a side salad and fresh seasonal fruits.",
             image: "/images/menu/food/edited/mushroom.jpeg",
         },
     ],
@@ -235,6 +244,5 @@ export const MENU_ITEMS: Record<MenuCategory, MenuItem[]> = {
             description: "Swiss water process • Brazil • milk chocolate, nuts.",
             image: "/images/menu/beans/edited/brazil-decaf-package.jpeg",
         },
-
     ],
 };

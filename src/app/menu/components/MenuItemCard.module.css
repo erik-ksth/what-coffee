@@ -33,7 +33,7 @@
 }
 
 .imageWrap:focus-visible {
-    outline: 3px solid var(--primary);
+    outline: 3px solid var(--foreground);
     outline-offset: 3px;
 }
 

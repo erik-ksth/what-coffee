@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl, SOCIAL_IMAGE } from "@/config/site";
 
 import styles from "./privacy.module.css";
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
     description: "Learn how What Coffee collects, uses, and protects personal information.",
+    alternates: {
+        canonical: absoluteUrl("/privacy"),
+    },
+    openGraph: {
+        title: "Privacy Policy | What Coffee",
+        description: "Learn how What Coffee collects, uses, and protects personal information.",
+        url: absoluteUrl("/privacy"),
+        images: [SOCIAL_IMAGE],
+    },
 };
 
 export default function PrivacyPolicy() {

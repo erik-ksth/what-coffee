@@ -19,7 +19,7 @@ const topHits = [
     {
         name: "Iced Matcha Latte",
         description: "Ceremonial matcha with milk, served over ice.",
-        image: "/images/menu/drinks/edited/matcha-latte-creamy.png",
+        image: "/images/menu/drinks/edited/matcha-latte-creamy.webp",
         imagePosition: "center 58%",
     },
     {

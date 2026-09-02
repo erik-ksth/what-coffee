@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeafShade from "@/components/LeafShade";
 import PageTransition from "@/components/PageTransition";
+import { absoluteUrl, SITE_URL, SOCIAL_IMAGE } from "@/config/site";
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
@@ -34,7 +35,7 @@ const craftyGirls = Crafty_Girls({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://whatcoffee.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
         default: "What Coffee | Best Coffee Shop in Santa Clara",
         template: "%s | What Coffee",
@@ -62,26 +63,19 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://whatcoffee.com",
+        url: SITE_URL,
         siteName: "What Coffee",
         title: "What Coffee | Best Coffee Shop in Santa Clara",
         description:
             "Experience the perfect blend of atmosphere and aroma. Fresh roasted daily, artisan coffee, premium beans, and handcrafted pastries.",
-        images: [
-            {
-                url: "/images/site/interiors/coffee-santa-clara-main.jpeg",
-                width: 1200,
-                height: 630,
-                alt: "What Coffee - Artisan Coffee Shop",
-            },
-        ],
+        images: [SOCIAL_IMAGE],
     },
     twitter: {
         card: "summary_large_image",
         title: "What Coffee | Best Coffee Shop in Santa Clara",
         description:
             "Experience the perfect blend of atmosphere and aroma. Fresh roasted daily, artisan coffee, premium beans.",
-        images: ["/images/site/interiors/coffee-santa-clara-main.jpeg"],
+        images: [SOCIAL_IMAGE.url],
     },
     robots: {
         index: true,
@@ -93,9 +87,6 @@ export const metadata: Metadata = {
             "max-image-preview": "large",
             "max-snippet": -1,
         },
-    },
-    alternates: {
-        canonical: "https://whatcoffee.com",
     },
 };
 
@@ -113,10 +104,14 @@ export default function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "CafeOrCoffeeShop",
+                            "@id": absoluteUrl("/#business"),
                             name: "What Coffee",
-                            image: "https://whatcoffee.com/images/site/interiors/coffee-santa-clara-main.jpeg",
-                            url: "https://whatcoffee.com",
-                            telephone: "408-279-3333",
+                            image: absoluteUrl(
+                                "/images/site/interiors/coffee-santa-clara-main.jpeg"
+                            ),
+                            url: SITE_URL,
+                            telephone: "+1-408-609-3146",
+                            email: "contact@whatcoffeeandbakery.com",
                             address: {
                                 "@type": "PostalAddress",
                                 streetAddress: "1002 Monroe St",
@@ -139,21 +134,25 @@ export default function RootLayout({
                                 },
                                 {
                                     "@type": "OpeningHoursSpecification",
-                                    dayOfWeek: ["Friday", "Saturday"],
+                                    dayOfWeek: ["Friday"],
                                     opens: "07:30",
                                     closes: "19:00",
                                 },
                                 {
                                     "@type": "OpeningHoursSpecification",
-                                    dayOfWeek: ["Sunday"],
+                                    dayOfWeek: ["Saturday", "Sunday"],
                                     opens: "08:00",
-                                    closes: "17:00",
+                                    closes: "19:00",
                                 },
                             ],
                             servesCuisine: "Coffee",
                             priceRange: "$",
-                            acceptsReservations: "false",
-                            menu: "https://whatcoffee.com/menu",
+                            acceptsReservations: false,
+                            menu: absoluteUrl("/menu"),
+                            sameAs: [
+                                "https://www.instagram.com/whatcoffeeandbakery/",
+                                "https://www.tiktok.com/@whatcoffeeandbakery",
+                            ],
                         }),
                     }}
                 />

@@ -11,8 +11,6 @@ interface Review {
     tone: "paper" | "peach" | "ink";
 }
 
-const googleMapsListing = "https://maps.app.goo.gl/k7j3PC34rzGNvbjWA";
-
 const reviews: Review[] = [
     {
         name: "F Lee",

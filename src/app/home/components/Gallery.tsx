@@ -29,7 +29,7 @@ const parallaxImages = [
         depth: 0.88,
     },
     {
-        src: "/images/site/events/catering-edited.png",
+        src: "/images/site/events/catering-edited.webp",
         alt: "A community event at What Coffee",
         depth: 0.72,
     },

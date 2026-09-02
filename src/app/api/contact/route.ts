@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "aungag1998@gmail.com";
 const CONTACT_FROM_EMAIL =
     process.env.CONTACT_FROM_EMAIL || "WhatCoffee Contact <onboarding@resend.dev>";
@@ -31,13 +30,16 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 class RequestBodyTooLargeError extends Error {}
 
 export async function POST(request: Request) {
-    if (!process.env.RESEND_API_KEY || !process.env.RECAPTCHA_SECRET_KEY) {
+    const resendApiKey = process.env.RESEND_API_KEY;
+
+    if (!resendApiKey || !process.env.RECAPTCHA_SECRET_KEY) {
         return NextResponse.json(
             { error: "The contact form is temporarily unavailable." },
             { status: 500 }
         );
     }
 
+    const resend = new Resend(resendApiKey);
     let body: unknown;
     try {
         body = await parseRequestBody(request);
