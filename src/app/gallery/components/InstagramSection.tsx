@@ -1,29 +1,43 @@
-import Script from "next/script";
-
+import { getInstagramData } from "@/lib/instagram";
+import InstagramGrid from "./InstagramGrid";
 import styles from "./InstagramSection.module.css";
 
-const InstagramSection = () => {
+export default async function InstagramSection() {
+    const { profile, posts } = await getInstagramData(12);
+    const username = profile?.username || "whatcoffeeandbakery";
+    const profileUrl = `https://www.instagram.com/${username}`;
+
     return (
         <section className={styles.section}>
             <div className={styles.heading}>
-                <h2>Latest from Instagram.</h2>
+                <div>
+                    <h2>Latest from Instagram.</h2>
+                </div>
                 <a
-                    href="https://www.instagram.com/whatcoffeeandbakery"
+                    href={profileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className={styles.igHandle}
                 >
-                    @whatcoffeeandbakery
+                    @{username}
                 </a>
             </div>
 
-            <div
-                data-key="Carousel Instagram Feed "
-                className={`ft ${styles.feed}`}
-                id="ftp4ggqumh"
-            />
-            <Script src="https://wdg.fouita.com/widgets/0x3895b7.js" strategy="lazyOnload" />
+            {posts.length > 0 ? (
+                <InstagramGrid posts={posts} profile={profile} />
+            ) : (
+                <div className={styles.emptyState}>
+                    <p>Check out our latest photos directly on Instagram</p>
+                    <a
+                        href={profileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.primaryButton}
+                    >
+                        Visit @{username}
+                    </a>
+                </div>
+            )}
         </section>
     );
-};
-
-export default InstagramSection;
+}
