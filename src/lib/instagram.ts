@@ -99,10 +99,7 @@ export async function getInstagramPosts(limit = 12): Promise<InstagramPost[]> {
 }
 
 export async function getInstagramData(limit = 12): Promise<InstagramFeedData> {
-    const [profile, posts] = await Promise.all([
-        getInstagramProfile(),
-        getInstagramPosts(limit),
-    ]);
+    const [profile, posts] = await Promise.all([getInstagramProfile(), getInstagramPosts(limit)]);
 
     return { profile, posts };
 }

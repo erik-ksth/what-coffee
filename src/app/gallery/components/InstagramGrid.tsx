@@ -39,7 +39,9 @@ export default function InstagramGrid({ posts, profile }: InstagramGridProps) {
                             <div className={styles.imageWrapper}>
                                 <Image
                                     src={imageUrl}
-                                    alt={post.caption?.slice(0, 100) || "What Coffee Instagram Post"}
+                                    alt={
+                                        post.caption?.slice(0, 100) || "What Coffee Instagram Post"
+                                    }
                                     fill
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                     className={styles.image}
@@ -55,14 +57,24 @@ export default function InstagramGrid({ posts, profile }: InstagramGridProps) {
                                 )}
                                 {post.media_type === "VIDEO" && (
                                     <div className={styles.badge} title="Video">
-                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            width="16"
+                                            height="16"
+                                        >
                                             <polygon points="5 3 19 12 5 21 5 3" />
                                         </svg>
                                     </div>
                                 )}
                                 {post.media_type === "CAROUSEL_ALBUM" && (
                                     <div className={styles.badge} title="Carousel">
-                                        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                            width="16"
+                                            height="16"
+                                        >
                                             <rect x="2" y="2" width="16" height="16" rx="2" />
                                             <path d="M6 18h14a2 2 0 0 0 2-2V6" />
                                         </svg>
