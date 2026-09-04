@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnalyticsPreferencesButton from "@/components/AnalyticsPreferencesButton";
 import { absoluteUrl, SOCIAL_IMAGE } from "@/config/site";
 
 import styles from "./privacy.module.css";
@@ -24,7 +25,7 @@ export default function PrivacyPolicy() {
             <article className={styles.policy}>
                 <p className={styles.eyebrow}>Legal</p>
                 <h1>Privacy Policy</h1>
-                <p className={styles.updated}>Last updated: September 1, 2026</p>
+                <p className={styles.updated}>Last updated: September 4, 2026</p>
 
                 <p>
                     What Coffee Roastery &amp; Bakery (&ldquo;What Coffee,&rdquo; &ldquo;we,&rdquo;
@@ -46,6 +47,13 @@ export default function PrivacyPolicy() {
                         collect technical information, such as IP address, device, browser, and
                         interaction data, under Google&apos;s privacy practices.
                     </p>
+                    <p>
+                        If you allow analytics, Google Analytics collects information about how you
+                        use the website, including pages viewed, general device and browser details,
+                        approximate location, referral source, and interactions with order,
+                        directions, phone, email, and social links. We do not send your name, email
+                        address, phone number, or message contents to Analytics.
+                    </p>
                 </section>
 
                 <section>
@@ -55,6 +63,7 @@ export default function PrivacyPolicy() {
                         <li>Respond to your questions, catering, event, or wholesale inquiries</li>
                         <li>Protect our contact form and website from spam, fraud, and abuse</li>
                         <li>Maintain and improve our website and customer service</li>
+                        <li>Understand which pages and café links visitors find useful</li>
                     </ul>
                     <p>
                         We do not use contact-form submissions to send marketing messages unless you
@@ -66,9 +75,10 @@ export default function PrivacyPolicy() {
                     <h2>How we share information</h2>
                     <p>
                         We share information only as needed to operate our website and respond to
-                        you. This includes service providers that help us deliver email and protect
-                        the contact form, including Resend and Google reCAPTCHA. These providers
-                        process information under their own terms and privacy policies.
+                        you. This includes service providers that help us deliver email, protect the
+                        contact form, and understand website use, including Resend, Google
+                        reCAPTCHA, and, when you allow it, Google Analytics. These providers process
+                        information under their own terms and privacy policies.
                     </p>
                     <p>
                         We do not sell personal information collected through the contact form or
@@ -96,6 +106,17 @@ export default function PrivacyPolicy() {
                     </p>
                 </section>
 
+                <section id="analytics-preferences">
+                    <h2>Analytics choices</h2>
+                    <p>
+                        Google Analytics does not load unless you select “Allow analytics.” You can
+                        decline it or change your choice at any time. Withdrawing permission stops
+                        future Analytics collection from this browser and removes available
+                        Analytics cookies from this website.
+                    </p>
+                    <AnalyticsPreferencesButton className={styles.preferenceButton} />
+                </section>
+
                 <section>
                     <h2>Children&apos;s privacy</h2>
                     <p>
@@ -107,7 +128,7 @@ export default function PrivacyPolicy() {
                 <section>
                     <h2>Third-party policies</h2>
                     <p>
-                        Google reCAPTCHA is subject to Google&apos;s{" "}
+                        Google reCAPTCHA and Google Analytics are subject to Google&apos;s{" "}
                         <a
                             href="https://policies.google.com/privacy"
                             target="_blank"

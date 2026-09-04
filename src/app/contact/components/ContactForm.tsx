@@ -3,6 +3,7 @@
 import Script from "next/script";
 import Link from "next/link";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 import styles from "./ContactForm.module.css";
 
@@ -29,6 +30,7 @@ const ContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
     const recaptchaContainerRef = useRef<HTMLDivElement>(null);
     const recaptchaWidgetIdRef = useRef<number | null>(null);
+    const hasTrackedFormStartRef = useRef(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
     const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
@@ -115,12 +117,14 @@ const ContactForm = () => {
                 type: "success",
                 message: "Thank you! Your message has been sent. We'll get back to you soon.",
             });
+            trackAnalyticsEvent("contact_form_submit", { status: "success" });
             formRef.current?.reset();
             setRecaptchaToken(null);
             if (recaptchaWidgetIdRef.current !== null) {
                 window.grecaptcha?.reset(recaptchaWidgetIdRef.current);
             }
         } catch (error) {
+            trackAnalyticsEvent("contact_form_submit", { status: "error" });
             setSubmitStatus({
                 type: "error",
                 message:
@@ -171,7 +175,16 @@ const ContactForm = () => {
                     </div>
                 </div>
 
-                <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
+                <form
+                    ref={formRef}
+                    onSubmit={handleSubmit}
+                    onFocusCapture={() => {
+                        if (hasTrackedFormStartRef.current) return;
+                        hasTrackedFormStartRef.current = true;
+                        trackAnalyticsEvent("contact_form_start", { page: "/contact" });
+                    }}
+                    className={styles.form}
+                >
                     <div>
                         <h2>Send a message.</h2>
                         <p className={styles.intro}>

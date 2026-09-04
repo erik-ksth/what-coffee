@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeafShade from "@/components/LeafShade";
 import PageTransition from "@/components/PageTransition";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { absoluteUrl, SITE_URL, SOCIAL_IMAGE } from "@/config/site";
 
 const geistMono = Geist_Mono({
@@ -166,6 +167,7 @@ export default function RootLayout({
                     <PageTransition>{children}</PageTransition>
                 </main>
                 <Footer />
+                <GoogleAnalytics />
             </body>
         </html>
     );

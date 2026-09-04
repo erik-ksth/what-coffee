@@ -77,3 +77,22 @@
 .backLink {
     margin: 3rem 0 0;
 }
+
+.preferenceButton {
+    min-height: 48px;
+    margin-top: 1rem;
+    padding-inline: 1.15rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: var(--button-radius);
+    background: var(--button-background);
+    box-shadow: var(--button-shadow-active);
+    color: var(--button-foreground);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+}
+
+.preferenceButton:focus-visible {
+    outline: 3px solid var(--foreground);
+    outline-offset: 3px;
+}
